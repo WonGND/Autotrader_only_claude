@@ -320,7 +320,7 @@ def main():
         "results": all_results,
     }
 
-    out_path = "/home/user/Autotrader_only_claude/analysis_results.json"
+    out_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "analysis_results.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
