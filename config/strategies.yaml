@@ -1,0 +1,32 @@
+active_strategy: "ma_crossover"
+
+strategies:
+  ma_crossover:
+    name: "이동평균 교차 전략"
+    short_window: 5
+    long_window: 20
+    watchlist:
+      - "005930"  # 삼성전자
+      - "000660"  # SK하이닉스
+      - "035420"  # NAVER
+      - "051910"  # LG화학
+      - "006400"  # 삼성SDI
+
+  rsi:
+    name: "RSI 과매수/과매도 전략"
+    period: 14
+    oversold: 30
+    overbought: 70
+    watchlist:
+      - "005930"
+      - "000660"
+      - "035420"
+
+  bollinger_bands:
+    name: "볼린저 밴드 전략"
+    period: 20
+    std_dev: 2.0
+    watchlist:
+      - "005930"
+      - "000660"
+      - "035420"

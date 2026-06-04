@@ -1,0 +1,29 @@
+app:
+  name: "AutoTrader"
+  mode: "paper"  # "paper" or "live"
+  web_port: 8000
+  timezone: "Asia/Seoul"
+
+trading:
+  max_positions: 5
+  position_size_pct: 0.2  # 20% of portfolio per position
+  stop_loss_pct: 0.05      # 5% stop loss
+  take_profit_pct: 0.15    # 15% take profit
+  initial_capital: 10000000  # 1천만원
+
+scheduler:
+  market_open: "09:00"
+  market_close: "15:30"
+  check_interval_minutes: 5
+
+broker:
+  type: "paper"  # "paper", "kis", "ebest", etc.
+
+data:
+  provider: "fdr"  # "fdr" (FinanceDataReader) or "yfinance"
+  cache_days: 365
+
+notification:
+  enabled: false
+  telegram_token: ""
+  telegram_chat_id: ""
