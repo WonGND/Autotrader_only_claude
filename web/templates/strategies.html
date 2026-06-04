@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}전략 설정{% endblock %}
+{% block page_title %}전략 설정{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    {% for key, strat in strategies.items() %}
+    <div class="col-lg-6 col-xl-4">
+        <div class="card-dark strategy-card {% if key == active_strategy %}strategy-active{% endif %}">
+            <div class="strategy-header">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h5 class="mb-1">{{ strat.name }}</h5>
+                        <span class="badge bg-secondary">{{ key }}</span>
+                    </div>
+                    {% if key == active_strategy %}
+                    <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>활성</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="strategy-body">
+                <!-- 전략 설명 -->
+                <div class="strategy-desc mb-3">
+                    {% if key == 'ma_crossover' %}
+                    <p class="text-muted small">단기 이동평균이 장기 이동평균을 상향 돌파할 때 매수, 하향 돌파 시 매도하는 추세 추종 전략입니다.</p>
+                    {% elif key == 'rsi' %}
+                    <p class="text-muted small">RSI가 과매도 구간에 진입하면 매수, 과매수 구간에 진입하면 매도하는 역추세 전략입니다.</p>
+                    {% elif key == 'bollinger_bands' %}
+                    <p class="text-muted small">가격이 볼린저 밴드 하단에 닿으면 매수, 상단에 닿으면 매도하는 평균 회귀 전략입니다.</p>
+                    {% endif %}
+                </div>
+
+                <!-- 파라미터 -->
+                <h6 class="text-muted mb-2"><i class="bi bi-sliders me-1"></i>파라미터</h6>
+                <table class="table table-dark table-sm mb-3">
+                    <tbody>
+                        {% for param_key, param_val in strat.items() %}
+                        {% if param_key not in ['name', 'watchlist'] %}
+                        <tr>
+                            <td class="text-muted">{{ param_key }}</td>
+                            <td class="fw-bold text-info">{{ param_val }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <!-- 감시 종목 -->
+                {% if strat.watchlist %}
+                <h6 class="text-muted mb-2"><i class="bi bi-eye me-1"></i>감시 종목</h6>
+                <div class="watchlist-badges">
+                    {% for symbol in strat.watchlist %}
+                    <span class="badge bg-dark border border-secondary me-1 mb-1">{{ symbol }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="strategy-footer mt-3">
+                <a href="/backtest?strategy={{ key }}" class="btn btn-sm btn-outline-info me-2">
+                    <i class="bi bi-clock-history me-1"></i>백테스트
+                </a>
+                {% if key != active_strategy %}
+                <button class="btn btn-sm btn-outline-success" onclick="alert('전략 전환은 config/strategies.yaml의 active_strategy 값을 변경하세요.')">
+                    <i class="bi bi-check-circle me-1"></i>활성화
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- 전략 추가 안내 -->
+<div class="card-dark mt-4">
+    <div class="card-dark-header">
+        <i class="bi bi-plus-circle me-2 text-success"></i>새 전략 추가 방법
+    </div>
+    <div class="p-3">
+        <ol class="text-muted">
+            <li class="mb-2"><code>strategies/</code> 디렉토리에 새 파일을 만드세요 (예: <code>my_strategy.py</code>)</li>
+            <li class="mb-2"><code>BaseStrategy</code>를 상속받아 <code>generate_signals()</code>와 <code>get_required_history()</code>를 구현하세요</li>
+            <li class="mb-2"><code>strategies/__init__.py</code>의 <code>STRATEGY_MAP</code>에 새 전략을 등록하세요</li>
+            <li class="mb-2"><code>config/strategies.yaml</code>에 전략 파라미터를 추가하세요</li>
+            <li><code>active_strategy</code> 값을 새 전략 키로 변경하세요</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

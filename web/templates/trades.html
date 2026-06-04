@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}거래 내역{% endblock %}
+{% block page_title %}거래 내역{% endblock %}
+
+{% block content %}
+<!-- 필터 -->
+<div class="card-dark mb-4">
+    <div class="card-dark-header">
+        <i class="bi bi-funnel me-2 text-info"></i>필터
+    </div>
+    <form method="GET" action="/trades" class="p-3">
+        <div class="row g-3 align-items-end">
+            <div class="col-md-3">
+                <label class="form-label">종목 코드</label>
+                <input type="text" class="form-control form-control-dark" name="symbol"
+                       value="{{ filter_symbol }}" placeholder="예: 005930">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">전략</label>
+                <input type="text" class="form-control form-control-dark" name="strategy"
+                       value="{{ filter_strategy }}" placeholder="예: 이동평균 교차">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">기간</label>
+                <select class="form-select form-select-dark" name="days">
+                    <option value="7" {% if filter_days == 7 %}selected{% endif %}>최근 7일</option>
+                    <option value="30" {% if filter_days == 30 %}selected{% endif %}>최근 30일</option>
+                    <option value="90" {% if filter_days == 90 %}selected{% endif %}>최근 90일</option>
+                    <option value="365" {% if filter_days == 365 %}selected{% endif %}>최근 1년</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-info w-100">
+                    <i class="bi bi-search me-2"></i>검색
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- 거래 통계 -->
+{% if trades %}
+{% set buy_trades = trades | selectattr('side', 'equalto', 'buy') | list %}
+{% set sell_trades = trades | selectattr('side', 'equalto', 'sell') | list %}
+{% set total_pnl = trades | map(attribute='pnl') | select | sum %}
+{% set win_trades = sell_trades | selectattr('pnl', 'gt', 0) | list %}
+
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-md-3">
+        <div class="stat-card-sm">
+            <div class="stat-label">총 거래</div>
+            <div class="stat-value-sm">{{ trades | length }}건</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="stat-card-sm">
+            <div class="stat-label">매수 / 매도</div>
+            <div class="stat-value-sm">{{ buy_trades | length }} / {{ sell_trades | length }}</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="stat-card-sm">
+            <div class="stat-label">총 손익</div>
+            <div class="stat-value-sm {% if total_pnl >= 0 %}text-success{% else %}text-danger{% endif %}">
+                {% if total_pnl >= 0 %}+{% endif %}₩{{ "{:,.0f}".format(total_pnl) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="stat-card-sm">
+            <div class="stat-label">승률</div>
+            <div class="stat-value-sm">
+                {% if sell_trades %}
+                {{ "{:.1f}".format(win_trades | length / sell_trades | length * 100) }}%
+                ({{ win_trades | length }}/{{ sell_trades | length }})
+                {% else %}
+                -
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- 거래 내역 테이블 -->
+<div class="card-dark">
+    <div class="card-dark-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-list-ul me-2 text-info"></i>거래 내역 ({{ trades | length }}건)</span>
+    </div>
+
+    {% if trades %}
+    <div class="table-responsive">
+        <table class="table table-dark table-hover mb-0" id="tradesTable">
+            <thead>
+                <tr>
+                    <th>일시</th>
+                    <th>종목</th>
+                    <th>구분</th>
+                    <th class="text-end">수량</th>
+                    <th class="text-end">주문가</th>
+                    <th class="text-end">체결가</th>
+                    <th class="text-end">손익</th>
+                    <th>전략</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in trades %}
+                <tr>
+                    <td class="text-muted small">
+                        {{ trade.timestamp[:16] if trade.timestamp else '-' }}
+                    </td>
+                    <td><span class="fw-bold">{{ trade.symbol }}</span></td>
+                    <td>
+                        <span class="badge {% if trade.side == 'buy' %}bg-success{% else %}bg-danger{% endif %}">
+                            {% if trade.side == 'buy' %}매수{% else %}매도{% endif %}
+                        </span>
+                    </td>
+                    <td class="text-end">{{ "{:,}".format(trade.quantity) }}</td>
+                    <td class="text-end">₩{{ "{:,.0f}".format(trade.price) }}</td>
+                    <td class="text-end">
+                        {% if trade.filled_price %}
+                        ₩{{ "{:,.0f}".format(trade.filled_price) }}
+                        {% else %}-{% endif %}
+                    </td>
+                    <td class="text-end {% if (trade.pnl or 0) > 0 %}text-success{% elif (trade.pnl or 0) < 0 %}text-danger{% else %}text-muted{% endif %}">
+                        {% if trade.pnl is not none and trade.pnl != 0 %}
+                            {% if trade.pnl > 0 %}+{% endif %}₩{{ "{:,.0f}".format(trade.pnl) }}
+                        {% else %}-{% endif %}
+                    </td>
+                    <td class="text-muted small">{{ trade.strategy or '-' }}</td>
+                    <td class="text-muted small">{{ trade.note or '-' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="text-center text-muted py-5">
+        <i class="bi bi-inbox fs-1 d-block mb-3"></i>
+        <div>해당 기간에 거래 내역이 없습니다.</div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

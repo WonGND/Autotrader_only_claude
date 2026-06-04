@@ -1,0 +1,428 @@
+/* ─── 전역 변수 ─────────────────────────────────────────── */
+:root {
+    --sidebar-width: 240px;
+    --topbar-height: 56px;
+    --bg-dark: #0d1117;
+    --bg-card: #161b22;
+    --bg-card-hover: #1c2128;
+    --border-color: #30363d;
+    --text-primary: #e6edf3;
+    --text-muted: #8b949e;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-red: #f85149;
+    --accent-yellow: #d29922;
+    --accent-cyan: #39d0e4;
+}
+
+/* ─── 기본 스타일 ────────────────────────────────────────── */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ─── 사이드바 ───────────────────────────────────────────── */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar-header {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--accent-cyan);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    overflow-y: auto;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.sidebar-nav .nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--accent-blue);
+}
+
+.sidebar-nav .nav-link.active {
+    color: var(--accent-cyan);
+    background: rgba(57, 208, 228, 0.1);
+    border-left-color: var(--accent-cyan);
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.trading-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-active .status-dot {
+    background: var(--accent-green);
+    box-shadow: 0 0 6px var(--accent-green);
+    animation: pulse 2s infinite;
+}
+
+.status-active {
+    color: var(--accent-green);
+}
+
+.status-paused .status-dot {
+    background: var(--text-muted);
+}
+
+.status-paused {
+    color: var(--text-muted);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* ─── 메인 콘텐츠 ────────────────────────────────────────── */
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+}
+
+/* ─── 탑바 ───────────────────────────────────────────────── */
+.topbar {
+    height: var(--topbar-height);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+.topbar-title {
+    font-weight: 600;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.market-status {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+.status-dot-sm {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    background: var(--text-muted);
+}
+
+.market-open .status-dot-sm {
+    background: var(--accent-green);
+    box-shadow: 0 0 4px var(--accent-green);
+}
+
+.market-open { color: var(--accent-green); border-color: rgba(63, 185, 80, 0.3); }
+.market-closed { color: var(--text-muted); }
+
+/* ─── 콘텐츠 영역 ────────────────────────────────────────── */
+.content-area {
+    padding: 1.5rem;
+}
+
+/* ─── 다크 카드 ──────────────────────────────────────────── */
+.card-dark {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-dark-header {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* ─── KPI 통계 카드 ──────────────────────────────────────── */
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+}
+
+.stat-sub {
+    font-size: 0.8rem;
+}
+
+/* 소형 stat 카드 */
+.stat-card-sm {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    text-align: center;
+}
+
+.stat-value-sm {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* ─── 백테스트 지표 카드 ─────────────────────────────────── */
+.metric-card {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.metric-positive { background: rgba(63, 185, 80, 0.1); border-color: rgba(63, 185, 80, 0.3); color: var(--accent-green); }
+.metric-negative { background: rgba(248, 81, 73, 0.1); border-color: rgba(248, 81, 73, 0.3); color: var(--accent-red); }
+.metric-warning  { background: rgba(210, 153, 34, 0.1); border-color: rgba(210, 153, 34, 0.3); color: var(--accent-yellow); }
+.metric-info     { background: rgba(88, 166, 255, 0.1); border-color: rgba(88, 166, 255, 0.3); color: var(--accent-blue); }
+
+/* ─── 전략 카드 ──────────────────────────────────────────── */
+.strategy-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.strategy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.strategy-active {
+    border-color: rgba(57, 208, 228, 0.4) !important;
+    box-shadow: 0 0 0 1px rgba(57, 208, 228, 0.2);
+}
+
+.strategy-header {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.strategy-body {
+    padding: 1.25rem;
+}
+
+.strategy-footer {
+    padding: 0 1.25rem 1.25rem;
+}
+
+.watchlist-badges .badge {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ─── 최근 백테스트 결과 ──────────────────────────────────── */
+.recent-result-item {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.recent-result-item:last-child {
+    border-bottom: none;
+}
+
+/* ─── 폼 다크 테마 ───────────────────────────────────────── */
+.form-control-dark,
+.form-select-dark {
+    background-color: #0d1117;
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.form-control-dark:focus,
+.form-select-dark:focus {
+    background-color: #0d1117;
+    border-color: var(--accent-cyan);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 3px rgba(57, 208, 228, 0.15);
+}
+
+.form-control-dark::placeholder {
+    color: var(--text-muted);
+}
+
+.form-select-dark option {
+    background-color: var(--bg-card);
+}
+
+/* ─── 테이블 ──────────────────────────────────────────────── */
+.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.04);
+    --bs-table-border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.table thead th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+    border-bottom-color: var(--border-color) !important;
+}
+
+/* ─── 버튼 ────────────────────────────────────────────────── */
+.btn-info {
+    background-color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    color: #0d1117;
+}
+
+.btn-info:hover {
+    background-color: #2bbfd4;
+    border-color: #2bbfd4;
+    color: #0d1117;
+}
+
+.btn-outline-info {
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+}
+
+.btn-outline-info:hover {
+    background-color: var(--accent-cyan);
+    color: #0d1117;
+}
+
+/* ─── 코드 ────────────────────────────────────────────────── */
+code {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--accent-cyan);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+/* ─── 스크롤바 ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── 반응형 ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+    .main-content {
+        margin-left: 0;
+    }
+}

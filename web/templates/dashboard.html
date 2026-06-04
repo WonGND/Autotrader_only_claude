@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block title %}대시보드{% endblock %}
+{% block page_title %}대시보드{% endblock %}
+
+{% block content %}
+<!-- 오류 표시 -->
+{% if error %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <i class="bi bi-exclamation-triangle me-2"></i>{{ error }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endif %}
+
+<!-- KPI 카드 -->
+<div class="row g-3 mb-4">
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon text-info"><i class="bi bi-wallet2"></i></div>
+            <div class="stat-label">총 포트폴리오 가치</div>
+            <div class="stat-value">₩{{ "{:,.0f}".format(total_value) }}</div>
+            <div class="stat-sub text-muted">현금: ₩{{ "{:,.0f}".format(cash) }}</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon {% if profit_loss >= 0 %}text-success{% else %}text-danger{% endif %}">
+                <i class="bi bi-{% if profit_loss >= 0 %}arrow-up-circle{% else %}arrow-down-circle{% endif %}"></i>
+            </div>
+            <div class="stat-label">총 손익</div>
+            <div class="stat-value {% if profit_loss >= 0 %}text-success{% else %}text-danger{% endif %}">
+                {% if profit_loss >= 0 %}+{% endif %}₩{{ "{:,.0f}".format(profit_loss) }}
+            </div>
+            <div class="stat-sub {% if profit_loss_pct >= 0 %}text-success{% else %}text-danger{% endif %}">
+                {% if profit_loss_pct >= 0 %}+{% endif %}{{ "{:.2f}".format(profit_loss_pct) }}%
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon text-warning"><i class="bi bi-briefcase"></i></div>
+            <div class="stat-label">보유 종목 수</div>
+            <div class="stat-value">{{ num_positions }}종목</div>
+            <div class="stat-sub text-muted">최대 5종목</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="stat-card">
+            <div class="stat-icon {% if trading_active %}text-success{% else %}text-secondary{% endif %}">
+                <i class="bi bi-{% if trading_active %}play-circle{% else %}pause-circle{% endif %}"></i>
+            </div>
+            <div class="stat-label">자동 매매 상태</div>
+            <div class="stat-value {% if trading_active %}text-success{% else %}text-secondary{% endif %}">
+                {% if trading_active %}실행 중{% else %}중지됨{% endif %}
+            </div>
+            <div class="stat-sub">
+                <button class="btn btn-sm {% if trading_active %}btn-danger{% else %}btn-success{% endif %}"
+                        onclick="toggleTrading({{ 'true' if trading_active else 'false' }})">
+                    {% if trading_active %}중지{% else %}시작{% endif %}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 차트 & 포지션 -->
+<div class="row g-3 mb-4">
+    <!-- P&L 차트 -->
+    <div class="col-xl-8">
+        <div class="card-dark">
+            <div class="card-dark-header">
+                <i class="bi bi-graph-up me-2 text-info"></i>누적 손익 차트
+            </div>
+            <div id="pnlChart" style="height:300px;"></div>
+        </div>
+    </div>
+
+    <!-- 보유 종목 -->
+    <div class="col-xl-4">
+        <div class="card-dark">
+            <div class="card-dark-header">
+                <i class="bi bi-briefcase me-2 text-warning"></i>보유 포지션
+            </div>
+            {% if positions %}
+            <div class="table-responsive">
+                <table class="table table-dark table-hover table-sm mb-0">
+                    <thead>
+                        <tr>
+                            <th>종목</th>
+                            <th class="text-end">수량</th>
+                            <th class="text-end">손익률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pos in positions %}
+                        <tr>
+                            <td><span class="fw-bold">{{ pos.symbol }}</span></td>
+                            <td class="text-end">{{ "{:,}".format(pos.quantity) }}주</td>
+                            <td class="text-end {% if pos.unrealized_pnl_pct >= 0 %}text-success{% else %}text-danger{% endif %}">
+                                {% if pos.unrealized_pnl_pct >= 0 %}+{% endif %}{{ "{:.2f}".format(pos.unrealized_pnl_pct) }}%
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="text-center text-muted py-4">
+                <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+                보유 중인 종목이 없습니다
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- 보유 포지션 상세 테이블 -->
+{% if positions %}
+<div class="card-dark mb-4">
+    <div class="card-dark-header">
+        <i class="bi bi-table me-2 text-info"></i>포지션 상세
+    </div>
+    <div class="table-responsive">
+        <table class="table table-dark table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>종목 코드</th>
+                    <th class="text-end">수량</th>
+                    <th class="text-end">평균 매수가</th>
+                    <th class="text-end">현재가</th>
+                    <th class="text-end">평가 손익</th>
+                    <th class="text-end">손익률</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pos in positions %}
+                <tr>
+                    <td><span class="badge bg-secondary">{{ pos.symbol }}</span></td>
+                    <td class="text-end">{{ "{:,}".format(pos.quantity) }}</td>
+                    <td class="text-end">₩{{ "{:,.0f}".format(pos.avg_price) }}</td>
+                    <td class="text-end">₩{{ "{:,.0f}".format(pos.current_price) }}</td>
+                    <td class="text-end {% if pos.unrealized_pnl >= 0 %}text-success{% else %}text-danger{% endif %}">
+                        {% if pos.unrealized_pnl >= 0 %}+{% endif %}₩{{ "{:,.0f}".format(pos.unrealized_pnl) }}
+                    </td>
+                    <td class="text-end {% if pos.unrealized_pnl_pct >= 0 %}text-success{% else %}text-danger{% endif %}">
+                        {% if pos.unrealized_pnl_pct >= 0 %}+{% endif %}{{ "{:.2f}".format(pos.unrealized_pnl_pct) }}%
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+
+<!-- 최근 거래 내역 -->
+<div class="card-dark">
+    <div class="card-dark-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-clock-history me-2 text-info"></i>최근 거래 내역</span>
+        <a href="/trades" class="btn btn-sm btn-outline-info">전체 보기</a>
+    </div>
+    {% if recent_trades %}
+    <div class="table-responsive">
+        <table class="table table-dark table-hover mb-0">
+            <thead>
+                <tr>
+                    <th>일시</th>
+                    <th>종목</th>
+                    <th>구분</th>
+                    <th class="text-end">수량</th>
+                    <th class="text-end">체결가</th>
+                    <th class="text-end">손익</th>
+                    <th>전략</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trade in recent_trades %}
+                <tr>
+                    <td class="text-muted small">{{ trade.timestamp[:16] if trade.timestamp else '-' }}</td>
+                    <td><span class="fw-bold">{{ trade.symbol }}</span></td>
+                    <td>
+                        <span class="badge {% if trade.side == 'buy' %}bg-success{% else %}bg-danger{% endif %}">
+                            {% if trade.side == 'buy' %}매수{% else %}매도{% endif %}
+                        </span>
+                    </td>
+                    <td class="text-end">{{ "{:,}".format(trade.quantity) }}</td>
+                    <td class="text-end">₩{{ "{:,.0f}".format(trade.filled_price or trade.price) }}</td>
+                    <td class="text-end {% if (trade.pnl or 0) >= 0 %}text-success{% else %}text-danger{% endif %}">
+                        {% if trade.pnl %}
+                            {% if trade.pnl >= 0 %}+{% endif %}₩{{ "{:,.0f}".format(trade.pnl) }}
+                        {% else %}-{% endif %}
+                    </td>
+                    <td class="text-muted small">{{ trade.strategy or '-' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="text-center text-muted py-4">
+        <i class="bi bi-inbox fs-2 d-block mb-2"></i>
+        거래 내역이 없습니다
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// P&L 차트 렌더링
+const pnlChartData = {{ pnl_chart_json | safe }};
+if (pnlChartData && pnlChartData.data) {
+    Plotly.newPlot('pnlChart', pnlChartData.data, pnlChartData.layout, {
+        responsive: true,
+        displayModeBar: false
+    });
+} else {
+    document.getElementById('pnlChart').innerHTML =
+        '<div class="text-center text-muted py-5"><i class="bi bi-graph-up fs-1 d-block mb-2"></i>거래 데이터가 없습니다</div>';
+}
+
+// 자동 매매 토글
+async function toggleTrading(isRunning) {
+    const endpoint = isRunning ? '/api/trading/stop' : '/api/trading/start';
+    try {
+        const res = await fetch(endpoint, { method: 'POST' });
+        const data = await res.json();
+        alert(data.message);
+        location.reload();
+    } catch (e) {
+        alert('오류가 발생했습니다: ' + e.message);
+    }
+}
+
+// 30초마다 포트폴리오 새로고침
+setInterval(async () => {
+    try {
+        const res = await fetch('/api/portfolio');
+        const data = await res.json();
+        // 총 가치 업데이트 (선택적)
+    } catch (e) {}
+}, 30000);
+</script>
+{% endblock %}
