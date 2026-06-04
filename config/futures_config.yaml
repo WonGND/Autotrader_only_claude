@@ -1,0 +1,33 @@
+futures:
+  enabled: true
+  max_leverage: 10
+  risk_per_trade_pct: 0.02      # 거래당 최대 손실 2%
+  max_position_margin_pct: 0.15 # 포지션당 최대 포트폴리오의 15%
+  max_open_positions: 3
+  maker_fee: 0.0002             # 0.02%
+  taker_fee: 0.0005             # 0.05%
+  funding_rate_8h: 0.0001       # 0.01% per 8h (강세장에서 롱이 숏에게 지불)
+
+  leverage_by_volatility:
+    - atr_pct_max: 2.0
+      max_leverage: 10
+    - atr_pct_max: 4.0
+      max_leverage: 7
+    - atr_pct_max: 6.0
+      max_leverage: 5
+    - atr_pct_max: 8.0
+      max_leverage: 3
+    - atr_pct_max: 999.0
+      max_leverage: 2
+
+  watchlist:
+    - BTC-USD
+    - ETH-USD
+    - SOL-USD
+    - BNB-USD
+    - XRP-USD
+    - DOGE-USD
+    - ADA-USD
+    - AVAX-USD
+    - DOT-USD
+    - MATIC-USD

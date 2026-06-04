@@ -7,12 +7,13 @@ FastAPI 웹 애플리케이션
 import os
 import json
 from datetime import datetime, timedelta
-from typing import Optional
+from typing import Optional, Dict, Any
 
 from fastapi import FastAPI, Request, Form, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel
 
 from database.models import BacktestResult, Trade, init_db, get_session
 from utils.logger import get_logger
@@ -326,6 +327,159 @@ async def startup_event():
     """앱 시작 시 DB 초기화"""
     init_db()
     logger.info("AutoTrader 웹 서버 시작")
+
+
+# ─── 선물거래 라우트 ───────────────────────────────────────────────
+
+# 인메모리 선물 포지션/거래 내역 저장소 (실거래 엔진 연결 전 임시)
+_futures_positions: list = []
+_futures_trade_history: list = []
+
+
+class FuturesBacktestRequest(BaseModel):
+    symbol: str
+    start_date: str
+    end_date: str
+    leverage_mode: str = "dynamic"  # "dynamic" | "1" | "3" | "5" | "10"
+
+
+@app.get("/futures", response_class=HTMLResponse)
+async def futures_page(request: Request):
+    """선물거래 대시보드 페이지"""
+    settings = load_settings()
+    portfolio_value = settings.get("trading", {}).get("initial_capital", 10_000_000)
+
+    # 현재 포지션 데이터 준비
+    positions_display = []
+    total_margin = 0.0
+    total_notional = 0.0
+    total_unrealized_pnl = 0.0
+    at_risk_positions = 0
+
+    for pos in _futures_positions:
+        try:
+            from data.fetcher import DataFetcher
+            fetcher = DataFetcher()
+            current_price = fetcher.get_current_price(pos["symbol"])
+            if current_price <= 0:
+                current_price = pos["entry_price"]
+
+            unrealized_pnl = pos.get("unrealized_pnl", 0.0)
+            unrealized_pnl_pct = (unrealized_pnl / pos["margin"] * 100) if pos["margin"] > 0 else 0
+            notional = pos.get("quantity", pos["margin"] * pos["leverage"])
+
+            # 청산가까지 거리
+            if pos["side"] == "long":
+                dist_pct = (current_price - pos["liquidation_price"]) / current_price * 100
+            else:
+                dist_pct = (pos["liquidation_price"] - current_price) / current_price * 100
+
+            entry = {**pos, "current_price": current_price,
+                     "unrealized_pnl": unrealized_pnl,
+                     "unrealized_pnl_pct": unrealized_pnl_pct,
+                     "distance_to_liq_pct": dist_pct}
+            positions_display.append(entry)
+
+            total_margin += pos["margin"]
+            total_notional += notional
+            total_unrealized_pnl += unrealized_pnl
+            if dist_pct < 20:
+                at_risk_positions += 1
+        except Exception as e:
+            logger.error(f"포지션 데이터 처리 오류: {e}")
+
+    margin_pct = (total_margin / portfolio_value * 100) if portfolio_value > 0 else 0
+    total_unrealized_pnl_pct = (total_unrealized_pnl / total_margin * 100) if total_margin > 0 else 0
+
+    # 워치리스트 설정 로드
+    try:
+        import yaml
+        config_path = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+            "config", "futures_config.yaml"
+        )
+        with open(config_path, "r", encoding="utf-8") as f:
+            futures_cfg = yaml.safe_load(f)
+        watchlist = futures_cfg.get("futures", {}).get("watchlist", ["BTC-USD", "ETH-USD"])
+        max_leverage = futures_cfg.get("futures", {}).get("max_leverage", 10)
+        max_positions = futures_cfg.get("futures", {}).get("max_open_positions", 3)
+    except Exception:
+        watchlist = ["BTC-USD", "ETH-USD", "SOL-USD", "BNB-USD", "XRP-USD",
+                     "DOGE-USD", "ADA-USD", "AVAX-USD", "DOT-USD", "MATIC-USD"]
+        max_leverage = 10
+        max_positions = 3
+
+    default_start = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
+    default_end = datetime.now().strftime("%Y-%m-%d")
+
+    return templates.TemplateResponse("futures.html", {
+        "request": request,
+        "positions": positions_display,
+        "positions_json": json.dumps(positions_display),
+        "trade_history": _futures_trade_history[-50:],
+        "total_margin": total_margin,
+        "total_notional": total_notional,
+        "total_unrealized_pnl": total_unrealized_pnl,
+        "total_unrealized_pnl_pct": total_unrealized_pnl_pct,
+        "margin_pct": margin_pct,
+        "at_risk_positions": at_risk_positions,
+        "max_leverage": max_leverage,
+        "max_positions": max_positions,
+        "watchlist": watchlist,
+        "default_start": default_start,
+        "default_end": default_end,
+        "trading_active": _trading_engine.is_running if _trading_engine else False,
+    })
+
+
+@app.get("/api/futures/positions")
+async def api_futures_positions():
+    """현재 선물 포지션 JSON"""
+    return JSONResponse({"positions": _futures_positions, "count": len(_futures_positions)})
+
+
+@app.post("/api/futures/backtest")
+async def api_futures_backtest(req: FuturesBacktestRequest):
+    """선물 백테스트 실행 API"""
+    try:
+        from strategies.futures_strategy import FuturesStrategy
+        from trader.leverage_manager import LeverageManager
+        from backtester.futures_backtester import FuturesBacktester
+
+        # 레버리지 모드 파싱
+        fixed_leverage = None
+        if req.leverage_mode != "dynamic":
+            try:
+                fixed_leverage = int(req.leverage_mode)
+            except ValueError:
+                raise HTTPException(status_code=400, detail=f"잘못된 레버리지 모드: {req.leverage_mode}")
+
+        settings = load_settings()
+        initial_capital = settings.get("trading", {}).get("initial_capital", 10_000_000)
+
+        strategy = FuturesStrategy()
+        leverage_manager = LeverageManager()
+        backtester = FuturesBacktester(
+            strategy=strategy,
+            leverage_manager=leverage_manager,
+            initial_capital=initial_capital,
+            fixed_leverage=fixed_leverage,
+        )
+
+        result = backtester.run(req.symbol, req.start_date, req.end_date)
+
+        return JSONResponse({
+            "success": True,
+            "result": result.to_dict(),
+            "equity_curve": result.equity_curve,
+            "trades_log": result.trades_log[:100],  # 최대 100건
+        })
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"선물 백테스트 오류: {e}", exc_info=True)
+        return JSONResponse({"success": False, "error": str(e)}, status_code=500)
 
 
 def _generate_pnl_chart() -> str:

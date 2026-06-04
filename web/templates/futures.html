@@ -1,0 +1,532 @@
+{% extends "base.html" %}
+
+{% block title %}선물거래{% endblock %}
+{% block page_title %}선물거래 대시보드{% endblock %}
+
+{% block content %}
+<!-- 요약 카드 -->
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="stat-label">총 증거금 투입</div>
+                <div class="stat-value text-warning" id="totalMargin">
+                    ${{ "%.2f"|format(total_margin) }}
+                </div>
+                <div class="stat-sub">포트폴리오 대비 {{ "%.1f"|format(margin_pct) }}%</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="stat-label">미실현 손익</div>
+                <div class="stat-value {% if total_unrealized_pnl >= 0 %}text-success{% else %}text-danger{% endif %}" id="totalPnl">
+                    {% if total_unrealized_pnl >= 0 %}+{% endif %}${{ "%.2f"|format(total_unrealized_pnl) }}
+                </div>
+                <div class="stat-sub">
+                    {% if total_unrealized_pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(total_unrealized_pnl_pct) }}%
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="stat-label">오픈 포지션</div>
+                <div class="stat-value text-info" id="openPositions">
+                    {{ positions|length }}
+                </div>
+                <div class="stat-sub">최대 {{ max_positions }}개 허용</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="stat-label">최대 레버리지</div>
+                <div class="stat-value text-purple">{{ max_leverage }}x</div>
+                <div class="stat-sub">동적 조정 활성화</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 현재 포지션 테이블 -->
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+            <i class="bi bi-arrow-left-right me-2 text-warning"></i>현재 선물 포지션
+        </h5>
+        <button class="btn btn-sm btn-outline-info" onclick="refreshPositions()">
+            <i class="bi bi-arrow-clockwise"></i> 새로고침
+        </button>
+    </div>
+    <div class="card-body p-0">
+        {% if positions %}
+        <div class="table-responsive">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>심볼</th>
+                        <th>방향</th>
+                        <th class="text-end">진입가</th>
+                        <th class="text-end">현재가</th>
+                        <th class="text-center">레버리지</th>
+                        <th class="text-end">증거금</th>
+                        <th class="text-end">미실현 손익</th>
+                        <th class="text-end">손익률</th>
+                        <th class="text-end">청산가까지</th>
+                        <th class="text-end">청산가</th>
+                    </tr>
+                </thead>
+                <tbody id="positionsTableBody">
+                    {% for pos in positions %}
+                    <tr>
+                        <td><strong>{{ pos.symbol }}</strong></td>
+                        <td>
+                            <span class="badge {% if pos.side == 'long' %}bg-success{% else %}bg-danger{% endif %} px-2">
+                                {% if pos.side == 'long' %}▲ 롱{% else %}▼ 숏{% endif %}
+                            </span>
+                        </td>
+                        <td class="text-end">${{ "%.2f"|format(pos.entry_price) }}</td>
+                        <td class="text-end">${{ "%.2f"|format(pos.current_price) }}</td>
+                        <td class="text-center">
+                            <span class="badge bg-warning text-dark">{{ pos.leverage }}x</span>
+                        </td>
+                        <td class="text-end">${{ "%.2f"|format(pos.margin) }}</td>
+                        <td class="text-end {% if pos.unrealized_pnl >= 0 %}text-success{% else %}text-danger{% endif %}">
+                            {% if pos.unrealized_pnl >= 0 %}+{% endif %}${{ "%.2f"|format(pos.unrealized_pnl) }}
+                        </td>
+                        <td class="text-end {% if pos.unrealized_pnl_pct >= 0 %}text-success{% else %}text-danger{% endif %}">
+                            {% if pos.unrealized_pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(pos.unrealized_pnl_pct) }}%
+                        </td>
+                        <td class="text-end">
+                            <span class="{% if pos.distance_to_liq_pct < 10 %}text-danger fw-bold{% elif pos.distance_to_liq_pct < 20 %}text-warning{% else %}text-success{% endif %}">
+                                {{ "%.1f"|format(pos.distance_to_liq_pct) }}%
+                            </span>
+                        </td>
+                        <td class="text-end text-danger">${{ "%.2f"|format(pos.liquidation_price) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5 text-muted">
+            <i class="bi bi-inbox fs-1 d-block mb-2"></i>
+            현재 오픈된 선물 포지션이 없습니다
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- 차트 영역 -->
+<div class="row g-3 mb-4">
+    <!-- 레버리지 분포 차트 -->
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="bi bi-bar-chart me-2 text-info"></i>레버리지 분포
+                </h6>
+            </div>
+            <div class="card-body">
+                <div id="leverageChart" style="height: 250px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 포지션 사이드 분포 -->
+    <div class="col-md-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h6 class="mb-0">
+                    <i class="bi bi-pie-chart me-2 text-warning"></i>롱/숏 비율
+                </h6>
+            </div>
+            <div class="card-body">
+                <div id="sideChart" style="height: 250px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 선물 백테스트 실행 -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0">
+            <i class="bi bi-clock-history me-2 text-info"></i>선물 백테스트 실행
+        </h5>
+    </div>
+    <div class="card-body">
+        <form id="futuresBacktestForm">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">종목</label>
+                    <select class="form-select" name="symbol" id="btSymbol">
+                        {% for sym in watchlist %}
+                        <option value="{{ sym }}" {% if sym == 'BTC-USD' %}selected{% endif %}>{{ sym }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">시작일</label>
+                    <input type="date" class="form-control" name="start_date" id="btStart"
+                           value="{{ default_start }}">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">종료일</label>
+                    <input type="date" class="form-control" name="end_date" id="btEnd"
+                           value="{{ default_end }}">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">레버리지 모드</label>
+                    <select class="form-select" name="leverage_mode" id="btLeverage">
+                        <option value="dynamic">동적 (자동)</option>
+                        <option value="1">1x (레버리지 없음)</option>
+                        <option value="3">3x 고정</option>
+                        <option value="5">5x 고정</option>
+                        <option value="10">10x 고정</option>
+                    </select>
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100" id="btRunBtn">
+                        <i class="bi bi-play-fill me-1"></i>백테스트 실행
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- 백테스트 결과 -->
+        <div id="btResultArea" class="mt-4" style="display:none;">
+            <hr>
+            <h6>백테스트 결과</h6>
+            <div class="row g-3" id="btResultCards"></div>
+            <div id="btEquityChart" class="mt-3" style="height: 300px;"></div>
+        </div>
+        <div id="btLoadingArea" class="mt-3 text-center" style="display:none;">
+            <div class="spinner-border text-info" role="status"></div>
+            <div class="mt-2 text-muted">백테스트 실행 중...</div>
+        </div>
+        <div id="btErrorArea" class="mt-3" style="display:none;">
+            <div class="alert alert-danger" id="btErrorMsg"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 거래 내역 -->
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+            <i class="bi bi-list-ul me-2 text-info"></i>선물 거래 내역
+        </h5>
+        <span class="badge bg-secondary">최근 {{ trade_history|length }}건</span>
+    </div>
+    <div class="card-body p-0">
+        {% if trade_history %}
+        <div class="table-responsive">
+            <table class="table table-dark table-hover table-sm mb-0">
+                <thead>
+                    <tr>
+                        <th>진입 시각</th>
+                        <th>청산 시각</th>
+                        <th>심볼</th>
+                        <th>방향</th>
+                        <th class="text-end">진입가</th>
+                        <th class="text-end">청산가</th>
+                        <th class="text-center">레버리지</th>
+                        <th class="text-end">증거금</th>
+                        <th class="text-end">손익</th>
+                        <th class="text-end">손익률</th>
+                        <th>청산 사유</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in trade_history %}
+                    <tr>
+                        <td class="text-muted small">{{ t.entry_time }}</td>
+                        <td class="text-muted small">{{ t.exit_time }}</td>
+                        <td><strong>{{ t.symbol }}</strong></td>
+                        <td>
+                            <span class="badge {% if t.side == 'long' %}bg-success{% else %}bg-danger{% endif %}">
+                                {% if t.side == 'long' %}롱{% else %}숏{% endif %}
+                            </span>
+                        </td>
+                        <td class="text-end">${{ "%.2f"|format(t.entry_price) }}</td>
+                        <td class="text-end">${{ "%.2f"|format(t.exit_price) }}</td>
+                        <td class="text-center">{{ t.leverage }}x</td>
+                        <td class="text-end">${{ "%.2f"|format(t.margin) }}</td>
+                        <td class="text-end {% if t.pnl >= 0 %}text-success{% else %}text-danger{% endif %}">
+                            {% if t.pnl >= 0 %}+{% endif %}${{ "%.2f"|format(t.pnl) }}
+                        </td>
+                        <td class="text-end {% if t.pnl_pct >= 0 %}text-success{% else %}text-danger{% endif %}">
+                            {% if t.pnl_pct >= 0 %}+{% endif %}{{ "%.2f"|format(t.pnl_pct) }}%
+                        </td>
+                        <td>
+                            <span class="badge
+                                {% if t.exit_reason == 'liquidation' %}bg-danger
+                                {% elif t.exit_reason == 'stop_loss' %}bg-warning text-dark
+                                {% elif t.exit_reason == 'take_profit' %}bg-success
+                                {% else %}bg-secondary{% endif %}
+                                small">
+                                {% if t.exit_reason == 'liquidation' %}청산
+                                {% elif t.exit_reason == 'stop_loss' %}손절
+                                {% elif t.exit_reason == 'take_profit' %}익절
+                                {% else %}{{ t.exit_reason }}{% endif %}
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-4 text-muted">
+            <i class="bi bi-inbox fs-2 d-block mb-2"></i>거래 내역이 없습니다
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- 리스크 요약 -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0">
+            <i class="bi bi-shield-exclamation me-2 text-danger"></i>리스크 지표
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="risk-metric">
+                    <div class="risk-label">총 증거금 투입</div>
+                    <div class="risk-value">${{ "%.2f"|format(total_margin) }}</div>
+                    <div class="progress mt-2" style="height: 6px;">
+                        <div class="progress-bar bg-warning" style="width: {{ [margin_pct, 100]|min }}%"></div>
+                    </div>
+                    <div class="risk-sub">포트폴리오의 {{ "%.1f"|format(margin_pct) }}%</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="risk-metric">
+                    <div class="risk-label">포트폴리오 리스크 노출</div>
+                    <div class="risk-value text-warning">${{ "%.2f"|format(total_notional) }}</div>
+                    <div class="risk-sub">명목 포지션 합계 (레버리지 포함)</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="risk-metric">
+                    <div class="risk-label">청산 위험 포지션</div>
+                    <div class="risk-value {% if at_risk_positions > 0 %}text-danger{% else %}text-success{% endif %}">
+                        {{ at_risk_positions }}개
+                    </div>
+                    <div class="risk-sub">청산가까지 거리 20% 미만</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+// ─── 레버리지 분포 차트 ─────────────────────────────────────────
+(function() {
+    const positions = {{ positions_json | safe }};
+    const leverageCounts = {};
+    positions.forEach(p => {
+        const lev = p.leverage + 'x';
+        leverageCounts[lev] = (leverageCounts[lev] || 0) + 1;
+    });
+
+    const leverageData = [{
+        x: Object.keys(leverageCounts),
+        y: Object.values(leverageCounts),
+        type: 'bar',
+        marker: { color: '#ffc107' },
+        text: Object.values(leverageCounts).map(v => v + '개'),
+        textposition: 'outside',
+    }];
+
+    const leverageLayout = {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(0,0,0,0)',
+        font: { color: '#e0e0e0', size: 11 },
+        xaxis: { title: '레버리지', gridcolor: 'rgba(255,255,255,0.1)' },
+        yaxis: { title: '포지션 수', gridcolor: 'rgba(255,255,255,0.1)', dtick: 1 },
+        margin: { l: 40, r: 10, t: 10, b: 40 },
+    };
+
+    Plotly.newPlot('leverageChart', leverageData, leverageLayout, { responsive: true, displayModeBar: false });
+
+    // 롱/숏 파이 차트
+    const longCount = positions.filter(p => p.side === 'long').length;
+    const shortCount = positions.filter(p => p.side === 'short').length;
+    const sideData = [{
+        labels: ['롱 (Long)', '숏 (Short)'],
+        values: [longCount || 0, shortCount || 0],
+        type: 'pie',
+        marker: { colors: ['#28a745', '#dc3545'] },
+        textinfo: 'label+percent',
+        hole: 0.4,
+    }];
+    const sideLayout = {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        font: { color: '#e0e0e0', size: 11 },
+        margin: { l: 10, r: 10, t: 10, b: 10 },
+        showlegend: true,
+        legend: { orientation: 'h', y: -0.1 },
+    };
+    Plotly.newPlot('sideChart', sideData, sideLayout, { responsive: true, displayModeBar: false });
+})();
+
+
+// ─── 포지션 새로고침 ─────────────────────────────────────────────
+function refreshPositions() {
+    fetch('/api/futures/positions')
+        .then(r => r.json())
+        .then(data => {
+            // 간단히 페이지 새로고침
+            location.reload();
+        })
+        .catch(e => console.error('포지션 조회 실패:', e));
+}
+
+
+// ─── 선물 백테스트 ──────────────────────────────────────────────
+document.getElementById('futuresBacktestForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const runBtn = document.getElementById('btRunBtn');
+    const resultArea = document.getElementById('btResultArea');
+    const loadingArea = document.getElementById('btLoadingArea');
+    const errorArea = document.getElementById('btErrorArea');
+
+    runBtn.disabled = true;
+    loadingArea.style.display = 'block';
+    resultArea.style.display = 'none';
+    errorArea.style.display = 'none';
+
+    const payload = {
+        symbol: form.symbol.value,
+        start_date: form.start_date.value,
+        end_date: form.end_date.value,
+        leverage_mode: form.leverage_mode.value,
+    };
+
+    try {
+        const resp = await fetch('/api/futures/backtest', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        });
+        const data = await resp.json();
+
+        if (!data.success) {
+            throw new Error(data.error || '백테스트 실패');
+        }
+
+        const r = data.result;
+
+        // 결과 카드 렌더링
+        const cards = document.getElementById('btResultCards');
+        cards.innerHTML = `
+            <div class="col-md-2">
+                <div class="card stat-card">
+                    <div class="card-body text-center">
+                        <div class="stat-label">총 수익률</div>
+                        <div class="stat-value ${r.total_return_pct >= 0 ? 'text-success' : 'text-danger'}">
+                            ${r.total_return_pct >= 0 ? '+' : ''}${r.total_return_pct.toFixed(2)}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card stat-card">
+                    <div class="card-body text-center">
+                        <div class="stat-label">최대 낙폭(MDD)</div>
+                        <div class="stat-value text-danger">${r.max_drawdown_pct.toFixed(2)}%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card stat-card">
+                    <div class="card-body text-center">
+                        <div class="stat-label">샤프 비율</div>
+                        <div class="stat-value text-info">${r.sharpe_ratio.toFixed(2)}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card stat-card">
+                    <div class="card-body text-center">
+                        <div class="stat-label">승률</div>
+                        <div class="stat-value text-warning">${(r.win_rate * 100).toFixed(1)}%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card stat-card">
+                    <div class="card-body text-center">
+                        <div class="stat-label">총 거래수</div>
+                        <div class="stat-value">${r.total_trades}</div>
+                        <div class="stat-sub">롱 ${r.long_trades} / 숏 ${r.short_trades}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card stat-card">
+                    <div class="card-body text-center">
+                        <div class="stat-label">청산 횟수</div>
+                        <div class="stat-value ${r.liquidations > 0 ? 'text-danger' : 'text-success'}">${r.liquidations}</div>
+                        <div class="stat-sub">평균 레버리지 ${r.avg_leverage.toFixed(1)}x</div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // 에쿼티 커브 차트
+        if (data.equity_curve && data.equity_curve.length > 0) {
+            const equityTrace = [{
+                y: data.equity_curve,
+                type: 'scatter',
+                mode: 'lines',
+                name: '자산 가치',
+                line: { color: '#00d4ff', width: 2 },
+                fill: 'tozeroy',
+                fillcolor: 'rgba(0,212,255,0.05)',
+            }];
+            const equityLayout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                font: { color: '#e0e0e0' },
+                xaxis: { gridcolor: 'rgba(255,255,255,0.1)', title: '거래일' },
+                yaxis: { gridcolor: 'rgba(255,255,255,0.1)', title: '포트폴리오 가치 ($)', tickformat: ',.0f' },
+                margin: { l: 60, r: 10, t: 20, b: 40 },
+                showlegend: false,
+            };
+            Plotly.newPlot('btEquityChart', equityTrace, equityLayout, { responsive: true, displayModeBar: false });
+        }
+
+        resultArea.style.display = 'block';
+
+    } catch (err) {
+        errorArea.style.display = 'block';
+        document.getElementById('btErrorMsg').textContent = '오류: ' + err.message;
+    } finally {
+        runBtn.disabled = false;
+        loadingArea.style.display = 'none';
+    }
+});
+</script>
+
+<style>
+.text-purple { color: #a855f7 !important; }
+.risk-metric { padding: 0.5rem; }
+.risk-label { font-size: 0.8rem; color: #aaa; margin-bottom: 0.25rem; }
+.risk-value { font-size: 1.4rem; font-weight: 700; }
+.risk-sub { font-size: 0.75rem; color: #888; margin-top: 0.25rem; }
+</style>
+{% endblock %}
