@@ -39,6 +39,12 @@ class FuturesPosition:
     liquidation_price: float
     entry_time: datetime
     unrealized_pnl: float = 0.0
+    # 트레일링 스탑 추적용
+    best_price: float = 0.0   # 보유 중 최고(롱) 또는 최저(숏) 도달가
+    entry_atr: float = 0.0    # 진입 시점 ATR (트레일링 계산 기준)
+    # 진입 근거 추적용
+    signal_strength: int = 0
+    entry_basis: str = ""
     # 내부 추적용
     trade_id: Optional[str] = None
 

@@ -1,0 +1,170 @@
+[
+  {
+    "symbol": "BTC-USD",
+    "baseline": {
+      "trades": 45,
+      "win_rate": 31.11111111111111,
+      "avg_pnl_pct": 2.6704102166181336,
+      "profit_factor": 1.1551453496570037,
+      "total_return_pct": 5.983570689804684,
+      "max_drawdown_pct": -15.332654873513116,
+      "liquidations": 0
+    },
+    "filtered": {
+      "trades": 37,
+      "win_rate": 29.72972972972973,
+      "avg_pnl_pct": 1.6687170934996594,
+      "profit_factor": 1.078653371250823,
+      "total_return_pct": 3.1912371366672403,
+      "max_drawdown_pct": -12.853371091307922,
+      "liquidations": 0
+    }
+  },
+  {
+    "symbol": "ETH-USD",
+    "baseline": {
+      "trades": 40,
+      "win_rate": 37.5,
+      "avg_pnl_pct": 8.700332755663622,
+      "profit_factor": 1.560849956126558,
+      "total_return_pct": 28.37226571600871,
+      "max_drawdown_pct": -9.48186144153,
+      "liquidations": 0
+    },
+    "filtered": {
+      "trades": 45,
+      "win_rate": 28.888888888888886,
+      "avg_pnl_pct": -0.6801753254742687,
+      "profit_factor": 0.970546219205484,
+      "total_return_pct": -2.905780492915381,
+      "max_drawdown_pct": -18.037249752281856,
+      "liquidations": 1
+    }
+  },
+  {
+    "symbol": "BNB-USD",
+    "baseline": {
+      "trades": 46,
+      "win_rate": 41.30434782608695,
+      "avg_pnl_pct": 13.931516429394645,
+      "profit_factor": 1.7854260336501477,
+      "total_return_pct": 55.46349557242062,
+      "max_drawdown_pct": -9.892406026420625,
+      "liquidations": 0
+    },
+    "filtered": {
+      "trades": 36,
+      "win_rate": 44.44444444444444,
+      "avg_pnl_pct": 17.362647775856672,
+      "profit_factor": 2.0005623574425755,
+      "total_return_pct": 53.43353211978603,
+      "max_drawdown_pct": -8.93368928479681,
+      "liquidations": 0
+    }
+  },
+  {
+    "symbol": "ATOM-USD",
+    "baseline": {
+      "trades": 57,
+      "win_rate": 33.33333333333333,
+      "avg_pnl_pct": 4.982428189404692,
+      "profit_factor": 1.2657281627928068,
+      "total_return_pct": 26.758231246850656,
+      "max_drawdown_pct": -13.273170731669618,
+      "liquidations": 0
+    },
+    "filtered": {
+      "trades": 49,
+      "win_rate": 28.57142857142857,
+      "avg_pnl_pct": -0.6573410546188513,
+      "profit_factor": 1.0188495896160834,
+      "total_return_pct": 3.464253111282065,
+      "max_drawdown_pct": -23.50237918848818,
+      "liquidations": 0
+    }
+  },
+  {
+    "symbol": "DOGE-USD",
+    "baseline": {
+      "trades": 47,
+      "win_rate": 31.914893617021278,
+      "avg_pnl_pct": 2.2528320149148446,
+      "profit_factor": 1.101962064720443,
+      "total_return_pct": 7.343287251073084,
+      "max_drawdown_pct": -17.25025354146473,
+      "liquidations": 1
+    },
+    "filtered": {
+      "trades": 46,
+      "win_rate": 28.26086956521739,
+      "avg_pnl_pct": 0.6664766110482134,
+      "profit_factor": 0.9264962123491091,
+      "total_return_pct": -5.03299361807486,
+      "max_drawdown_pct": -17.23514164280695,
+      "liquidations": 1
+    }
+  },
+  {
+    "symbol": "DOT-USD",
+    "baseline": {
+      "trades": 62,
+      "win_rate": 33.87096774193548,
+      "avg_pnl_pct": 1.9275759075748284,
+      "profit_factor": 1.2484042480385371,
+      "total_return_pct": 26.741896216298567,
+      "max_drawdown_pct": -22.932453534062233,
+      "liquidations": 1
+    },
+    "filtered": {
+      "trades": 38,
+      "win_rate": 36.84210526315789,
+      "avg_pnl_pct": 4.249126648935303,
+      "profit_factor": 1.3868783385352739,
+      "total_return_pct": 24.352839745124616,
+      "max_drawdown_pct": -16.29136281728611,
+      "liquidations": 1
+    }
+  },
+  {
+    "symbol": "TRX-USD",
+    "baseline": {
+      "trades": 48,
+      "win_rate": 40.42553191489361,
+      "avg_pnl_pct": 10.879475078371884,
+      "profit_factor": 1.7826933517604453,
+      "total_return_pct": 43.31536527237848,
+      "max_drawdown_pct": -18.105632245559857,
+      "liquidations": 0
+    },
+    "filtered": {
+      "trades": 48,
+      "win_rate": 41.66666666666667,
+      "avg_pnl_pct": 11.155668155126184,
+      "profit_factor": 1.7762944350258003,
+      "total_return_pct": 49.795042344532014,
+      "max_drawdown_pct": -11.447556325846266,
+      "liquidations": 0
+    }
+  },
+  {
+    "symbol": "SOL-USD",
+    "baseline": {
+      "trades": 57,
+      "win_rate": 26.31578947368421,
+      "avg_pnl_pct": -0.8498638517519491,
+      "profit_factor": 0.8931066180098227,
+      "total_return_pct": -9.205011494197436,
+      "max_drawdown_pct": -27.44247845370663,
+      "liquidations": 0
+    },
+    "filtered": {
+      "trades": 53,
+      "win_rate": 24.528301886792452,
+      "avg_pnl_pct": -2.4322543738083766,
+      "profit_factor": 0.8164705730136753,
+      "total_return_pct": -13.496379120242988,
+      "max_drawdown_pct": -22.3937961551907,
+      "liquidations": 0
+    }
+  }
+]

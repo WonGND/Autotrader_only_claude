@@ -15,6 +15,8 @@ from strategies.futures_strategy import FuturesStrategy
 from trader.futures_position import FuturesPosition
 from trader.leverage_manager import LeverageManager
 from data.fetcher import DataFetcher
+from data.macro_fetcher import get_macro_data
+from strategies.macro_filter import MacroFilter
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -42,6 +44,7 @@ class FuturesBacktestResult:
     trades_log: List[Dict[str, Any]] = field(default_factory=list)
     equity_curve: List[float] = field(default_factory=list)
     leverage_mode: str = "dynamic"
+    validation: Dict[str, Any] = field(default_factory=dict)   # 검증 지표 전체
 
     def to_dict(self) -> dict:
         return {
@@ -90,6 +93,11 @@ class FuturesBacktester:
         funding_rate_8h: float = 0.0001,
         fixed_leverage: Optional[int] = None,
         risk_per_trade_pct: float = 0.02,
+        use_trailing_stop: bool = False,
+        trail_atr_multiplier: float = 2.0,
+        trail_activation_atr: float = 3.0,
+        use_macro_filter: bool = False,
+        signal_delay_bars: int = 0,
     ):
         self.strategy = strategy
         self.leverage_manager = leverage_manager
@@ -97,8 +105,16 @@ class FuturesBacktester:
         self.maker_fee = maker_fee
         self.taker_fee = taker_fee
         self.funding_rate_8h = funding_rate_8h
-        self.fixed_leverage = fixed_leverage  # None = dynamic
+        self.fixed_leverage = fixed_leverage
         self.risk_per_trade_pct = risk_per_trade_pct
+        # 트레일링 스탑 설정
+        self.use_trailing_stop = use_trailing_stop
+        self.trail_atr_multiplier = trail_atr_multiplier
+        self.trail_activation_atr = trail_activation_atr
+        # 매크로 필터 설정
+        self.use_macro_filter = use_macro_filter
+        # 신호 지연(봉): Time Delay Test용. N>0이면 신호를 N봉 뒤에 실행
+        self.signal_delay_bars = int(signal_delay_bars)
         self.data_fetcher = DataFetcher()
 
     def run(
@@ -106,6 +122,7 @@ class FuturesBacktester:
         symbol: str,
         start_date: str,
         end_date: str,
+        raw_data: Optional[pd.DataFrame] = None,
     ) -> FuturesBacktestResult:
         """
         선물 백테스트 실행
@@ -130,13 +147,24 @@ class FuturesBacktester:
             datetime.strptime(start_date, "%Y-%m-%d") - timedelta(days=buffer_days)
         ).strftime("%Y-%m-%d")
 
-        raw_data = self.data_fetcher.get_ohlcv(symbol, extended_start, end_date)
-        if raw_data.empty:
+        # raw_data가 주어지면 다운로드를 건너뛴다 (파라미터 그리드 재실행 시 속도/레이트리밋 방지)
+        if raw_data is None:
+            raw_data = self.data_fetcher.get_ohlcv(symbol, extended_start, end_date)
+        if raw_data is None or raw_data.empty:
             logger.error(f"{symbol} 데이터를 가져오지 못했습니다.")
             return self._empty_result(symbol, start_date, end_date)
 
         # ── 2. 지표 계산 (신호 포함) ──────────────────────────────
         data_with_signals = self.strategy.generate_signals(raw_data)
+
+        # ── Time Delay Test (24): 신호를 N봉 뒤로 미뤄 실행 ──────────
+        # 같은 봉 즉시 체결이라는 비현실적 가정에 전략이 의존하는지 검증.
+        # 견고한 전략은 1~2봉 지연에도 성과가 급락하지 않는다.
+        if self.signal_delay_bars > 0:
+            for col in ("signal", "signal_strength"):
+                if col in data_with_signals.columns:
+                    data_with_signals[col] = data_with_signals[col].shift(self.signal_delay_bars)
+            data_with_signals = data_with_signals.dropna(subset=["signal"])
 
         # start_date 이후 데이터만 백테스트
         bt_data = data_with_signals[data_with_signals.index >= start_date].copy()
@@ -144,7 +172,17 @@ class FuturesBacktester:
             logger.error(f"{symbol} 백테스트 기간 데이터 없음")
             return self._empty_result(symbol, start_date, end_date)
 
-        # ── 3. 시뮬레이션 루프 ────────────────────────────────────
+        # ── 3. 매크로 데이터 로드 ────────────────────────────────
+        macro_df = pd.DataFrame()
+        macro_filter = MacroFilter()
+        if self.use_macro_filter:
+            try:
+                macro_df = get_macro_data(start_date, end_date)
+                logger.info(f"매크로 필터 활성화 — F&G/VIX/도미넌스 적용")
+            except Exception as e:
+                logger.warning(f"매크로 데이터 로드 실패 ({e}) — 매크로 필터 비활성화")
+
+        # ── 4. 시뮬레이션 루프 ────────────────────────────────────
         cash = float(self.initial_capital)
         position: Optional[FuturesPosition] = None
         trades_log: List[Dict] = []
@@ -165,18 +203,49 @@ class FuturesBacktester:
             price_close = float(row["Close"])
             signal = int(row.get("signal", 0))
             signal_strength = int(row.get("signal_strength", 1))
+            entry_basis = str(row.get("entry_basis", ""))
             atr = float(row.get("atr", price_close * 0.02))
 
             # ── a. 기존 포지션 청산 조건 확인 ─────────────────────
             if position is not None:
                 # 펀딩비 적용 (일일 3회 × 8h 비율)
-                # 롱은 펀딩비 납부 (positive funding rate), 숏은 수취
                 notional = position.quantity
                 funding_cost = notional * daily_funding_rate
                 if position.side == "long":
                     cash -= funding_cost
                 else:
                     cash += funding_cost
+
+                # ── 트레일링 스탑 업데이트 ────────────────────────
+                if self.use_trailing_stop:
+                    entry_atr = position.entry_atr or atr
+                    if position.side == "long":
+                        # 새 고점 갱신
+                        position.best_price = max(position.best_price, price_high)
+                        # 진입가에서 activation_atr 이상 이익 발생 시 트레일링 활성화
+                        activation = position.entry_price + self.trail_activation_atr * entry_atr
+                        if position.best_price >= activation:
+                            trail_stop = self.leverage_manager.calculate_trailing_stop(
+                                position.best_price, atr, "long", self.trail_atr_multiplier
+                            )
+                            # 손절은 한 방향(올라가는 방향)으로만 이동
+                            if trail_stop > position.stop_loss:
+                                position.stop_loss = trail_stop
+                    else:
+                        # 새 저점 갱신
+                        if position.best_price == 0:
+                            position.best_price = price_low
+                        else:
+                            position.best_price = min(position.best_price, price_low)
+                        # 진입가에서 activation_atr 이상 이익 발생 시 트레일링 활성화
+                        activation = position.entry_price - self.trail_activation_atr * entry_atr
+                        if position.best_price <= activation:
+                            trail_stop = self.leverage_manager.calculate_trailing_stop(
+                                position.best_price, atr, "short", self.trail_atr_multiplier
+                            )
+                            # 손절은 한 방향(내려가는 방향)으로만 이동
+                            if trail_stop < position.stop_loss:
+                                position.stop_loss = trail_stop
 
                 exit_price = None
                 exit_reason = None
@@ -186,14 +255,13 @@ class FuturesBacktester:
                     exit_price = position.liquidation_price
                     exit_reason = "liquidation"
                     liquidation_count += 1
-                    # 청산 시 증거금 전액 손실
                     pnl = -position.margin
-                    cash += 0  # 증거금 이미 소진
-                # 손절가 확인
+                    cash += 0
+                # 손절/트레일링 스탑 확인
                 elif position.is_stop_loss_hit(price_low, price_high):
                     exit_price = position.stop_loss
                     exit_reason = "stop_loss"
-                # 익절가 확인
+                # 고정 익절가 확인 (트레일링 미작동 구간의 안전망)
                 elif position.is_take_profit_hit(price_low, price_high):
                     exit_price = position.take_profit
                     exit_reason = "take_profit"
@@ -222,12 +290,39 @@ class FuturesBacktester:
                         "pnl_pct": (pnl / position.margin * 100) if exit_reason != "liquidation" else -100.0,
                         "exit_reason": exit_reason,
                         "hold_hours": hold_duration,
+                        "signal_strength": getattr(position, "signal_strength", signal_strength),
+                        "entry_basis": getattr(position, "entry_basis", ""),
                     })
                     position = None
 
             # ── b. 신호 기반 새 포지션 진입 ───────────────────────
             if signal != 0 and position is None and cash > 0:
                 side = "long" if signal == 1 else "short"
+
+                # ── 매크로 필터 적용 ──────────────────────────────
+                macro_modifier = 1.0
+                if self.use_macro_filter and not macro_df.empty:
+                    try:
+                        date_key = idx.normalize() if hasattr(idx, "normalize") else pd.Timestamp(idx).normalize()
+                        if date_key in macro_df.index:
+                            mrow = macro_df.loc[date_key]
+                        else:
+                            # 가장 가까운 이전 날짜 사용
+                            past = macro_df.index[macro_df.index <= date_key]
+                            mrow = macro_df.loc[past[-1]] if len(past) > 0 else None
+
+                        if mrow is not None:
+                            msig = macro_filter.evaluate_from_row(mrow, str(date_key.date()), symbol)
+                            # 방향 차단
+                            if side == "long"  and not msig.allow_long:
+                                equity_curve.append(cash)
+                                continue
+                            if side == "short" and not msig.allow_short:
+                                equity_curve.append(cash)
+                                continue
+                            macro_modifier = msig.position_modifier
+                    except Exception as e:
+                        logger.debug(f"매크로 필터 오류 ({e}), 스킵")
 
                 # ATR% 계산
                 atr_pct = (atr / price_close * 100) if price_close > 0 else 2.0
@@ -270,14 +365,14 @@ class FuturesBacktester:
                 sl_dist_pct = abs(price_close - stop_loss) / price_close
                 sl_dist_pct = max(sl_dist_pct, 0.005)  # 최소 0.5%
 
-                # 증거금 계산
+                # 증거금 계산 (매크로 배율 적용, 최대 포트폴리오의 20%까지)
                 margin = self.leverage_manager.calculate_margin(
                     portfolio_value=cash,
-                    risk_pct=self.risk_per_trade_pct,
+                    risk_pct=self.risk_per_trade_pct * macro_modifier,
                     stop_loss_distance_pct=sl_dist_pct,
                     leverage=leverage,
                 )
-                margin = min(margin, cash * 0.95)  # 가용 현금의 95% 이내
+                margin = min(margin, cash * 0.95, cash * 0.20)  # 최대 20% 상한
 
                 if margin < 10:
                     # 증거금 부족 시 진입 포기
@@ -310,6 +405,11 @@ class FuturesBacktester:
                 entry_fee = quantity * self.taker_fee
                 cash -= (margin + entry_fee)
 
+                pos.signal_strength = signal_strength
+                pos.entry_basis = entry_basis
+                # 트레일링 스탑 초기화
+                pos.entry_atr = atr
+                pos.best_price = price_close if side == "long" else price_close
                 position = pos
                 leverage_list.append(leverage)
 
@@ -349,6 +449,8 @@ class FuturesBacktester:
                 "pnl_pct": pnl / position.margin * 100 if position.margin > 0 else 0,
                 "exit_reason": "end_of_backtest",
                 "hold_hours": hold_duration,
+                "signal_strength": getattr(position, "signal_strength", 0),
+                "entry_basis": getattr(position, "entry_basis", ""),
             })
             if equity_curve:
                 equity_curve[-1] = max(cash, 0.0)
@@ -372,6 +474,21 @@ class FuturesBacktester:
         avg_hold_hours = float(np.mean(hold_hours_list)) if hold_hours_list else 0.0
 
         leverage_mode = f"{self.fixed_leverage}x" if self.fixed_leverage else "동적"
+
+        # ── 검증 지표 전체 계산 (켈리/소르티노/Calmar/몬테카를로/CVaR 등) ──
+        # 코인은 24시간 시장이므로 연율화 계수 365 사용
+        validation_report = {}
+        try:
+            import validation as _val
+            # 포트폴리오 대비 거래수익률(pnl / 초기자본)을 사용해야 자산곡선 MDD와
+            # 몬테카를로/시퀀스 결과가 정합한다. pnl_pct는 증거금 대비라 부적합.
+            trade_returns = [t["pnl"] / self.initial_capital for t in closed_trades
+                             if t.get("pnl") is not None]
+            if len(trade_returns) >= 2 and len(equity_curve) >= 2:
+                validation_report = _val.full_report(
+                    equity_curve, trade_returns, periods=365, num_trials=1)
+        except Exception as e:
+            logger.warning(f"검증 지표 계산 실패: {e}")
 
         logger.info(
             f"선물 백테스트 완료: {symbol} {leverage_mode} | "
@@ -399,6 +516,7 @@ class FuturesBacktester:
             trades_log=trades_log,
             equity_curve=equity_curve,
             leverage_mode=leverage_mode,
+            validation=validation_report,
         )
 
     # ─── 성과 지표 ────────────────────────────────────────────────

@@ -19,6 +19,10 @@ from data.fetcher import DataFetcher
 from database.models import Trade as TradeModel, get_session
 from utils.logger import get_logger
 from utils.helpers import get_market_status, get_trading_symbols, load_settings
+from strategies.performance_monitor import get_monitor
+from strategies.macro_filter import MacroFilter
+from data.macro_fetcher import MacroDataFetcher
+from data.news_fetcher import NewsFetcher
 
 logger = get_logger(__name__)
 
@@ -56,6 +60,11 @@ class TradingEngine:
         self._cycle_count = 0
         self._last_run: Optional[datetime] = None
         self._errors: List[str] = []
+        # 매크로/뉴스 모듈
+        self._macro_fetcher = MacroDataFetcher()
+        self._news_fetcher = NewsFetcher()
+        self._macro_filter = MacroFilter()
+        self._last_macro_state: dict = {}  # 웹 대시보드용
 
         # 설정 로드
         settings = load_settings()
@@ -141,12 +150,67 @@ class TradingEngine:
                 self._save_trade(order, self.strategy.name, "익절")
                 return
 
+        # 승률 기반 비활성화 전략 건너뜀
+        monitor = get_monitor()
+        if not monitor.is_enabled(self.strategy.name):
+            logger.info(f"전략 비활성화 상태 - 신호 생성 건너뜀: {self.strategy.name}")
+            return
+
         # 신호 생성
         data_with_signals = self.strategy.generate_signals(data)
         if data_with_signals.empty:
             return
 
         latest_signal = int(data_with_signals["signal"].iloc[-1])
+
+        # ── 매크로 + 뉴스 감성 확인 (실거래 보조) ─────────────────
+        macro_modifier = 1.0
+        macro_reason = ""
+        if latest_signal != 0:
+            try:
+                today = datetime.now().strftime("%Y-%m-%d")
+                fg_df = self._macro_fetcher.get_fear_greed(today, today)
+                vix_df = self._macro_fetcher.get_vix(today, today)
+                fg_val  = float(fg_df["fg_value"].iloc[-1]) if not fg_df.empty else 50
+                vix_val = float(vix_df["vix_close"].iloc[-1]) if not vix_df.empty else 20
+                msig = self._macro_filter.evaluate(fg_val, vix_val, 0.0, today)
+                macro_modifier = msig.position_modifier
+                macro_reason = msig.reason
+                self._last_macro_state = {
+                    "fg_value": fg_val,
+                    "fg_class": fg_df["fg_class"].iloc[-1] if not fg_df.empty else "N/A",
+                    "vix": vix_val,
+                    "macro_modifier": macro_modifier,
+                    "reason": macro_reason,
+                    "updated": today,
+                }
+                # 방향 차단 확인
+                if latest_signal == 1  and not msig.allow_long:
+                    logger.info(f"{symbol} 매크로 필터: 롱 차단 ({macro_reason})")
+                    return
+                if latest_signal == -1 and not msig.allow_short:
+                    logger.info(f"{symbol} 매크로 필터: 숏 차단 ({macro_reason})")
+                    return
+                # 뉴스 감성 체크
+                sentiment = self._news_fetcher.get_sentiment(symbol)
+                news_score = sentiment.get("score", 0)
+                # 강한 악재(-50 이하) 시 진입 보류
+                if news_score <= -50:
+                    logger.warning(
+                        f"{symbol} 뉴스 악재로 진입 보류 (score={news_score}, {sentiment.get('reasoning','')})"
+                    )
+                    return
+                # 뉴스 점수를 포지션 배율에 반영
+                if news_score >= 50:
+                    macro_modifier = min(1.3, macro_modifier * 1.1)
+                elif news_score <= -20:
+                    macro_modifier = max(0.4, macro_modifier * 0.8)
+                logger.info(
+                    f"{symbol} 매크로OK: F&G={fg_val:.0f}, VIX={vix_val:.1f}, "
+                    f"뉴스={news_score}, 포지션배율={macro_modifier:.2f}"
+                )
+            except Exception as e:
+                logger.debug(f"매크로/뉴스 확인 실패 ({e}) — 기본값 사용")
 
         if latest_signal == 1:
             if self.portfolio_manager.can_open_position(symbol):
@@ -155,16 +219,21 @@ class TradingEngine:
                     cash = self.broker.get_balance()
                     required = quantity * current_price * 1.001
                     if cash >= required:
-                        logger.info(f"매수 신호: {symbol} {quantity}주 @ ₩{current_price:,.0f}")
+                        note = f"전략 신호 | {macro_reason}" if macro_reason else "전략 신호"
+                        logger.info(f"매수 신호: {symbol} {quantity}주 @ ₩{current_price:,.0f} [{note}]")
                         order = self.broker.buy(symbol, quantity)
-                        self._save_trade(order, self.strategy.name, "전략 신호")
+                        self._save_trade(order, self.strategy.name, note)
 
         elif latest_signal == -1:
             if symbol in positions:
                 pos = positions[symbol]
-                logger.info(f"매도 신호: {symbol} {pos.quantity}주 @ ₩{current_price:,.0f}")
+                note = f"전략 신호 | {macro_reason}" if macro_reason else "전략 신호"
+                logger.info(f"매도 신호: {symbol} {pos.quantity}주 @ ₩{current_price:,.0f} [{note}]")
                 order = self.broker.sell(symbol, pos.quantity)
-                self._save_trade(order, self.strategy.name, "전략 신호")
+                self._save_trade(order, self.strategy.name, note)
+                # 매도 완료 시 성과 기록 (pnl > 0이면 승)
+                if hasattr(order, "pnl") and order.pnl is not None:
+                    get_monitor().record_trade(self.strategy.name, order.pnl > 0)
 
     def _save_trade(self, order, strategy_name: str, note: str = ""):
         """거래 내역 DB 저장"""

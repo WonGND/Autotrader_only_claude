@@ -32,6 +32,7 @@ app.mount(
     name="static",
 )
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
+templates.env.globals["format_currency"] = format_currency
 
 # 전역 트레이딩 엔진 (main.py에서 주입)
 _trading_engine = None
@@ -93,7 +94,6 @@ async def dashboard(request: Request):
         pnl_chart_json = _generate_pnl_chart()
 
         context = {
-            "request": request,
             "total_value": account.total_value,
             "cash": account.cash,
             "profit_loss": account.profit_loss,
@@ -103,12 +103,10 @@ async def dashboard(request: Request):
             "recent_trades": trades_list,
             "pnl_chart_json": pnl_chart_json,
             "trading_active": _trading_engine.is_running if _trading_engine else False,
-            "format_currency": format_currency,
         }
     except Exception as e:
         logger.error(f"대시보드 오류: {e}")
         context = {
-            "request": request,
             "total_value": 0,
             "cash": 0,
             "profit_loss": 0,
@@ -121,7 +119,7 @@ async def dashboard(request: Request):
             "error": str(e),
         }
 
-    return templates.TemplateResponse("dashboard.html", context)
+    return templates.TemplateResponse(request=request, name="dashboard.html", context=context)
 
 
 @app.get("/strategies", response_class=HTMLResponse)
@@ -131,8 +129,7 @@ async def strategies_page(request: Request):
     settings = load_settings()
     active = strategies_config.get("active_strategy", "ma_crossover")
 
-    return templates.TemplateResponse("strategies.html", {
-        "request": request,
+    return templates.TemplateResponse(request=request, name="strategies.html", context={
         "strategies": strategies_config.get("strategies", {}),
         "active_strategy": active,
         "trading_active": _trading_engine.is_running if _trading_engine else False,
@@ -155,8 +152,7 @@ async def backtest_page(request: Request):
     results_list = [r.to_dict() for r in recent_results]
     session.close()
 
-    return templates.TemplateResponse("backtest.html", {
-        "request": request,
+    return templates.TemplateResponse(request=request, name="backtest.html", context={
         "strategies": strategies_config.get("strategies", {}),
         "recent_results": results_list,
         "trading_active": _trading_engine.is_running if _trading_engine else False,
@@ -186,8 +182,7 @@ async def trades_page(
     trades_list = [t.to_dict() for t in trades]
     session.close()
 
-    return templates.TemplateResponse("trades.html", {
-        "request": request,
+    return templates.TemplateResponse(request=request, name="trades.html", context={
         "trades": trades_list,
         "filter_symbol": symbol or "",
         "filter_strategy": strategy or "",
@@ -412,8 +407,7 @@ async def futures_page(request: Request):
     default_start = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
     default_end = datetime.now().strftime("%Y-%m-%d")
 
-    return templates.TemplateResponse("futures.html", {
-        "request": request,
+    return templates.TemplateResponse(request=request, name="futures.html", context={
         "positions": positions_display,
         "positions_json": json.dumps(positions_display),
         "trade_history": _futures_trade_history[-50:],
@@ -480,6 +474,154 @@ async def api_futures_backtest(req: FuturesBacktestRequest):
     except Exception as e:
         logger.error(f"선물 백테스트 오류: {e}", exc_info=True)
         return JSONResponse({"success": False, "error": str(e)}, status_code=500)
+
+
+@app.get("/api/strategy-monitor/status")
+async def api_monitor_status():
+    """전략별 성과 모니터 상태 조회"""
+    from strategies.performance_monitor import get_monitor
+    monitor = get_monitor()
+    return JSONResponse({"strategies": monitor.get_all_status()})
+
+
+@app.post("/api/strategy-monitor/toggle")
+async def api_monitor_toggle(strategy: str, enabled: bool):
+    """전략 수동 활성화/비활성화"""
+    from strategies.performance_monitor import get_monitor
+    monitor = get_monitor()
+    monitor.set_enabled(strategy, enabled)
+    return JSONResponse({
+        "strategy": strategy,
+        "enabled": enabled,
+        "message": f"전략 {'활성화' if enabled else '비활성화'} 완료: {strategy}",
+    })
+
+
+@app.get("/api/monthly-returns")
+async def api_monthly_returns(year: int = None, month: int = None):
+    """월간 수익률 분석"""
+    from datetime import date
+
+    now = datetime.now()
+    target_year = year or now.year
+    target_month = month or now.month
+
+    session = get_session()
+    try:
+        start = datetime(target_year, target_month, 1)
+        if target_month == 12:
+            end = datetime(target_year + 1, 1, 1)
+        else:
+            end = datetime(target_year, target_month + 1, 1)
+
+        trades = (
+            session.query(Trade)
+            .filter(Trade.timestamp >= start, Trade.timestamp < end)
+            .order_by(Trade.timestamp.asc())
+            .all()
+        )
+        trades_data = [t.to_dict() for t in trades]
+
+        total_pnl = sum(t.pnl or 0 for t in trades)
+        win_trades = sum(1 for t in trades if (t.pnl or 0) > 0)
+        loss_trades = sum(1 for t in trades if (t.pnl or 0) < 0)
+        total_closed = win_trades + loss_trades
+        win_rate = win_trades / total_closed if total_closed > 0 else None
+
+        # 전략별 집계
+        by_strategy: dict = {}
+        for t in trades:
+            name = t.strategy or "unknown"
+            if name not in by_strategy:
+                by_strategy[name] = {"pnl": 0.0, "trades": 0, "wins": 0}
+            by_strategy[name]["pnl"] += t.pnl or 0
+            by_strategy[name]["trades"] += 1
+            if (t.pnl or 0) > 0:
+                by_strategy[name]["wins"] += 1
+
+        return JSONResponse({
+            "period": f"{target_year}-{target_month:02d}",
+            "total_trades": len(trades),
+            "total_pnl": total_pnl,
+            "win_trades": win_trades,
+            "loss_trades": loss_trades,
+            "win_rate": win_rate,
+            "win_rate_pct": f"{win_rate*100:.1f}%" if win_rate is not None else "N/A",
+            "by_strategy": by_strategy,
+            "trades": trades_data,
+        })
+    finally:
+        session.close()
+
+
+@app.get("/api/macro-sentiment")
+async def api_macro_sentiment():
+    """현재 매크로 + 뉴스 감성 지표 반환 (실거래 대시보드용)"""
+    try:
+        from data.macro_fetcher import MacroDataFetcher
+        from strategies.macro_filter import MacroFilter, score_to_label
+
+        fetcher = MacroDataFetcher()
+        filt    = MacroFilter()
+        today   = datetime.now().strftime("%Y-%m-%d")
+        yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+
+        fg_df  = fetcher.get_fear_greed(yesterday, today)
+        vix_df = fetcher.get_vix(yesterday, today)
+
+        fg_val   = float(fg_df["fg_value"].iloc[-1])  if not fg_df.empty  else 50
+        fg_class = str(fg_df["fg_class"].iloc[-1])    if not fg_df.empty  else "N/A"
+        vix_val  = float(vix_df["vix_close"].iloc[-1]) if not vix_df.empty else 20.0
+
+        msig = filt.evaluate(fg_val, vix_val, 0.0, today)
+
+        # 뉴스 감성 (BTC + 전체 시장)
+        news_result = {}
+        try:
+            from data.news_fetcher import NewsFetcher
+            nf = NewsFetcher()
+            news_result = nf.get_market_sentiment()
+        except Exception:
+            news_result = {"score": 0, "reasoning": "뉴스 API 미설정"}
+
+        return JSONResponse({
+            "date": today,
+            "fear_greed": {
+                "value": fg_val,
+                "label": fg_class,
+                "interpretation": (
+                    "매수 기회 (역발상)" if fg_val < 20
+                    else "공포 → 롱 유리" if fg_val < 35
+                    else "중립" if fg_val < 65
+                    else "탐욕 → 주의" if fg_val < 80
+                    else "과열 → 롱 위험"
+                ),
+            },
+            "vix": {
+                "value": round(vix_val, 2),
+                "level": (
+                    "정상" if vix_val < 20
+                    else "상승" if vix_val < 25
+                    else "고공포" if vix_val < 35
+                    else "극단공포"
+                ),
+            },
+            "macro_filter": {
+                "allow_long":  msig.allow_long,
+                "allow_short": msig.allow_short,
+                "position_modifier": round(msig.position_modifier, 2),
+                "reason": msig.reason,
+                "score_label": score_to_label(msig.macro_score),
+            },
+            "news_sentiment": {
+                "score": news_result.get("score", 0),
+                "reasoning": news_result.get("reasoning", ""),
+                "bullish": news_result.get("bullish", [])[:3],
+                "bearish": news_result.get("bearish", [])[:3],
+            },
+        })
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
 
 
 def _generate_pnl_chart() -> str:

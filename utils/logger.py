@@ -69,23 +69,22 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     console_handler.setFormatter(console_formatter)
     logger.addHandler(console_handler)
 
-    # 파일 핸들러 (일별 로테이션)
+    # 파일 핸들러 (날짜별 파일명 — 회전 없음, Windows 잠금 문제 회피)
     log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
     os.makedirs(log_dir, exist_ok=True)
 
-    file_handler = logging.handlers.TimedRotatingFileHandler(
-        filename=os.path.join(log_dir, "autotrader.log"),
-        when="midnight",
-        interval=1,
-        backupCount=30,
-        encoding="utf-8"
-    )
-    file_handler.setLevel(level)
-    file_formatter = logging.Formatter(
-        fmt="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S"
-    )
-    file_handler.setFormatter(file_formatter)
-    logger.addHandler(file_handler)
+    try:
+        today = datetime.now().strftime("%Y-%m-%d")
+        log_path = os.path.join(log_dir, f"autotrader_{today}.log")
+        file_handler = logging.FileHandler(log_path, encoding="utf-8", delay=True)
+        file_handler.setLevel(level)
+        file_formatter = logging.Formatter(
+            fmt="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S"
+        )
+        file_handler.setFormatter(file_formatter)
+        logger.addHandler(file_handler)
+    except Exception:
+        pass  # 파일 핸들러 실패 시 콘솔 로그만 사용
 
     return logger

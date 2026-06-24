@@ -11,3 +11,14 @@ venv/
 dist/
 build/
 .DS_Store
+
+# 런타임/생성물 (소스 아님)
+coin_bot.lock
+data/macro_cache/
+data/news_cache/
+*.xlsx
+*.parquet
+backtest_*.csv
+futures_backtest_*.csv
+coin_rotation_results.csv
+backtest_coin_per_symbol.csv

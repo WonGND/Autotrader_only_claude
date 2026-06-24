@@ -5,6 +5,7 @@
 메모리 캐시를 통해 반복 요청을 최소화합니다.
 """
 
+import os
 import time
 from datetime import datetime, timedelta
 from typing import Optional, Dict, Tuple
@@ -14,6 +15,25 @@ from utils.logger import get_logger
 from utils.helpers import is_korean_stock
 
 logger = get_logger(__name__)
+
+# Windows 한글 경로로 인한 libcurl SSL 오류 우회
+# certifi 인증서를 ASCII 경로에 미리 복사해 환경변수로 지정
+def _fix_ssl_cert_path():
+    try:
+        import certifi, shutil
+        src = certifi.where()
+        # 한글/비ASCII 경로가 포함된 경우에만 복사
+        if not src.isascii():
+            dst = "C:/tmp/cacert.pem"
+            os.makedirs("C:/tmp", exist_ok=True)
+            if not os.path.exists(dst):
+                shutil.copy(src, dst)
+            os.environ.setdefault("REQUESTS_CA_BUNDLE", dst)
+            os.environ.setdefault("SSL_CERT_FILE", dst)
+    except Exception:
+        pass
+
+_fix_ssl_cert_path()
 
 
 class DataFetcher:

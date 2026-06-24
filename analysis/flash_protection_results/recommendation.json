@@ -1,0 +1,9 @@
+{
+  "be_trigger_pct": 0.5,
+  "warn_pct": 0.2,
+  "flash_pct": 0.3,
+  "auto_close": true,
+  "monitor_interval_sec": 60,
+  "expected_win_rate": 50.0,
+  "expected_avg_pnl": 8.540000000000001
+}

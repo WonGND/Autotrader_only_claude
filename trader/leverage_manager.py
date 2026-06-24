@@ -113,10 +113,10 @@ class LeverageManager:
 
     def calculate_stop_loss(self, entry_price: float, atr: float, side: str) -> float:
         """
-        ATR 기반 손절가 계산 (2 ATR)
+        ATR 기반 손절가 계산 (1.5 ATR)
 
-        롱: 진입가 - 2 × ATR
-        숏: 진입가 + 2 × ATR
+        롱: 진입가 - 1.5 × ATR
+        숏: 진입가 + 1.5 × ATR
 
         Args:
             entry_price: 진입가
@@ -127,16 +127,17 @@ class LeverageManager:
             손절가
         """
         if side == "long":
-            return entry_price - 2 * atr
+            return entry_price - 1.5 * atr
         else:
-            return entry_price + 2 * atr
+            return entry_price + 1.5 * atr
 
     def calculate_take_profit(self, entry_price: float, atr: float, side: str) -> float:
         """
-        ATR 기반 익절가 계산 (3 ATR, RR = 1.5)
+        ATR 기반 익절가 계산 (4 ATR, RR ≈ 2.67)
 
-        롱: 진입가 + 3 × ATR
-        숏: 진입가 - 3 × ATR
+        트레일링 스탑 사용 시 이 값은 최대 안전망으로만 동작.
+        롱: 진입가 + 4 × ATR
+        숏: 진입가 - 4 × ATR
 
         Args:
             entry_price: 진입가
@@ -147,9 +148,37 @@ class LeverageManager:
             익절가
         """
         if side == "long":
-            return entry_price + 3 * atr
+            return entry_price + 4 * atr
         else:
-            return entry_price - 3 * atr
+            return entry_price - 4 * atr
+
+    def calculate_trailing_stop(
+        self,
+        best_price: float,
+        atr: float,
+        side: str,
+        trail_multiplier: float = 2.0,
+    ) -> float:
+        """
+        트레일링 스탑 계산
+
+        최고/최저 도달가에서 trail_multiplier × ATR 만큼 떨어진 지점.
+        롱: best_high - trail × ATR
+        숏: best_low  + trail × ATR
+
+        Args:
+            best_price:       포지션 보유 중 최고(롱) 또는 최저(숏) 도달가
+            atr:              현재 ATR
+            side:             "long" 또는 "short"
+            trail_multiplier: ATR 배수 (기본 2.0)
+
+        Returns:
+            트레일링 스탑 가격
+        """
+        if side == "long":
+            return best_price - trail_multiplier * atr
+        else:
+            return best_price + trail_multiplier * atr
 
     # ─── 안전 확인 ────────────────────────────────────────────────
 
