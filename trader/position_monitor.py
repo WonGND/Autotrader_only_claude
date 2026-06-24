@@ -1,0 +1,346 @@
+# -*- coding: utf-8 -*-
+"""
+실시간 포지션 모니터 (1분마다 실행)
+
+멀티 타임프레임(1m / 3m / 5m) 캔들을 Bybit 실시간 API로 체크해
+급등·급락 감지, 부분 익절, BE SL 이동을 자동으로 수행합니다.
+
+[로직]
+  매 60초:
+    1. 오픈 포지션 조회
+    2. 각 포지션에 대해 1m·3m·5m 캔들 분석
+    3. 역방향 급변동 감지 (롱=하락, 숏=상승):
+         1 TF 감지 → 텔레그램 경보
+         2 TF 감지 → 30% 부분 익절(손실제한) + 경보
+         3 TF 감지 → 50% 부분 익절 + SL → BE + 경보
+    4. 유리 방향 급변동 감지 (롱=상승, 숏=하락):
+         1 TF 감지 → 텔레그램 경보
+         2 TF 감지 → 25% 부분 익절(이익확보) + 경보
+         3 TF 감지 → 40% 부분 익절 + SL → BE + 경보
+    5. BE 자동 이동:
+         미실현 수익 >= +BE_TRIGGER_PCT → SL → 진입가
+"""
+
+import time
+import threading
+from datetime import datetime
+from typing import Dict, Optional
+
+from broker.bybit_futures_broker import BybitFuturesBroker, FuturesPositionInfo
+from utils.telegram_notifier import TelegramNotifier
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
+
+# ── 파라미터 ────────────────────────────────────────────────────────
+
+# 역방향 급변동 임계값 (캔들 내 Open→Low/High 변화율)
+FLASH_THRESHOLDS = {
+    "1m": 1.0,   # 1분봉 1.0% 이상 역방향 = 급변동 감지
+    "3m": 1.3,   # 3분봉 1.3% 이상
+    "5m": 1.5,   # 5분봉 1.5% 이상
+}
+ALERT_THRESHOLD = 0.5   # 0.5% 이상 역방향 = 경보만 (청산 없음)
+
+# 부분 청산 비율: 감지된 TF 수에 따라
+ADVERSE_CLOSE = {2: 0.30, 3: 0.50}    # 역방향: 2TF=30%, 3TF=50%
+FAVORABLE_CLOSE = {2: 0.25, 3: 0.40}  # 유리방향: 2TF=25%, 3TF=40%
+
+BE_TRIGGER_PCT = 1.0    # 미실현 수익 +1.0% 이상이면 SL → 진입가
+BE_RETRY_COOLDOWN = 600 # BE 손절 이동 실패 시 재시도 보류 시간(초) — 무한 재시도/로그 폭주 방지
+MONITOR_INTERVAL = 60   # 초
+
+
+class PositionMonitor:
+    """1분 주기 포지션 실시간 모니터"""
+
+    def __init__(self, broker: BybitFuturesBroker, telegram: TelegramNotifier,
+                 on_position_closed=None):
+        self.broker   = broker
+        self.telegram = telegram
+        # 포지션 청산 감지 시 호출할 콜백 (메인 루프 즉시 사이클 트리거용)
+        self.on_position_closed = on_position_closed
+        self._running = False
+        self._thread: Optional[threading.Thread] = None
+
+        # 포지션별 상태 기억 (symbol_side → dict)
+        self._state: Dict[str, dict] = {}
+
+    # ── 외부 제어 ───────────────────────────────────────────────────
+
+    def start(self):
+        if self._running:
+            return
+        self._running = True
+        self._thread = threading.Thread(target=self._loop, daemon=True)
+        self._thread.start()
+        logger.info("포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)")
+
+    def stop(self):
+        self._running = False
+        if self._thread:
+            self._thread.join(timeout=10)
+
+    # ── 메인 루프 ───────────────────────────────────────────────────
+
+    def _loop(self):
+        while self._running:
+            try:
+                positions = self.broker.get_positions()
+                if positions:
+                    for pos in positions:
+                        self._check_position(pos)
+                        # 청산 알림용 마지막 스냅샷 저장
+                        self._get_state(pos)["snapshot"] = {
+                            "entry": pos.avg_price,
+                            "mark": pos.mark_price,
+                            "size": pos.size,
+                            "leverage": pos.leverage,
+                            "tp": pos.take_profit,
+                            "sl": pos.stop_loss,
+                        }
+                # 사라진 포지션 = 청산됨 (TP/SL 거래소 체결 포함) → 알림 후 상태 정리
+                active_keys = {self._key(p) for p in positions}
+                closed_any = False
+                for k in list(self._state.keys()):
+                    if k not in active_keys:
+                        state = self._state.pop(k)
+                        closed_any = True
+                        try:
+                            self._notify_position_closed(k, state)
+                        except Exception as e:
+                            logger.error(f"청산 알림 실패 ({k}): {e}", exc_info=True)
+                # 포지션이 청산되면 메인 루프를 깨워 즉시 신규 매수 기회 탐색
+                if closed_any and self.on_position_closed:
+                    try:
+                        self.on_position_closed()
+                    except Exception as e:
+                        logger.error(f"청산 콜백 오류: {e}")
+            except Exception as e:
+                logger.error(f"모니터 오류: {e}", exc_info=True)
+            time.sleep(MONITOR_INTERVAL)
+
+    # ── 청산 감지 알림 ──────────────────────────────────────────────
+
+    def _notify_position_closed(self, key: str, state: dict):
+        """추적 중이던 포지션이 사라지면 실현손익을 조회해 익절/손절 알림을 보낸다."""
+        symbol, side = key.rsplit("_", 1)          # 예: "BTCUSDT", "Buy"
+        exit_side = "Sell" if side == "Buy" else "Buy"  # 청산 주문은 반대 방향
+        snap = state.get("snapshot") or {}
+
+        # Bybit 실현손익 내역에서 직전 청산 레코드 검색 (최근 10분 이내)
+        record = None
+        try:
+            for r in self.broker.get_closed_pnl(symbol, limit=10):
+                if r.get("symbol") != symbol or r.get("side") != exit_side:
+                    continue
+                updated_ms = float(r.get("updatedTime", 0))
+                if time.time() * 1000 - updated_ms <= 10 * 60 * 1000:
+                    record = r
+                    break
+        except Exception as e:
+            logger.warning(f"실현손익 조회 실패 ({symbol}): {e}")
+
+        direction = "롱" if side == "Buy" else "숏"
+
+        if record is None:
+            # 내역을 못 찾아도 청산 사실 자체는 알린다
+            msg = (
+                f"🔔 <b>포지션 청산 감지</b>  {symbol} {direction}\n"
+                f"거래소에서 포지션이 종료되었습니다 (TP/SL 또는 수동 청산).\n"
+                f"마지막 진입가: ${snap.get('entry', 0):,.4f}"
+            )
+            self.telegram.send(msg)
+            logger.info(f"청산 감지 (내역 미확인): {key}")
+            return
+
+        entry = float(record.get("avgEntryPrice", 0))
+        exit_p = float(record.get("avgExitPrice", 0))
+        qty = float(record.get("qty", 0))
+        pnl = float(record.get("closedPnl", 0))
+        lev = int(float(record.get("leverage", snap.get("leverage", 1)) or 1))
+
+        # 가격 변동률 및 증거금 대비 수익률(ROI)
+        price_pct = 0.0
+        if entry > 0:
+            price_pct = (exit_p - entry) / entry * 100
+            if side == "Sell":
+                price_pct = -price_pct
+        margin = entry * qty / lev if lev > 0 else 0
+        roi_pct = pnl / margin * 100 if margin > 0 else 0
+
+        # TP/SL 가격과 비교해 청산 사유 추정 (0.2% 허용 오차)
+        cause = "청산"
+        tp, sl = snap.get("tp", 0), snap.get("sl", 0)
+        if tp and exit_p and abs(exit_p - tp) / tp < 0.002:
+            cause = "TP 체결"
+        elif sl and exit_p and abs(exit_p - sl) / sl < 0.002:
+            cause = "SL 체결"
+
+        if pnl >= 0:
+            header = f"💰 <b>익절 ({cause})</b>"
+        else:
+            header = f"🛑 <b>손절 ({cause})</b>"
+
+        msg = (
+            f"{header}  {symbol} {direction} x{lev}\n"
+            f"진입: ${entry:,.4f} → 청산: ${exit_p:,.4f} ({price_pct:+.2f}%)\n"
+            f"수량: {qty}\n"
+            f"실현손익: <b>{pnl:+.2f} USDT</b> (ROI {roi_pct:+.1f}%)"
+        )
+        self.telegram.send(msg)
+        logger.info(f"청산 알림 전송: {key} pnl={pnl:+.2f} USDT ({cause})")
+
+    # ── 포지션 분석 ─────────────────────────────────────────────────
+
+    def _key(self, pos: FuturesPositionInfo) -> str:
+        return f"{pos.symbol}_{pos.side}"
+
+    def _get_state(self, pos: FuturesPositionInfo) -> dict:
+        k = self._key(pos)
+        if k not in self._state:
+            self._state[k] = {"be_moved": False, "last_alert_time": 0}
+        return self._state[k]
+
+    def _check_position(self, pos: FuturesPositionInfo):
+        symbol_yf = pos.symbol.replace("USDT", "-USD")
+        side      = "long" if pos.side == "Buy" else "short"
+        entry     = pos.avg_price
+        mark      = pos.mark_price
+        state     = self._get_state(pos)
+
+        if entry <= 0 or mark <= 0:
+            return
+
+        # 현재 미실현 수익률 (레버리지 미포함)
+        unreal_pct = (
+            (mark - entry) / entry * 100
+            if side == "long"
+            else (entry - mark) / entry * 100
+        )
+
+        now_str = datetime.now().strftime("%H:%M")
+        now_ts  = time.time()
+
+        # ── 1. BE 자동 이동 ─────────────────────────────────────────
+        # update_stop_loss가 실패(False)를 반환하면 무한 재시도/로그 폭주를 막기 위해
+        # BE_RETRY_COOLDOWN 동안 재시도를 보류한다. (2026-06-25 무한 재시도 방어)
+        be_retry_ok = now_ts - state.get("last_be_attempt", 0) > BE_RETRY_COOLDOWN
+        if not state["be_moved"] and unreal_pct >= BE_TRIGGER_PCT and be_retry_ok:
+            state["last_be_attempt"] = now_ts
+            ok = self.broker.update_stop_loss(symbol_yf, side, entry)
+            if ok:
+                state["be_moved"] = True
+                msg = (
+                    f"🛡 <b>BE SL 이동</b>  {pos.symbol} {pos.side}\n"
+                    f"진입가 ${entry:.4f} → SL을 진입가로 이동\n"
+                    f"현재 미실현: +{unreal_pct:.2f}%  (${mark:.4f})"
+                )
+                self.telegram.send(msg)
+                logger.info(f"BE 이동: {pos.symbol} {side} entry={entry:.4f}")
+            else:
+                logger.warning(
+                    f"BE 이동 실패 ({pos.symbol} {side}) — {BE_RETRY_COOLDOWN//60}분 후 재시도"
+                )
+
+        # ── 2. 멀티 TF 캔들 분석 ────────────────────────────────────
+        adverse_count   = 0
+        favorable_count = 0
+        tf_details      = []
+
+        for interval_min, threshold in sorted(FLASH_THRESHOLDS.items(), key=lambda x: int(x[0][:-1])):
+            candle = self.broker.get_kline(symbol_yf, int(interval_min[:-1]))
+            if not candle:
+                continue
+
+            o, h, l = candle["open"], candle["high"], candle["low"]
+
+            if side == "long":
+                adverse_pct   = (o - l) / o * 100 if o > 0 else 0  # 하락
+                favorable_pct = (h - o) / o * 100 if o > 0 else 0  # 상승
+            else:
+                adverse_pct   = (h - o) / o * 100 if o > 0 else 0  # 상승
+                favorable_pct = (o - l) / o * 100 if o > 0 else 0  # 하락
+
+            if adverse_pct >= threshold:
+                adverse_count += 1
+                tf_details.append(f"{interval_min} 역방향 -{adverse_pct:.1f}%")
+            elif adverse_pct >= ALERT_THRESHOLD:
+                tf_details.append(f"{interval_min} 경보 -{adverse_pct:.1f}%")
+
+            if favorable_pct >= threshold:
+                favorable_count += 1
+
+        # ── 3. 역방향 급변동 처리 ────────────────────────────────────
+        cooldown = 180  # 같은 포지션에 대해 3분 내 중복 알림 방지
+
+        if adverse_count >= 1 and now_ts - state.get("last_alert_time", 0) > cooldown:
+            state["last_alert_time"] = now_ts
+
+            if adverse_count == 1:
+                # 경보만
+                msg = (
+                    f"⚠️ <b>급변동 경보</b>  {pos.symbol} {pos.side}\n"
+                    f"[{', '.join(tf_details)}]\n"
+                    f"PnL: {unreal_pct:+.2f}%  현재가: ${mark:.4f}"
+                )
+                self.telegram.send(msg)
+
+            elif adverse_count in ADVERSE_CLOSE:
+                ratio = ADVERSE_CLOSE[adverse_count]
+                order = None
+                try:
+                    order = self.broker.close_partial(symbol_yf, side, ratio)
+                except Exception as e:
+                    logger.error(f"부분 청산 실패 ({pos.symbol}): {e}")
+
+                action = f"{int(ratio*100)}% 부분 청산"
+                emoji  = "🔴" if unreal_pct < 0 else "🟡"
+                msg = (
+                    f"{emoji} <b>급변동 {action}</b>  {pos.symbol} {pos.side}\n"
+                    f"감지: {adverse_count}TF [{', '.join(tf_details)}]\n"
+                    f"PnL: {unreal_pct:+.2f}%  현재가: ${mark:.4f}\n"
+                )
+                if order:
+                    msg += f"청산: {order.qty}개 ({action})"
+                if adverse_count == 3 and not state["be_moved"]:
+                    ok = self.broker.update_stop_loss(symbol_yf, side, entry)
+                    if ok:
+                        state["be_moved"] = True
+                        msg += f"\nSL → 진입가 ${entry:.4f} 이동"
+                self.telegram.send(msg)
+                logger.info(f"역방향 부분 청산: {pos.symbol} {side} {ratio*100:.0f}% ({adverse_count}TF)")
+
+        # ── 4. 유리 방향 급변동 처리 (익절) ──────────────────────────
+        if favorable_count >= 2 and now_ts - state.get("last_fav_time", 0) > cooldown:
+            state["last_fav_time"] = now_ts
+            ratio = FAVORABLE_CLOSE.get(favorable_count, 0)
+            if ratio > 0:
+                order = None
+                try:
+                    order = self.broker.close_partial(symbol_yf, side, ratio)
+                except Exception as e:
+                    logger.error(f"익절 부분 청산 실패 ({pos.symbol}): {e}")
+
+                action = f"{int(ratio*100)}% 부분 익절"
+                msg = (
+                    f"💰 <b>{action}</b>  {pos.symbol} {pos.side}\n"
+                    f"유리 급등락 {favorable_count}TF 동시 감지\n"
+                    f"PnL: {unreal_pct:+.2f}%  현재가: ${mark:.4f}\n"
+                )
+                if order:
+                    msg += f"익절: {order.qty}개 ({action})"
+                if favorable_count == 3 and not state["be_moved"]:
+                    ok = self.broker.update_stop_loss(symbol_yf, side, entry)
+                    if ok:
+                        state["be_moved"] = True
+                        msg += f"\nSL → 진입가 ${entry:.4f} 이동"
+                self.telegram.send(msg)
+                logger.info(f"유리 방향 익절: {pos.symbol} {side} {ratio*100:.0f}% ({favorable_count}TF)")
+
+        # ── 5. 정기 포지션 상태 로그 (5분마다) ───────────────────────
+        if int(time.time()) % 300 < MONITOR_INTERVAL:
+            logger.info(
+                f"포지션 체크: {pos.symbol} {pos.side} x{pos.leverage} | "
+                f"PnL={unreal_pct:+.2f}% | BE={'O' if state['be_moved'] else 'X'}"
+            )
