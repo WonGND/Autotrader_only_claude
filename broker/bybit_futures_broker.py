@@ -596,6 +596,38 @@ class BybitFuturesBroker:
             return None
 
     @_resilient
+    def get_atr(self, symbol: str, interval_min: int = 60, period: int = 14) -> Optional[float]:
+        """최근 period개 완성 캔들로 ATR(평균 실제 변동폭, 가격 단위)을 계산한다.
+
+        True Range = max(고-저, |고-전봉종가|, |저-전봉종가|) 의 period봉 평균.
+        트레일링 스탑 등 코인별 변동성 적응이 필요한 곳에서 사용한다.
+        """
+        bybit_sym = self._to_bybit_symbol(symbol)
+        try:
+            resp = self._session.get_kline(
+                category=self.CATEGORY,
+                symbol=bybit_sym,
+                interval=str(interval_min),
+                limit=period + 2,          # 미완성봉(+1) + 전봉종가용(+1)
+            )
+            self._raise_if_error(resp, f"ATR 캔들 {symbol} {interval_min}m")
+            kl = resp["result"]["list"]    # 최신순(index 0 = 현재 미완성봉)
+            if len(kl) < period + 2:
+                return None
+            # index 1..period = 완성봉, index i+1 = 그 직전봉(전봉종가용)
+            trs = []
+            for i in range(1, period + 1):
+                high = float(kl[i][2])
+                low  = float(kl[i][3])
+                prev_close = float(kl[i + 1][4])
+                tr = max(high - low, abs(high - prev_close), abs(low - prev_close))
+                trs.append(tr)
+            return sum(trs) / len(trs) if trs else None
+        except Exception as e:
+            logger.warning(f"ATR 계산 실패 ({symbol} {interval_min}m): {e}")
+            return None
+
+    @_resilient
     def close_partial(
         self,
         symbol: str,

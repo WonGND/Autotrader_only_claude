@@ -46,9 +46,24 @@ ALERT_THRESHOLD = 0.5   # 0.5% 이상 역방향 = 경보만 (청산 없음)
 ADVERSE_CLOSE = {2: 0.30, 3: 0.50}    # 역방향: 2TF=30%, 3TF=50%
 FAVORABLE_CLOSE = {2: 0.25, 3: 0.40}  # 유리방향: 2TF=25%, 3TF=40%
 
-BE_TRIGGER_PCT = 1.0    # 미실현 수익 +1.0% 이상이면 SL → 진입가
-BE_RETRY_COOLDOWN = 600 # BE 손절 이동 실패 시 재시도 보류 시간(초) — 무한 재시도/로그 폭주 방지
+BE_TRIGGER_PCT = 1.0    # 미실현 수익 +1.0%(가격 기준) 이상이면 보호 손절 시작
+BE_RETRY_COOLDOWN = 600 # 보호 손절 이동 실패 시 재시도 보류 시간(초) — 무한 재시도/로그 폭주 방지
 MONITOR_INTERVAL = 60   # 초
+
+# ── 수수료 보정 BE + ATR 트레일링 손절 ──────────────────────────────
+# 거래소(본전=진입가)로만 옮기면 왕복 수수료 때문에 손절 시 실제로는 마이너스다.
+# 그래서 ①진입가 대신 '수수료 + 증거금 +1% 순이익' 지점으로 옮기고(수수료 보정 BE),
+# ②수익이 더 오르면 ATR 기반으로 손절을 따라 올려(트레일링) 수익을 추가로 잠근다.
+FEE_ROUNDTRIP   = 0.0011   # 왕복 테이커 수수료 (0.055% × 2, 가격 대비 비율)
+BE_LOCK_ROI     = 0.01     # 수수료 보정 BE 시 잠글 증거금 대비 순이익 (+1%)
+
+TRAIL_ACTIVATE_PCT     = 1.0   # 트레일링 시작 미실현 수익(가격 기준 %)
+TRAIL_ATR_INTERVAL_MIN = 60    # ATR 계산용 캔들 주기 (1시간)
+TRAIL_ATR_PERIOD       = 14    # ATR 평균 기간
+TRAIL_ATR_MULT         = 2.5   # 고점에서 트레일 거리 = 2.5 × ATR (작을수록 촘촘=조기청산↑)
+TRAIL_MIN_STEP_PCT     = 0.1   # SL 갱신 최소 개선폭(가격 %) — 잦은 갱신/API 스팸 방지
+ATR_CACHE_SEC          = 300   # 같은 포지션 ATR 재조회 최소 간격(초)
+PROT_MSG_COOLDOWN      = 600   # 보호 손절 텔레그램 알림 쿨다운(초)
 
 
 class PositionMonitor:
@@ -202,6 +217,102 @@ class PositionMonitor:
             self._state[k] = {"be_moved": False, "last_alert_time": 0}
         return self._state[k]
 
+    # ── 수수료 보정 BE + ATR 트레일링 손절 ──────────────────────────
+
+    def _atr_cached(self, symbol_yf: str, state: dict, now_ts: float) -> Optional[float]:
+        """ATR을 ATR_CACHE_SEC 간격으로만 재조회(캐시)해 API 부하/지연을 줄인다."""
+        if state.get("atr") and now_ts - state.get("atr_ts", 0) < ATR_CACHE_SEC:
+            return state["atr"]
+        atr = self.broker.get_atr(symbol_yf, TRAIL_ATR_INTERVAL_MIN, TRAIL_ATR_PERIOD)
+        if atr and atr > 0:
+            state["atr"]    = atr
+            state["atr_ts"] = now_ts
+        return atr
+
+    def _ratchet_stop(self, pos: FuturesPositionInfo, symbol_yf: str, side: str,
+                      entry: float, mark: float, unreal_pct: float,
+                      state: dict, now_ts: float):
+        """손절선을 위로만(이익을 더 지키는 방향) 끌어올린다.
+
+        ① 미실현 +BE_TRIGGER_PCT% 이상 → '진입가 + 수수료 + 증거금 +1%' 지점 (수수료 보정 BE)
+        ② 미실현 +TRAIL_ACTIVATE_PCT% 이상 → 고점 ∓ TRAIL_ATR_MULT×ATR (ATR 트레일링)
+        두 후보 중 더 유리한 값을 택하고, 기존 SL보다 최소폭 이상 개선될 때만 거래소에 반영한다.
+        """
+        long     = side == "long"
+        leverage = max(int(pos.leverage or 1), 1)
+
+        # 고점(롱)/저점(숏) 추적 — 트레일링 기준점
+        peak = state.get("peak")
+        peak = mark if peak is None else (max(peak, mark) if long else min(peak, mark))
+        state["peak"] = peak
+
+        candidates = []
+
+        # ① 수수료 보정 BE: 손절돼도 증거금 +1% 순이익이 남는 가격
+        if unreal_pct >= BE_TRIGGER_PCT:
+            off = BE_LOCK_ROI / leverage + FEE_ROUNDTRIP
+            candidates.append(entry * (1 + off) if long else entry * (1 - off))
+
+        # ② ATR 트레일링: 고점에서 2.5 ATR 떨어진 가격 (코인 변동성에 자동 적응)
+        if unreal_pct >= TRAIL_ACTIVATE_PCT:
+            atr = self._atr_cached(symbol_yf, state, now_ts)
+            if atr:
+                candidates.append(peak - TRAIL_ATR_MULT * atr if long
+                                  else peak + TRAIL_ATR_MULT * atr)
+
+        if not candidates:
+            return
+
+        desired = max(candidates) if long else min(candidates)
+
+        # 현재가 너머(즉시 손절될 위치)면 보류
+        if (long and desired >= mark) or (not long and desired <= mark):
+            return
+
+        # 기존 거래소 SL보다 최소 개선폭 이상 좋아질 때만 갱신 (잦은 갱신/API 스팸 방지)
+        cur_sl   = pos.stop_loss if (pos.stop_loss and pos.stop_loss > 0) else None
+        min_step = mark * (TRAIL_MIN_STEP_PCT / 100)
+        improved = cur_sl is None or (desired > cur_sl + min_step if long
+                                      else desired < cur_sl - min_step)
+        if not improved:
+            return
+
+        # 직전 갱신이 실패했고 쿨다운 중이면 보류 (무한 재시도 방어)
+        if state.get("_update_failed") and now_ts - state.get("last_be_attempt", 0) < BE_RETRY_COOLDOWN:
+            return
+        state["last_be_attempt"] = now_ts
+
+        ok = self.broker.update_stop_loss(symbol_yf, side, desired)
+        if not ok:
+            state["_update_failed"] = True
+            logger.warning(f"보호 손절 이동 실패 ({pos.symbol} {side}) — {BE_RETRY_COOLDOWN//60}분 후 재시도")
+            return
+        state["_update_failed"] = False
+
+        first = not state.get("be_moved")
+        state["be_moved"] = True
+
+        # 확정 순이익(손절 체결 시) — 가격% 및 증거금 ROI%
+        lock_price_pct = ((desired - entry) / entry * 100) if long else ((entry - desired) / entry * 100)
+        net_price_pct  = lock_price_pct - FEE_ROUNDTRIP * 100
+        net_roi_pct    = net_price_pct * leverage
+        kind = "수수료 보정 BE" if first else "트레일링 ↑"
+        logger.info(
+            f"보호 손절 {kind}: {pos.symbol} {side} SL=${desired:.4f} "
+            f"(확정 순이익 +{net_price_pct:.2f}% 가격 / +{net_roi_pct:.1f}% 증거금)"
+        )
+
+        # 텔레그램: 최초 이동은 즉시, 이후 트레일링은 쿨다운 두고 알림(스팸 방지)
+        if first or now_ts - state.get("last_prot_msg", 0) > PROT_MSG_COOLDOWN:
+            state["last_prot_msg"] = now_ts
+            emoji = "🛡" if first else "⏫"
+            self.telegram.send(
+                f"{emoji} <b>보호 손절 {kind}</b>  {pos.symbol} {pos.side}\n"
+                f"SL → ${desired:.4f}  (진입 ${entry:.4f})\n"
+                f"확정 순이익: +{net_price_pct:.2f}% 가격 / +{net_roi_pct:.1f}% 증거금\n"
+                f"현재 미실현: +{unreal_pct:.2f}%  (${mark:.4f})"
+            )
+
     def _check_position(self, pos: FuturesPositionInfo):
         symbol_yf = pos.symbol.replace("USDT", "-USD")
         side      = "long" if pos.side == "Buy" else "short"
@@ -222,26 +333,8 @@ class PositionMonitor:
         now_str = datetime.now().strftime("%H:%M")
         now_ts  = time.time()
 
-        # ── 1. BE 자동 이동 ─────────────────────────────────────────
-        # update_stop_loss가 실패(False)를 반환하면 무한 재시도/로그 폭주를 막기 위해
-        # BE_RETRY_COOLDOWN 동안 재시도를 보류한다. (2026-06-25 무한 재시도 방어)
-        be_retry_ok = now_ts - state.get("last_be_attempt", 0) > BE_RETRY_COOLDOWN
-        if not state["be_moved"] and unreal_pct >= BE_TRIGGER_PCT and be_retry_ok:
-            state["last_be_attempt"] = now_ts
-            ok = self.broker.update_stop_loss(symbol_yf, side, entry)
-            if ok:
-                state["be_moved"] = True
-                msg = (
-                    f"🛡 <b>BE SL 이동</b>  {pos.symbol} {pos.side}\n"
-                    f"진입가 ${entry:.4f} → SL을 진입가로 이동\n"
-                    f"현재 미실현: +{unreal_pct:.2f}%  (${mark:.4f})"
-                )
-                self.telegram.send(msg)
-                logger.info(f"BE 이동: {pos.symbol} {side} entry={entry:.4f}")
-            else:
-                logger.warning(
-                    f"BE 이동 실패 ({pos.symbol} {side}) — {BE_RETRY_COOLDOWN//60}분 후 재시도"
-                )
+        # ── 1. 수수료 보정 BE + ATR 트레일링 손절 ───────────────────
+        self._ratchet_stop(pos, symbol_yf, side, entry, mark, unreal_pct, state, now_ts)
 
         # ── 2. 멀티 TF 캔들 분석 ────────────────────────────────────
         adverse_count   = 0
