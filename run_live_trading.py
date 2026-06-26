@@ -49,6 +49,14 @@ CONFIG = {
     "max_positions": 3,            # 동시 최대 포지션
     "check_interval_sec": 1800,    # 30분마다 체크
     "min_balance_usdt": 5,         # 최소 운용 잔고
+
+    # ── 불타기(피라미딩): 이기는 포지션에 추세 따라 추가 ──────────
+    # 레버리지 선물이라 보수적으로: 추가는 현재 수량의 일부만, 증거금 상한 고정.
+    "pyramid_max_adds":       2,      # 종목당 최대 추가 횟수
+    "pyramid_step_atr":       0.5,    # 직전 진입가에서 0.5×ATR 더 유리하게 갔을 때 추가
+    "pyramid_min_profit":     0.01,   # 미실현 +1%(가격) 이상 이익일 때만 추가
+    "pyramid_add_fraction":   0.5,    # 추가분 = 현재 수량의 50%
+    "pyramid_max_margin_pct": 0.25,   # 불타기 포함 종목당 최대 증거금 비중
 }
 
 
@@ -78,6 +86,8 @@ class LiveFuturesTrader:
         # 동일 차단 사유의 텔레그램 알림이 매 사이클(30분) 반복되는 것을 막기 위한 캐시.
         # key="SYMBOL:방향" → 마지막으로 알린 차단 사유. 사유가 바뀔 때만 1회 알린다.
         self._last_block_reason: dict = {}
+        # 불타기 상태: symbol → {"adds": 추가횟수, "last_add_price": 마지막 추가가}
+        self._pyramid_state: dict = {}
 
     def start(self):
         print(f"\n{'='*60}")
@@ -150,6 +160,10 @@ class LiveFuturesTrader:
         # ── 2. 포지션 갱신 ───────────────────────────────────────────
         open_positions = {p.symbol: p for p in self.broker.get_positions()}
         n_open = len(open_positions)
+        # 청산된 종목의 불타기 상태 정리 (다음 진입 시 0부터)
+        for sym in list(self._pyramid_state):
+            if sym.replace("-USD", "USDT") not in open_positions:
+                self._pyramid_state.pop(sym, None)
         print(f"  포지션: {n_open}개")
         for sym, p in open_positions.items():
             pnl_sign = "+" if p.unrealized_pnl >= 0 else ""
@@ -216,6 +230,81 @@ class LiveFuturesTrader:
         """차단이 해소되면(진입/신호소멸) 캐시를 비워 다음 차단 시 다시 알리도록 한다."""
         self._last_block_reason.pop(f"{symbol}:{direction}", None)
 
+    def _try_pyramid(self, pos, atr: float, macro: dict):
+        """불타기(피라미딩): 이기는 포지션이 추세를 이어가면 추가 진입한다.
+
+        레버리지 선물이라 보수적으로: 추가분은 현재 수량의 일부(pyramid_add_fraction)만,
+        종목당 증거금 비중 상한(pyramid_max_margin_pct) 내에서만 더한다.
+          · 손절선: 추가하면 거래소 평단이 올라가고, 모니터(_ratchet_stop)가 '새 평단'
+                    기준 본전(BE) 락 + ATR 트레일링으로 자동 상향 → 원물량 이익 보호
+          · 익절선: 추가 직후 새 평단 기준(평단 + 4×ATR)으로 재설정
+          · 최소 익절(보장) 라인: 본전 락이 새 평단 기준이라, 손절돼도 전체가 ≥본전
+        """
+        if pos is None or atr <= 0:
+            return
+        cfg    = CONFIG
+        symbol = pos.symbol.replace("USDT", "-USD")
+        state  = self._pyramid_state.setdefault(symbol, {"adds": 0, "last_add_price": pos.avg_price})
+        if state["adds"] >= cfg["pyramid_max_adds"]:
+            return
+
+        long  = pos.side == "Buy"
+        price = self.broker.get_price(symbol)
+        step  = cfg["pyramid_step_atr"] * atr
+        # 추세 지속: 직전 추가가에서 0.5×ATR 이상 더 유리하게 진행했을 때만
+        if long and price < state["last_add_price"] + step:
+            return
+        if not long and price > state["last_add_price"] - step:
+            return
+        # 이익 구간에서만 추가 (지는 포지션엔 절대 안 더함 = 물타기 금지)
+        unreal = ((price - pos.avg_price) / pos.avg_price if long
+                  else (pos.avg_price - price) / pos.avg_price)
+        if unreal < cfg["pyramid_min_profit"]:
+            return
+        if long and not macro["allow_long"]:
+            return
+        if not long and not macro["allow_short"]:
+            return
+
+        # 증거금 비중 상한 내에서만 추가
+        balance      = self.broker.get_balance()
+        lev          = max(pos.leverage, 1)
+        cur_margin   = (pos.size * price) / lev
+        max_margin   = balance * cfg["pyramid_max_margin_pct"]
+        if cur_margin >= max_margin:
+            return
+        add_margin   = min(cur_margin * cfg["pyramid_add_fraction"], max_margin - cur_margin)
+        add_notional = add_margin * lev
+        if add_notional < cfg["min_balance_usdt"]:
+            return
+
+        side_str = "long" if long else "short"
+        try:
+            if long:
+                self.broker.open_long(symbol, add_notional, lev)
+            else:
+                self.broker.open_short(symbol, add_notional, lev)
+        except Exception as e:
+            logger.warning(f"{symbol} 불타기 추가 실패: {e}")
+            return
+
+        state["adds"] += 1
+        state["last_add_price"] = price
+        print(f"  {symbol}: 🔺 불타기 {state['adds']}차 추가 | +{add_notional:.1f} USDT @ ${price:.4f}")
+
+        # 새 평단 기준 익절선 재설정 (손절선은 포지션 모니터가 자동 상향)
+        time.sleep(1)
+        newpos = next((p for p in self.broker.get_positions(symbol) if p.side == pos.side), None)
+        if newpos:
+            new_tp = self.lm.calculate_take_profit(newpos.avg_price, atr, side_str)
+            self.broker.update_take_profit(symbol, side_str, new_tp)
+            self.telegram.send(
+                f"🔺 <b>불타기 추가 ({state['adds']}차)</b>  {symbol} {pos.side}\n"
+                f"추가 명목 {add_notional:.1f} USDT @ ${price:,.4f}\n"
+                f"새 평단 ${newpos.avg_price:,.4f}  (수량 {newpos.size})\n"
+                f"익절 → ${new_tp:,.4f}  ·  손절은 새 평단 기준 자동 상향"
+            )
+
     def _process_symbol(self, symbol: str, open_positions: dict, macro: dict):
         # 90일 데이터 로드
         end   = datetime.now().strftime("%Y-%m-%d")
@@ -246,10 +335,12 @@ class LiveFuturesTrader:
         has_short = any(p.side == "Sell" and p.symbol == bybit_sym for p in open_positions.values())
         direction = "롱" if signal == 1 else "숏"
 
-        # 중복 포지션 체크
+        # 중복 포지션: 신규 진입 대신 불타기(피라미딩) 시도
         if signal == 1 and has_long:
+            self._try_pyramid(open_positions.get(bybit_sym), atr, macro)
             return
         if signal == -1 and has_short:
+            self._try_pyramid(open_positions.get(bybit_sym), atr, macro)
             return
 
         # 최대 포지션 체크

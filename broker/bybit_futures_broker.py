@@ -551,6 +551,33 @@ class BybitFuturesBroker:
             logger.error(f"손절 변경 실패 ({symbol}): {e}")
             return False
 
+    @_resilient
+    def update_take_profit(
+        self,
+        symbol: str,
+        side: str,
+        take_profit_price: float,
+    ) -> bool:
+        """기존 포지션의 익절가 변경 (불타기 후 새 평단 기준 TP 재설정용)"""
+        bybit_sym = self._to_bybit_symbol(symbol)
+        pos_idx   = 1 if side == "long" else 2
+        try:
+            resp = self._session.set_trading_stop(
+                category=self.CATEGORY,
+                symbol=bybit_sym,
+                takeProfit=self._price_str(take_profit_price, bybit_sym),
+                tpTriggerBy="MarkPrice",
+                positionIdx=pos_idx,
+            )
+            self._raise_if_error(resp, f"익절 변경 {symbol}")
+            return True
+        except Exception as e:
+            if "34040" in str(e) or "not modified" in str(e):
+                logger.info(f"익절 변경 생략 ({symbol}): 이미 목표값과 동일 (34040)")
+                return True
+            logger.error(f"익절 변경 실패 ({symbol}): {e}")
+            return False
+
     # ── 연결 테스트 ──────────────────────────────────────────────────
 
     @_resilient
