@@ -45,7 +45,7 @@ CONFIG = {
     # 2026-06-14: IS/OOS 재최적화로 OOS 견고성 미확보 4종목(ATOM/DOT/TRX/SOL) 제외.
     # 종목별 SMA는 COIN_SYMBOL_PARAMS 사용. 운용 종목 = 그 dict의 키.
     "symbols": list(COIN_SYMBOL_PARAMS.keys()),  # [BTC, ETH, BNB, DOGE]
-    "risk_per_trade_pct": 0.05,   # 거래당 잔고의 5%
+    "risk_per_trade_pct": 0.03,   # 거래당 잔고의 3% (2026-06-27 5%→3% 하향: 계좌 리스크 축소)
     "max_positions": 3,            # 동시 최대 포지션
     "check_interval_sec": 1800,    # 30분마다 체크
     "min_balance_usdt": 5,         # 최소 운용 잔고
