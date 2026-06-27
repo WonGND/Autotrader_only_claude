@@ -113,10 +113,14 @@ class LeverageManager:
 
     def calculate_stop_loss(self, entry_price: float, atr: float, side: str) -> float:
         """
-        ATR 기반 손절가 계산 (1.5 ATR)
+        ATR 기반 손절가 계산 (1.0 ATR)
 
-        롱: 진입가 - 1.5 × ATR
-        숏: 진입가 + 1.5 × ATR
+        롱: 진입가 - 1.0 × ATR
+        숏: 진입가 + 1.0 × ATR
+
+        2026-06-27: 1.5→1.0 ATR로 타이트화. 3년 백테스트에서 손절을 좁힐수록
+        손실을 빨리 끊어 평균수익·MDD가 개선됨(10종목 중 8개 개선). 단 강한 추세장
+        에선 조기 청산 위험이 있어 트레일링과 함께 중간값(SL 1.0 / 트레일 1.5)으로 채택.
 
         Args:
             entry_price: 진입가
@@ -127,17 +131,19 @@ class LeverageManager:
             손절가
         """
         if side == "long":
-            return entry_price - 1.5 * atr
+            return entry_price - 1.0 * atr
         else:
-            return entry_price + 1.5 * atr
+            return entry_price + 1.0 * atr
 
     def calculate_take_profit(self, entry_price: float, atr: float, side: str) -> float:
         """
-        ATR 기반 익절가 계산 (4 ATR, RR ≈ 2.67)
+        ATR 기반 익절가 계산 (8 ATR, RR ≈ 8:1)
 
-        트레일링 스탑 사용 시 이 값은 최대 안전망으로만 동작.
-        롱: 진입가 + 4 × ATR
-        숏: 진입가 - 4 × ATR
+        2026-06-27: 4→8 ATR로 확대 + 이익 래칫(트레일링/BE) 비활성화.
+        3년 백테스트에서 '손절 낮게(1.0 ATR) + 익절 높게(8 ATR) + 보호장치 제거'가
+        +87%(MDD 48%)로 최고. 보호장치(트레일/BE)는 소수의 큰 추세를 조기 청산해
+        오히려 전략을 망쳤다(BE락 −45.7%). 리스크는 타이트한 진입 손절이 통제.
+        롱: 진입가 + 8 × ATR / 숏: 진입가 - 8 × ATR
 
         Args:
             entry_price: 진입가
@@ -148,9 +154,9 @@ class LeverageManager:
             익절가
         """
         if side == "long":
-            return entry_price + 4 * atr
+            return entry_price + 8 * atr
         else:
-            return entry_price - 4 * atr
+            return entry_price - 8 * atr
 
     def calculate_trailing_stop(
         self,

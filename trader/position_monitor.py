@@ -57,10 +57,16 @@ MONITOR_INTERVAL = 60   # 초
 FEE_ROUNDTRIP   = 0.0011   # 왕복 테이커 수수료 (0.055% × 2, 가격 대비 비율)
 BE_LOCK_ROI     = 0.01     # 수수료 보정 BE 시 잠글 증거금 대비 순이익 (+1%)
 
+# 2026-06-27: 이익 래칫(수수료 보정 BE + ATR 트레일링) 비활성화.
+# 3년 백테스트에서 보호장치가 소수의 큰 추세를 조기 청산해 전략을 망쳤다(BE락 −45.7%).
+# '손절 낮게(1.0 ATR) + 익절 높게(8 ATR) + 보호 제거'가 +87%로 최고. 리스크는 진입 손절이 통제.
+# True로 바꾸면 기존 BE 락 + ATR 트레일링이 다시 작동한다.
+ENABLE_PROFIT_RATCHET  = False
+
 TRAIL_ACTIVATE_PCT     = 1.0   # 트레일링 시작 미실현 수익(가격 기준 %)
 TRAIL_ATR_INTERVAL_MIN = 60    # ATR 계산용 캔들 주기 (1시간)
 TRAIL_ATR_PERIOD       = 14    # ATR 평균 기간
-TRAIL_ATR_MULT         = 2.5   # 고점에서 트레일 거리 = 2.5 × ATR (작을수록 촘촘=조기청산↑)
+TRAIL_ATR_MULT         = 1.5   # 고점에서 트레일 거리 = 1.5 × ATR (작을수록 촘촘=조기청산↑). 2026-06-27 2.5→1.5 타이트화
 TRAIL_MIN_STEP_PCT     = 0.1   # SL 갱신 최소 개선폭(가격 %) — 잦은 갱신/API 스팸 방지
 ATR_CACHE_SEC          = 300   # 같은 포지션 ATR 재조회 최소 간격(초)
 PROT_MSG_COOLDOWN      = 600   # 보호 손절 텔레그램 알림 쿨다운(초)
@@ -333,8 +339,9 @@ class PositionMonitor:
         now_str = datetime.now().strftime("%H:%M")
         now_ts  = time.time()
 
-        # ── 1. 수수료 보정 BE + ATR 트레일링 손절 ───────────────────
-        self._ratchet_stop(pos, symbol_yf, side, entry, mark, unreal_pct, state, now_ts)
+        # ── 1. 수수료 보정 BE + ATR 트레일링 손절 (기본 비활성: 보호장치가 winner를 잘라먹음) ──
+        if ENABLE_PROFIT_RATCHET:
+            self._ratchet_stop(pos, symbol_yf, side, entry, mark, unreal_pct, state, now_ts)
 
         # ── 2. 멀티 TF 캔들 분석 ────────────────────────────────────
         adverse_count   = 0
