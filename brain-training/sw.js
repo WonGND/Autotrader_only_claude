@@ -1,7 +1,7 @@
 /* 두뇌 트레이닝 PWA 서비스 워커
  * 전략: 설치 시 전체 자산 프리캐시 → 오프라인에서도 모든 훈련 가능.
  * 자산/데이터를 수정했다면 CACHE_VERSION 을 올려야 새 버전이 배포된다. */
-const CACHE_VERSION = 'bt-v4';
+const CACHE_VERSION = 'bt-v5';
 
 const ASSETS = [
   './',
@@ -15,6 +15,8 @@ const ASSETS = [
   './js/vocab.js',
   './js/thinking.js',
   './js/speech.js',
+  './js/stats.js',
+  './js/daily.js',
   './data/vocab.json',
   './data/categories.json',
   './data/thinking.json',

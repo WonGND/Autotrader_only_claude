@@ -44,6 +44,12 @@ export function addRecord(module, score, detail = {}) {
     detail,
   });
   set('records', records);
+  window.dispatchEvent(new CustomEvent('bt:record-added'));
+}
+
+/** 모든 훈련 데이터 삭제(기록·간격 반복·오늘의 훈련 진행) */
+export function resetAllData() {
+  ['records', 'sr', 'daily'].forEach((k) => localStorage.removeItem(PREFIX + k));
 }
 
 export function getRecords() {

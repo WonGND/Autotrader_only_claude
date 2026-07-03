@@ -112,6 +112,8 @@ function renderHome(root) {
 
 backBtn.addEventListener('click', () => history.back());
 window.addEventListener('hashchange', route);
+// 훈련 기록 직후 상단 streak 배지를 즉시 갱신하기 위한 앱 내부 이벤트
+window.addEventListener('bt:record-added', updateStreakBadge);
 route();
 
 if ('serviceWorker' in navigator) {
