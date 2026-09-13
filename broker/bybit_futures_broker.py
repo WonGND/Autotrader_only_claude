@@ -355,12 +355,19 @@ class BybitFuturesBroker:
                 sellLeverage=lev_str,
             )
             if resp.get("retCode") == 110043:
-                # 이미 같은 레버리지 설정 중 (정상)
+                # 이미 같은 레버리지 — 정상 (변경 불필요)
+                logger.debug(f"{symbol} 레버리지 이미 {leverage}x — 설정 생략")
                 return True
             self._raise_if_error(resp, f"레버리지 설정 {symbol}")
             logger.info(f"{symbol} 레버리지 {leverage}x 설정 완료")
             return True
         except Exception as e:
+            # pybit은 110043("leverage not modified")을 resp 대신 예외로 던진다.
+            # 이 경우는 실패가 아니라 "이미 원하는 레버리지" 상태이므로 True 반환.
+            e_str = str(e)
+            if "110043" in e_str or "leverage not modified" in e_str.lower():
+                logger.debug(f"{symbol} 레버리지 이미 {leverage}x (pybit 예외 경로) — 정상")
+                return True
             logger.warning(f"레버리지 설정 실패 ({symbol}): {e}")
             return False
 
@@ -416,8 +423,14 @@ class BybitFuturesBroker:
     ) -> FuturesOrder:
         bybit_sym = self._to_bybit_symbol(symbol)
 
-        # 레버리지 설정
-        self.set_leverage(symbol, leverage)
+        # 레버리지 설정 — 실패하면 진입을 중단한다.
+        # (실패를 무시하고 진입하면 그 심볼에 직전 거래가 남긴 레버리지로 포지션이 열려,
+        #  의도보다 높은 레버리지 → 청산가가 SL보다 앞에 올 수 있다.)
+        if not self.set_leverage(symbol, leverage):
+            raise RuntimeError(
+                f"{symbol} 레버리지 {leverage}x 설정 실패 → 진입 중단 "
+                f"(원치 않는 레버리지로 진입하는 것을 방지)"
+            )
 
         # 현재가로 수량 계산
         price = self.get_price(symbol)
@@ -456,14 +469,43 @@ class BybitFuturesBroker:
         self._raise_if_error(resp, f"주문 실행 {side} {symbol}")
 
         order_info = resp["result"]
+
+        # ── 체결 + SL 등록 검증 ─────────────────────────────────────────
+        # IOC 시장가는 즉시 체결되지만, 거래소 반영에 약간의 지연이 있어 짧게 폴링한다.
+        # 1) 포지션이 실제로 잡혔는지(미체결 방지) 2) SL이 실제로 등록됐는지 확인한다.
+        side_str = "long" if side == "Buy" else "short"
+        opened = None
+        for _ in range(4):                       # 최대 ~1.6초 폴링
+            time.sleep(0.4)
+            opened = next((p for p in self.get_positions(symbol) if p.side == side), None)
+            if opened and opened.size > 0:
+                break
+        if not opened or opened.size <= 0:
+            raise RuntimeError(
+                f"{symbol} {side} 주문이 체결되지 않음(IOC 미체결/유동성 부족) — 포지션 없음"
+            )
+
+        # SL을 요청했는데 포지션에 등록돼 있지 않으면 즉시 재등록, 그래도 실패하면 청산한다.
+        # (레버리지 포지션을 손절 없이 들고 있는 상황을 막는다.)
+        if stop_loss_price and stop_loss_price > 0 and not (opened.stop_loss and opened.stop_loss > 0):
+            logger.warning(f"{symbol} {side} 진입 후 SL 미등록 감지 → 재등록 시도")
+            if not self.update_stop_loss(symbol, side_str, stop_loss_price):
+                logger.error(f"{symbol} {side} SL 재등록 실패 → 노출 방지 위해 포지션 청산")
+                try:
+                    self.close_position(symbol, side_str)
+                finally:
+                    raise RuntimeError(
+                        f"{symbol} {side} SL 등록 실패 → 안전을 위해 포지션을 청산했습니다."
+                    )
+
         return FuturesOrder(
             order_id=order_info.get("orderId", ""),
             symbol=bybit_sym,
             side=side,
-            qty=qty,
-            price=price,
+            qty=opened.size,                     # 실제 체결 수량(부분체결 반영)
+            price=opened.avg_price or price,     # 실제 평단(없으면 진입 직전가)
             order_type="Market",
-            status="New",
+            status="Filled",
             created_at=datetime.now().isoformat(),
         )
 

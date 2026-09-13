@@ -83,6 +83,8 @@ class PositionMonitor:
         self.on_position_closed = on_position_closed
         self._running = False
         self._thread: Optional[threading.Thread] = None
+        # 하트비트: _loop가 한 바퀴 돌 때마다 갱신. 메인 루프가 스레드 생존/행 여부를 점검한다.
+        self._last_beat = 0.0
 
         # 포지션별 상태 기억 (symbol_side → dict)
         self._state: Dict[str, dict] = {}
@@ -102,10 +104,28 @@ class PositionMonitor:
         if self._thread:
             self._thread.join(timeout=10)
 
+    # ── 생존 점검 / 재시작 ──────────────────────────────────────────
+
+    def is_alive(self) -> bool:
+        """모니터 스레드가 실제로 살아있는지 확인."""
+        return bool(self._running and self._thread and self._thread.is_alive())
+
+    def seconds_since_beat(self) -> float:
+        """마지막 루프 한 바퀴 이후 경과 시간(초). 0이면 아직 첫 비트 전."""
+        return (time.time() - self._last_beat) if self._last_beat else 0.0
+
+    def restart(self):
+        """죽은 모니터 스레드를 재시작한다. (이전 스레드가 종료된 경우에 호출)"""
+        self._running = True
+        self._thread = threading.Thread(target=self._loop, daemon=True)
+        self._thread.start()
+        logger.warning("포지션 모니터 스레드 재시작됨")
+
     # ── 메인 루프 ───────────────────────────────────────────────────
 
     def _loop(self):
         while self._running:
+            self._last_beat = time.time()   # 하트비트 갱신 (메인 루프의 생존 점검용)
             try:
                 positions = self.broker.get_positions()
                 if positions:

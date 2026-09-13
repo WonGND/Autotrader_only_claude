@@ -50,6 +50,12 @@ CONFIG = {
     "check_interval_sec": 1800,    # 30분마다 체크
     "min_balance_usdt": 5,         # 최소 운용 잔고
 
+    # ── 일일 손실 서킷브레이커 (계좌 단위 킬스위치) ───────────────
+    # 당일 시작 자산 대비 총자산(equity)이 이 비율 이상 하락하면 '신규 진입/불타기'를
+    # 그날 동안 중단한다. 기존 포지션의 SL/TP는 거래소에 그대로 두므로 청산은 정상 작동.
+    # (실계좌인데 계좌 단위 손실 차단장치가 없던 문제 보완 — 미국봇 daily_loss_limit과 동등)
+    "daily_drawdown_limit": 0.10,  # 일일 자산 -10% 도달 시 당일 신규 진입 중단
+
     # ── 불타기(피라미딩): 이기는 포지션에 추세 따라 추가 ──────────
     # 레버리지 선물이라 보수적으로: 추가는 현재 수량의 일부만, 증거금 상한 고정.
     "pyramid_max_adds":       2,      # 종목당 최대 추가 횟수
@@ -58,6 +64,10 @@ CONFIG = {
     "pyramid_add_fraction":   0.5,    # 추가분 = 현재 수량의 50%
     "pyramid_max_margin_pct": 0.25,   # 불타기 포함 종목당 최대 증거금 비중
 }
+
+# 포지션 모니터(1분 주기)가 이 시간(초) 이상 한 바퀴도 못 돌면 '응답 없음'으로 보고 경보한다.
+# 정상 주기 60초의 약 5배 → 일시 지연엔 반응하지 않고 실제 행(hang)만 잡는다.
+MONITOR_STALE_SEC = 300
 
 
 class LiveFuturesTrader:
@@ -88,6 +98,12 @@ class LiveFuturesTrader:
         self._last_block_reason: dict = {}
         # 불타기 상태: symbol → {"adds": 추가횟수, "last_add_price": 마지막 추가가}
         self._pyramid_state: dict = {}
+        # 일일 손실 서킷브레이커 상태
+        self._day               = None   # 기준일(date) — 날짜 바뀌면 리셋
+        self._day_start_equity  = None   # 당일 시작 시점 총자산(USDT)
+        self._halted            = False  # True면 당일 신규 진입/불타기 중단
+        # 포지션 모니터 헬스체크: 응답 없음 경보 스팸 방지용 마지막 경보 시각
+        self._last_monitor_warn = 0.0
 
     def start(self):
         print(f"\n{'='*60}")
@@ -147,9 +163,73 @@ class LiveFuturesTrader:
         self._running = False
         self.monitor.stop()
 
+    def _update_circuit_breaker(self):
+        """일일 자산 낙폭이 한도를 넘으면 당일 신규 진입을 중단한다(서킷브레이커).
+
+        기준일이 바뀌면 시작 자산을 다시 기록하고 중단을 해제한다.
+        기존 포지션의 SL/TP는 거래소에 그대로 두므로 손절/익절은 정상 작동한다.
+        자산 조회 실패 시에는 상태를 바꾸지 않고 넘어간다(일시 오류로 매매를 막지 않음).
+        """
+        from datetime import date
+        try:
+            equity = self.broker.get_total_equity()
+        except Exception as e:
+            logger.warning(f"서킷브레이커 자산 조회 실패(무시): {e}")
+            return
+
+        today = date.today()
+        if today != self._day:
+            # 날짜 변경 → 당일 기준 자산 리셋, 중단 해제
+            self._day              = today
+            self._day_start_equity = equity
+            self._halted           = False
+            return
+        if not self._day_start_equity or self._day_start_equity <= 0:
+            self._day_start_equity = equity
+            return
+
+        dd = (self._day_start_equity - equity) / self._day_start_equity
+        if dd >= CONFIG["daily_drawdown_limit"] and not self._halted:
+            self._halted = True
+            print(f"  ⛔ 일일 손실 한도 도달 (-{dd*100:.1f}%) → 오늘 신규 진입 중단")
+            self.telegram.send(
+                f"⛔ <b>일일 손실 한도 도달</b>\n"
+                f"오늘 자산 {self._day_start_equity:.2f} → {equity:.2f} USDT "
+                f"(-{dd*100:.1f}%)\n"
+                f"당일 신규 진입/불타기를 중단합니다. (기존 포지션 SL/TP는 유지)"
+            )
+
+    def _check_monitor_health(self):
+        """포지션 모니터 스레드를 점검한다.
+
+        · 죽어 있으면(thread 종료) 재시작 + 텔레그램 알림.
+        · 살아있지만 오래(MONITOR_STALE_SEC) 한 바퀴도 못 돌았으면(행 의심) 경보만 한다.
+          (행 의심 스레드를 강제로 재시작하면 중복 스레드가 생겨 더 위험하므로 경보만.)
+        SL/TP는 거래소에 등록돼 있어 모니터가 멈춰도 손절은 작동하지만,
+        부분 익절·급변동 감지가 조용히 멈추는 것을 막기 위한 안전장치다.
+        """
+        try:
+            if not self.monitor.is_alive():
+                self.monitor.restart()
+                self.telegram.send("⚠️ 포지션 모니터 스레드가 중단돼 자동 재시작했습니다.")
+                return
+            stale = self.monitor.seconds_since_beat()
+            if stale > MONITOR_STALE_SEC and (time.time() - self._last_monitor_warn) > 1800:
+                self._last_monitor_warn = time.time()
+                self.telegram.send(
+                    f"⚠️ 포지션 모니터 응답 없음({stale/60:.0f}분) — 수동 확인 권장.\n"
+                    f"(거래소 SL/TP는 유지되나 부분익절·급변동 감지가 멈췄을 수 있음)"
+                )
+        except Exception as e:
+            logger.error(f"모니터 헬스체크 오류: {e}")
+
     def _run_cycle(self):
         now = datetime.now().strftime("%Y-%m-%d %H:%M")
         print(f"\n[{now}] 사이클 시작 {'─'*40}")
+
+        # ── 0. 일일 손실 서킷브레이커 + 모니터 생존 점검 ─────────────
+        self._update_circuit_breaker()
+        self._check_monitor_health()
 
         # ── 1. 매크로 확인 ───────────────────────────────────────────
         macro = self._get_macro_state()
@@ -158,16 +238,20 @@ class LiveFuturesTrader:
               f"[{macro['reason']}]")
 
         # ── 2. 포지션 갱신 ───────────────────────────────────────────
-        open_positions = {p.symbol: p for p in self.broker.get_positions()}
+        # 헤지 모드에선 같은 심볼에 롱·숏이 동시에 존재할 수 있으므로 (symbol, side)로 키를 잡는다.
+        # (예전엔 p.symbol만 키로 써서 같은 심볼의 롱/숏 중 하나가 덮어써지며
+        #  포지션 오판·이중 진입·불타기 방향 오적용 위험이 있었다.)
+        open_positions = {(p.symbol, p.side): p for p in self.broker.get_positions()}
         n_open = len(open_positions)
         # 청산된 종목의 불타기 상태 정리 (다음 진입 시 0부터)
+        open_symbols = {sym for (sym, _side) in open_positions}
         for sym in list(self._pyramid_state):
-            if sym.replace("-USD", "USDT") not in open_positions:
+            if sym.replace("-USD", "USDT") not in open_symbols:
                 self._pyramid_state.pop(sym, None)
         print(f"  포지션: {n_open}개")
-        for sym, p in open_positions.items():
+        for (_sym, _side), p in open_positions.items():
             pnl_sign = "+" if p.unrealized_pnl >= 0 else ""
-            print(f"    {sym} {p.side} x{p.leverage} | "
+            print(f"    {p.symbol} {p.side} x{p.leverage} | "
                   f"진입=${p.avg_price:.4f} | 현재=${p.mark_price:.4f} | "
                   f"PnL={pnl_sign}{p.unrealized_pnl:.2f}USDT")
 
@@ -212,10 +296,15 @@ class LiveFuturesTrader:
                 "reason": msig.reason,
             }
         except Exception as e:
-            logger.warning(f"매크로 조회 실패: {e}")
+            # fail-closed: 리스크 게이트인 매크로를 못 읽으면 신규 진입을 '보류'한다.
+            # (전엔 allow_long/short=True로 fail-open이라, 매크로 API가 죽으면 위험장에서도
+            #  진입이 열렸다. 기존 포지션은 거래소 SL/TP가 지키므로 신규만 막으면 된다.
+            #  다음 사이클에 매크로가 복구되면 자동으로 다시 진입이 허용된다.)
+            logger.warning(f"매크로 조회 실패 → 신규 진입 보류(fail-closed): {e}")
             return {
                 "fg_value": 50, "fg_class": "N/A", "vix": 20,
-                "modifier": 1.0, "allow_long": True, "allow_short": True, "reason": "기본값",
+                "modifier": 0.0, "allow_long": False, "allow_short": False,
+                "reason": "매크로 조회 실패(보수적 차단)",
             }
 
     def _notify_block_once(self, symbol: str, direction: str, reason: str):
@@ -235,10 +324,10 @@ class LiveFuturesTrader:
 
         레버리지 선물이라 보수적으로: 추가분은 현재 수량의 일부(pyramid_add_fraction)만,
         종목당 증거금 비중 상한(pyramid_max_margin_pct) 내에서만 더한다.
-          · 손절선: 추가하면 거래소 평단이 올라가고, 모니터(_ratchet_stop)가 '새 평단'
-                    기준 본전(BE) 락 + ATR 트레일링으로 자동 상향 → 원물량 이익 보호
-          · 익절선: 추가 직후 새 평단 기준(평단 + 4×ATR)으로 재설정
-          · 최소 익절(보장) 라인: 본전 락이 새 평단 기준이라, 손절돼도 전체가 ≥본전
+          · 손절선: 추가 직후 '새 평단 − 1ATR'(롱)/'+ 1ATR'(숏)로 직접 끌어올린다.
+                    위로만(보호 방향) 이동하고, 즉시 손절될 위치면 보류한다.
+                    (이익 래칫 모니터가 꺼져 있어도 늘어난 물량이 방어된다.)
+          · 익절선: 추가 직후 새 평단 기준(평단 + 8×ATR)으로 재설정
         """
         if pos is None or atr <= 0:
             return
@@ -292,17 +381,36 @@ class LiveFuturesTrader:
         state["last_add_price"] = price
         print(f"  {symbol}: 🔺 불타기 {state['adds']}차 추가 | +{add_notional:.1f} USDT @ ${price:.4f}")
 
-        # 새 평단 기준 익절선 재설정 (손절선은 포지션 모니터가 자동 상향)
+        # 새 평단 기준으로 익절선·손절선 재설정.
+        # 불타기로 수량이 늘면 손실 한 방도 커지므로, 손절선을 새 평단 기준으로 끌어올려
+        # 늘어난 물량을 방어한다. (이익 래칫 모니터가 꺼져 있어도 SL이 따라간다.)
         time.sleep(1)
         newpos = next((p for p in self.broker.get_positions(symbol) if p.side == pos.side), None)
         if newpos:
             new_tp = self.lm.calculate_take_profit(newpos.avg_price, atr, side_str)
             self.broker.update_take_profit(symbol, side_str, new_tp)
+
+            # 손절선: 새 평단 − 1ATR(롱) / + 1ATR(숏). 위로만(보호 방향으로만) 이동시키고,
+            # 즉시 손절될 위치(현재가 너머)면 보류한다.
+            new_sl   = self.lm.calculate_stop_loss(newpos.avg_price, atr, side_str)
+            cur_sl   = newpos.stop_loss if (newpos.stop_loss and newpos.stop_loss > 0) else None
+            mark     = newpos.mark_price or price
+            safe     = (new_sl < mark) if long else (new_sl > mark)
+            improves = cur_sl is None or (new_sl > cur_sl if long else new_sl < cur_sl)
+            sl_line  = "손절 유지(개선폭 없음)"
+            if safe and improves:
+                if self.broker.update_stop_loss(symbol, side_str, new_sl):
+                    sl_line = f"손절 → ${new_sl:,.4f} (새 평단 기준 상향)"
+                else:
+                    sl_line = "손절 이동 실패 — 수동 확인 필요"
+            elif not safe:
+                sl_line = "손절 이동 보류(현재가 근접)"
+
             self.telegram.send(
                 f"🔺 <b>불타기 추가 ({state['adds']}차)</b>  {symbol} {pos.side}\n"
                 f"추가 명목 {add_notional:.1f} USDT @ ${price:,.4f}\n"
                 f"새 평단 ${newpos.avg_price:,.4f}  (수량 {newpos.size})\n"
-                f"익절 → ${new_tp:,.4f}  ·  손절은 새 평단 기준 자동 상향"
+                f"익절 → ${new_tp:,.4f}  ·  {sl_line}"
             )
 
     def _process_symbol(self, symbol: str, open_positions: dict, macro: dict):
@@ -330,17 +438,23 @@ class LiveFuturesTrader:
             self._clear_block(symbol, "숏")
             return
 
+        # 일일 손실 서킷브레이커 발동 시: 신규 진입·불타기 모두 차단.
+        # (기존 포지션의 청산은 거래소 SL/TP·모니터가 계속 처리하므로 여기서만 막으면 된다.)
+        if self._halted:
+            print(f"  {symbol}: 일일 손실 한도 초과 → 신규 진입/추가 차단")
+            return
+
         bybit_sym = symbol.replace("-USD", "USDT")
-        has_long  = any(p.side == "Buy"  and p.symbol == bybit_sym for p in open_positions.values())
-        has_short = any(p.side == "Sell" and p.symbol == bybit_sym for p in open_positions.values())
+        has_long  = (bybit_sym, "Buy")  in open_positions
+        has_short = (bybit_sym, "Sell") in open_positions
         direction = "롱" if signal == 1 else "숏"
 
-        # 중복 포지션: 신규 진입 대신 불타기(피라미딩) 시도
+        # 중복 포지션: 신규 진입 대신 불타기(피라미딩) 시도 (방향별 포지션을 정확히 전달)
         if signal == 1 and has_long:
-            self._try_pyramid(open_positions.get(bybit_sym), atr, macro)
+            self._try_pyramid(open_positions.get((bybit_sym, "Buy")), atr, macro)
             return
         if signal == -1 and has_short:
-            self._try_pyramid(open_positions.get(bybit_sym), atr, macro)
+            self._try_pyramid(open_positions.get((bybit_sym, "Sell")), atr, macro)
             return
 
         # 최대 포지션 체크
@@ -385,6 +499,22 @@ class LiveFuturesTrader:
         stop_loss   = self.lm.calculate_stop_loss(price, atr, side_str)
         take_profit = self.lm.calculate_take_profit(price, atr, side_str)
         sl_dist_pct = abs(price - stop_loss) / price
+
+        # ── 청산가 안전 점검 ─────────────────────────────────────────
+        # SL이 강제청산가에 너무 가까우면(버퍼 15% 미만) 레버리지를 한 단계씩 낮춰
+        # 청산가를 진입가에서 멀린다(SL은 ATR 기준이라 레버리지와 무관하게 고정).
+        # 최저 레버리지(1x)에서도 안전거리가 안 나오면 그 거래는 건너뛴다.
+        while leverage > self.lm.MIN_LEVERAGE:
+            liq = self.lm.estimate_liquidation_price(price, leverage, side_str)
+            if self.lm.liquidation_safe(price, stop_loss, liq):
+                break
+            leverage -= 1
+        liq = self.lm.estimate_liquidation_price(price, leverage, side_str)
+        if not self.lm.liquidation_safe(price, stop_loss, liq):
+            reason = "청산가 안전거리 미달 (SL이 강제청산가에 근접)"
+            print(f"  {symbol}: {direction} 신호 → {reason}")
+            self._notify_block_once(symbol, direction, reason)
+            return
 
         margin = self.lm.calculate_margin(
             portfolio_value=balance,

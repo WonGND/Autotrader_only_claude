@@ -14,3 +14,8 @@ python-dotenv>=1.0.0
 requests>=2.31.0
 aiofiles>=23.2.0
 pytz>=2023.3
+
+# ── 코인선물 라이브 봇 필수 의존성 (그동안 시스템 파이썬에 수동 설치돼 누락돼 있던 것) ──
+pybit>=5.6.0          # Bybit v5 API (broker)
+feedparser>=6.0.0     # 뉴스 RSS 수집 (data/news_fetcher 임포트 시 필요)
+anthropic>=0.39.0     # 뉴스 감성 분석 (키 없어도 import 자체는 필요)

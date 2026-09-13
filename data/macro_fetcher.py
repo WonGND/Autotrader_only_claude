@@ -70,10 +70,11 @@ class MacroDataFetcher:
         Returns:
             timestamp, fg_value(0~100), fg_class 컬럼 DataFrame
         """
-        # 캐시 확인
+        # 캐시 확인: 날짜 단위로 비교 (시간 기반 .days는 23.5h도 0일로 계산해 당일 갱신 누락)
+        from datetime import date as _date
         if use_cache and self.FNG_CACHE.exists():
-            age = (datetime.now() - datetime.fromtimestamp(self.FNG_CACHE.stat().st_mtime)).days
-            if age < self.FNG_CACHE_DAYS:
+            cache_date = _date.fromtimestamp(self.FNG_CACHE.stat().st_mtime)
+            if cache_date >= _date.today():
                 df = pd.read_parquet(self.FNG_CACHE)
                 logger.debug(f"Fear & Greed 캐시 사용 ({len(df)}행)")
             else:
@@ -88,12 +89,17 @@ class MacroDataFetcher:
         if df.empty:
             return df
 
-        df = df.set_index("timestamp")
+        full = df.set_index("timestamp")
+        filtered = full.copy()
         if start_date:
-            df = df[df.index >= pd.Timestamp(start_date)]
+            filtered = filtered[filtered.index >= pd.Timestamp(start_date)]
         if end_date:
-            df = df[df.index <= pd.Timestamp(end_date)]
-        return df.reset_index()
+            filtered = filtered[filtered.index <= pd.Timestamp(end_date)]
+        # 날짜 필터 후 빈 결과 → 당일 API 미발행 케이스(자정 직후 등)
+        # 가장 최근 값으로 폴백 (중립 50 폴백보다 실제 데이터가 더 정확)
+        if filtered.empty and not full.empty:
+            filtered = full.tail(1)
+        return filtered.reset_index()
 
     def get_vix(
         self,
@@ -117,7 +123,10 @@ class MacroDataFetcher:
 
         try:
             import yfinance as yf
-            vix = yf.download("^VIX", start=start_date, end=end_date, progress=False, auto_adjust=True)
+            from datetime import datetime as _dt, timedelta as _td
+            # start=end=today 조회는 장 마감 전 항상 빈 데이터 → 최근 7일로 확장해 마지막 거래일 값 사용
+            fetch_start = (_dt.strptime(start_date, "%Y-%m-%d") - _td(days=7)).strftime("%Y-%m-%d")
+            vix = yf.download("^VIX", start=fetch_start, end=end_date, progress=False, auto_adjust=True)
             if vix.empty:
                 logger.warning("VIX 데이터 없음")
                 return pd.DataFrame()
@@ -126,6 +135,8 @@ class MacroDataFetcher:
                 "vix_close": vix["Close"].values.flatten(),
             })
             df = df.dropna().reset_index(drop=True)
+            # 가장 최근 거래일 1행만 캐시 (날짜별 캐시 키 유지)
+            df = df.tail(1).reset_index(drop=True)
             df.to_parquet(cache_file, index=False)
             return df
         except Exception as e:

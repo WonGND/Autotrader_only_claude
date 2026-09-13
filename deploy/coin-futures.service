@@ -1,0 +1,23 @@
+[Unit]
+# Bybit 코인선물 자동매매 봇 — systemd 서비스 (부팅 자동시작 + 죽으면 자동 재시작)
+# 설치 위치: /etc/systemd/system/coin-futures.service
+Description=Bybit Coin Futures Auto-Trader
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# 아래 User / 경로는 실제 배포 환경에 맞게 바꿀 것 (가이드 참고)
+User=botuser
+WorkingDirectory=/home/botuser/autotrader_only_claude
+ExecStart=/home/botuser/autotrader_only_claude/.venv/bin/python -X utf8 run_live_trading.py
+# 비정상 종료 시 15초 후 자동 재시작 (텔레그램봇의 역할을 systemd가 대체)
+Restart=always
+RestartSec=15
+# 로그가 버퍼링 없이 journald로 바로 가도록
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONUTF8=1
+# .env는 봇이 load_dotenv()로 직접 읽으므로 EnvironmentFile 불필요
+
+[Install]
+WantedBy=multi-user.target

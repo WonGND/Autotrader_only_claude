@@ -102,11 +102,16 @@ class LeverageManager:
             return portfolio_value * 0.02  # 폴백: 포트폴리오의 2%
 
         max_loss = portfolio_value * risk_pct
-        margin = max_loss / (leverage * stop_loss_distance_pct)
+        # 리스크 정합 증거금: 손절 도달 시 손실이 정확히 max_loss가 되는 증거금.
+        risk_based = max_loss / (leverage * stop_loss_distance_pct)
         max_margin = portfolio_value * 0.15  # 포트폴리오의 최대 15%
-        margin = min(margin, max_margin)
-        # 최소 증거금: $10 이상
-        margin = max(margin, 10.0)
+        margin = min(risk_based, max_margin)
+        # 최소 증거금($10) 바닥값 — 단, '리스크 한도를 넘지 않는 선에서만' 올린다.
+        # (전엔 무조건 max(margin, 10)이라 소액 계좌에서 거래당 손실이 risk_pct를 초과했다.
+        #  risk_based보다 위로 올리면 손절 손실이 max_loss를 넘으므로 그 위로는 올리지 않는다.
+        #  이 경우 명목이 거래소 최소주문 미만이 되면 주문 단계에서 자연히 걸러진다 =
+        #  '이 계좌엔 이 거래가 너무 큼'을 의미.)
+        margin = min(max(margin, 10.0), risk_based)
         return margin
 
     # ─── 손절/익절가 계산 ──────────────────────────────────────────
@@ -214,6 +219,47 @@ class LeverageManager:
         else:
             # 숏: 손절가 < 청산가 × (1 - buffer)
             return stop_loss < liquidation_price * (1 - buffer)
+
+    # 유지증거금률 추정 (주요 코인 ~0.5%). 청산가 추정에 사용.
+    # backtester/futures_backtester.py의 하드코딩 0.005와 동일하게 맞춘다.
+    MAINT_MARGIN_RATE = 0.005
+
+    def estimate_liquidation_price(
+        self, entry_price: float, leverage: int, side: str
+    ) -> float:
+        """진입가·레버리지로 강제 청산가를 1차 근사한다(격리증거금 기준).
+
+        롱: entry × (1 − 1/lev + 유지증거금률)
+        숏: entry × (1 + 1/lev − 유지증거금률)
+        교차증거금이면 실제 청산가는 더 멀어지므로(여유 큼) 이 추정은 보수적이다
+        (청산가를 진입가에 더 가깝게 잡음 = 안전 점검이 더 엄격).
+        """
+        if leverage <= 0 or entry_price <= 0:
+            return 0.0
+        edge = max(1.0 / leverage - self.MAINT_MARGIN_RATE, 0.0)
+        if side == "long":
+            return entry_price * (1 - edge)
+        return entry_price * (1 + edge)
+
+    def liquidation_safe(
+        self,
+        entry_price: float,
+        stop_loss: float,
+        liquidation_price: float,
+        buffer: float = 0.15,
+    ) -> bool:
+        """손절이 강제청산보다 '충분히 먼저' 발동하는지 거리 기반으로 점검(라이브용).
+
+        손절 거리(|진입−손절|)가 청산 거리(|진입−청산|)의 (1−buffer) 이내여야 안전.
+        즉 청산까지 거리의 최소 buffer(15%)만큼 여유를 두고 손절이 먼저 닿아야 한다.
+        (기존 is_liquidation_safe의 버퍼식은 롱에서 사실상 항상 False가 되는 문제가 있어,
+         라이브에서는 이 거리 기반 함수를 쓴다. 백테스터 재현성을 위해 기존 함수는 유지.)
+        """
+        dist_liq = abs(entry_price - liquidation_price)
+        dist_sl  = abs(entry_price - stop_loss)
+        if dist_liq <= 0:
+            return False
+        return dist_sl <= dist_liq * (1 - buffer)
 
     def calculate_stop_loss_distance_pct(
         self, entry_price: float, stop_loss: float
