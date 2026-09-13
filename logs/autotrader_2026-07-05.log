@@ -1,0 +1,623 @@
+2026-07-05 22:23:03 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +512ms — 보정 오프셋 -488ms 적용
+2026-07-05 22:23:03 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-07-05 22:23:03 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-07-05 22:23:03 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-07-05 22:23:05 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=181.47 USDT | 총자산=181.34 USDT
+2026-07-05 22:23:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-07-05 22:23:09 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-05 22:23:09 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:10 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:10 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:10 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:10 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:11 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:11 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:11 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-05 22:23:26 | [93mWARNING[0m | [94mutils.telegram_notifier[0m | 텔레그램 오류: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=10)
+2026-07-05 22:26:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +403ms — 보정 오프셋 -597ms 적용
+2026-07-05 22:29:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +401ms — 보정 오프셋 -599ms 적용
+2026-07-05 22:32:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +400ms — 보정 오프셋 -600ms 적용
+2026-07-05 22:35:08 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +397ms — 보정 오프셋 -603ms 적용
+2026-07-05 22:38:08 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +395ms — 보정 오프셋 -605ms 적용
+2026-07-05 22:41:08 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +392ms — 보정 오프셋 -608ms 적용
+2026-07-05 22:44:09 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +390ms — 보정 오프셋 -610ms 적용
+2026-07-05 22:47:09 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +386ms — 보정 오프셋 -614ms 적용
+2026-07-05 22:50:09 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +386ms — 보정 오프셋 -614ms 적용
+2026-07-05 22:53:10 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +383ms — 보정 오프셋 -617ms 적용
+2026-07-05 22:53:12 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-05 22:53:13 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-05 22:56:10 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +382ms — 보정 오프셋 -618ms 적용
+2026-07-05 22:59:10 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +379ms — 보정 오프셋 -621ms 적용
+2026-07-05 23:02:11 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +376ms — 보정 오프셋 -624ms 적용
+2026-07-05 23:05:11 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +375ms — 보정 오프셋 -625ms 적용
+2026-07-05 23:08:11 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +373ms — 보정 오프셋 -627ms 적용
+2026-07-05 23:11:12 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +370ms — 보정 오프셋 -630ms 적용
+2026-07-05 23:14:12 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +368ms — 보정 오프셋 -632ms 적용
+2026-07-05 23:17:12 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +367ms — 보정 오프셋 -633ms 적용
+2026-07-05 23:20:13 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +364ms — 보정 오프셋 -636ms 적용
+2026-07-05 23:23:13 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +363ms — 보정 오프셋 -637ms 적용
+2026-07-05 23:23:14 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-05 23:23:14 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-05 23:26:13 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +356ms — 보정 오프셋 -644ms 적용
+2026-07-05 23:29:14 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +357ms — 보정 오프셋 -643ms 적용
+2026-07-05 23:32:14 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +356ms — 보정 오프셋 -644ms 적용
+2026-07-05 23:35:14 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +354ms — 보정 오프셋 -646ms 적용
+2026-07-05 23:38:15 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +352ms — 보정 오프셋 -648ms 적용
+2026-07-05 23:41:15 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +350ms — 보정 오프셋 -650ms 적용
+2026-07-05 23:44:15 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +347ms — 보정 오프셋 -653ms 적용
+2026-07-05 23:47:16 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +216ms — 보정 오프셋 -784ms 적용
+2026-07-05 23:50:16 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +343ms — 보정 오프셋 -657ms 적용
+2026-07-05 23:53:15 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-05 23:53:16 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +341ms — 보정 오프셋 -659ms 적용
+2026-07-05 23:56:17 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +338ms — 보정 오프셋 -662ms 적용
+2026-07-05 23:59:17 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +334ms — 보정 오프셋 -666ms 적용
+2026-07-06 00:02:17 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +334ms — 보정 오프셋 -666ms 적용
+2026-07-06 00:05:18 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +333ms — 보정 오프셋 -667ms 적용
+2026-07-06 00:08:18 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +331ms — 보정 오프셋 -669ms 적용
+2026-07-06 00:11:18 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +329ms — 보정 오프셋 -671ms 적용
+2026-07-06 00:14:19 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +326ms — 보정 오프셋 -674ms 적용
+2026-07-06 00:17:19 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +324ms — 보정 오프셋 -676ms 적용
+2026-07-06 00:20:19 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +322ms — 보정 오프셋 -678ms 적용
+2026-07-06 00:23:18 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 00:23:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:19 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:19 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:20 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +320ms — 보정 오프셋 -680ms 적용
+2026-07-06 00:23:20 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:20 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:20 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:21 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:21 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 00:23:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 00:26:20 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +319ms — 보정 오프셋 -681ms 적용
+2026-07-06 00:29:20 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +317ms — 보정 오프셋 -683ms 적용
+2026-07-06 00:32:21 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +315ms — 보정 오프셋 -685ms 적용
+2026-07-06 00:35:21 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +312ms — 보정 오프셋 -688ms 적용
+2026-07-06 00:38:21 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +309ms — 보정 오프셋 -691ms 적용
+2026-07-06 00:41:22 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +307ms — 보정 오프셋 -693ms 적용
+2026-07-06 00:44:22 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +305ms — 보정 오프셋 -695ms 적용
+2026-07-06 00:47:22 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +303ms — 보정 오프셋 -697ms 적용
+2026-07-06 00:50:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +301ms — 보정 오프셋 -699ms 적용
+2026-07-06 00:53:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +299ms — 보정 오프셋 -701ms 적용
+2026-07-06 00:53:24 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 00:53:25 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:25 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:25 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:25 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:25 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:26 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:26 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:26 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:26 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 00:53:26 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 00:56:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +295ms — 보정 오프셋 -705ms 적용
+2026-07-06 00:59:24 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +293ms — 보정 오프셋 -707ms 적용
+2026-07-06 01:02:24 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +290ms — 보정 오프셋 -710ms 적용
+2026-07-06 01:05:24 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +289ms — 보정 오프셋 -711ms 적용
+2026-07-06 01:08:25 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +286ms — 보정 오프셋 -714ms 적용
+2026-07-06 01:11:25 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +284ms — 보정 오프셋 -716ms 적용
+2026-07-06 01:14:25 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +281ms — 보정 오프셋 -719ms 적용
+2026-07-06 01:17:25 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +278ms — 보정 오프셋 -722ms 적용
+2026-07-06 01:20:26 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +277ms — 보정 오프셋 -723ms 적용
+2026-07-06 01:23:26 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +271ms — 보정 오프셋 -729ms 적용
+2026-07-06 01:23:30 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 01:23:30 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:30 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:31 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:31 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:31 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:31 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:31 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:32 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:32 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 01:23:32 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 01:26:27 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +271ms — 보정 오프셋 -729ms 적용
+2026-07-06 01:29:27 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +269ms — 보정 오프셋 -731ms 적용
+2026-07-06 01:32:27 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +267ms — 보정 오프셋 -733ms 적용
+2026-07-06 01:35:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +263ms — 보정 오프셋 -737ms 적용
+2026-07-06 01:38:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +261ms — 보정 오프셋 -739ms 적용
+2026-07-06 01:41:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +259ms — 보정 오프셋 -741ms 적용
+2026-07-06 01:44:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +257ms — 보정 오프셋 -743ms 적용
+2026-07-06 01:47:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +254ms — 보정 오프셋 -746ms 적용
+2026-07-06 01:50:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +252ms — 보정 오프셋 -748ms 적용
+2026-07-06 01:53:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +249ms — 보정 오프셋 -751ms 적용
+2026-07-06 01:53:36 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 01:53:37 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:37 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:37 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:37 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:37 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:38 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:38 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:38 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:38 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 01:53:38 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 01:56:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +245ms — 보정 오프셋 -755ms 적용
+2026-07-06 01:59:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +244ms — 보정 오프셋 -756ms 적용
+2026-07-06 02:02:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +242ms — 보정 오프셋 -758ms 적용
+2026-07-06 02:05:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +238ms — 보정 오프셋 -762ms 적용
+2026-07-06 02:08:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +237ms — 보정 오프셋 -763ms 적용
+2026-07-06 02:11:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +234ms — 보정 오프셋 -766ms 적용
+2026-07-06 02:14:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +232ms — 보정 오프셋 -768ms 적용
+2026-07-06 02:17:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +229ms — 보정 오프셋 -771ms 적용
+2026-07-06 02:20:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +227ms — 보정 오프셋 -773ms 적용
+2026-07-06 02:23:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +224ms — 보정 오프셋 -776ms 적용
+2026-07-06 02:23:42 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 02:23:43 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:43 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:43 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:43 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:43 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:44 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:44 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:44 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 02:23:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 02:26:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +221ms — 보정 오프셋 -779ms 적용
+2026-07-06 02:29:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +218ms — 보정 오프셋 -782ms 적용
+2026-07-06 02:32:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +216ms — 보정 오프셋 -784ms 적용
+2026-07-06 02:35:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +213ms — 보정 오프셋 -787ms 적용
+2026-07-06 02:38:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +211ms — 보정 오프셋 -789ms 적용
+2026-07-06 02:41:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +208ms — 보정 오프셋 -792ms 적용
+2026-07-06 02:44:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +205ms — 보정 오프셋 -795ms 적용
+2026-07-06 02:47:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +203ms — 보정 오프셋 -797ms 적용
+2026-07-06 02:50:36 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +204ms — 보정 오프셋 -796ms 적용
+2026-07-06 02:53:48 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 02:53:49 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:49 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:49 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:49 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:49 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:50 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:50 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:50 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:50 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 02:53:50 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 03:23:55 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:55 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:56 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:56 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:56 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 03:23:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:00 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 03:54:01 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:01 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:01 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:01 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:01 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:02 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:02 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:02 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:02 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 03:54:02 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:06 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 04:24:07 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:07 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:07 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:07 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:07 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:08 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:08 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:08 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:08 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 04:24:08 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:12 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 04:54:13 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:13 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:13 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:13 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:13 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:14 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:14 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:14 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:14 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 04:54:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:18 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 05:24:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:19 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:19 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:20 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:20 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:20 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:20 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:20 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 05:24:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:25 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 05:54:25 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:26 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:26 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:26 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:26 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:26 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:27 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:27 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:27 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 05:54:27 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:31 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 06:24:32 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:32 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:32 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:32 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 06:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:38 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 06:54:38 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:38 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:38 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:40 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 06:54:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:43 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 07:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:46 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 07:24:46 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:50 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 07:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:51 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:51 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:51 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:51 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:52 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 07:54:52 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:55 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 08:24:56 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:56 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:56 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:56 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:57 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:57 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:57 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:57 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:57 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 08:24:57 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:01 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 08:55:02 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:02 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:02 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:02 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:03 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:03 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:03 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:03 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:03 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-06 08:55:03 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-06 09:25:07 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 09:25:08 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:08 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:08 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:08 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:09 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:09 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:09 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:09 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:09 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 09:25:09 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:13 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 09:55:14 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:14 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:14 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:15 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:15 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:15 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:15 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:16 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 09:55:16 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 10:25:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 10:42:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -202ms — 보정 오프셋 -1202ms 적용
+2026-07-06 10:45:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -205ms — 보정 오프셋 -1205ms 적용
+2026-07-06 10:48:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -206ms — 보정 오프셋 -1206ms 적용
+2026-07-06 10:51:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -210ms — 보정 오프셋 -1210ms 적용
+2026-07-06 10:54:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -211ms — 보정 오프셋 -1211ms 적용
+2026-07-06 10:55:24 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 10:55:24 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 10:57:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -213ms — 보정 오프셋 -1213ms 적용
+2026-07-06 11:00:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -216ms — 보정 오프셋 -1216ms 적용
+2026-07-06 11:03:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -219ms — 보정 오프셋 -1219ms 적용
+2026-07-06 11:06:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -222ms — 보정 오프셋 -1222ms 적용
+2026-07-06 11:09:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -224ms — 보정 오프셋 -1224ms 적용
+2026-07-06 11:12:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -228ms — 보정 오프셋 -1228ms 적용
+2026-07-06 11:15:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -230ms — 보정 오프셋 -1230ms 적용
+2026-07-06 11:18:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -233ms — 보정 오프셋 -1233ms 적용
+2026-07-06 11:21:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -235ms — 보정 오프셋 -1235ms 적용
+2026-07-06 11:24:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -237ms — 보정 오프셋 -1237ms 적용
+2026-07-06 11:25:28 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 11:25:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 11:27:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -241ms — 보정 오프셋 -1241ms 적용
+2026-07-06 11:30:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -243ms — 보정 오프셋 -1243ms 적용
+2026-07-06 11:33:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -244ms — 보정 오프셋 -1244ms 적용
+2026-07-06 11:36:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -248ms — 보정 오프셋 -1248ms 적용
+2026-07-06 11:39:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -251ms — 보정 오프셋 -1251ms 적용
+2026-07-06 11:42:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -254ms — 보정 오프셋 -1254ms 적용
+2026-07-06 11:45:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -255ms — 보정 오프셋 -1255ms 적용
+2026-07-06 11:48:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -257ms — 보정 오프셋 -1257ms 적용
+2026-07-06 11:51:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -262ms — 보정 오프셋 -1262ms 적용
+2026-07-06 11:54:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -264ms — 보정 오프셋 -1264ms 적용
+2026-07-06 11:55:32 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 11:55:32 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 11:57:36 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -265ms — 보정 오프셋 -1265ms 적용
+2026-07-06 12:00:36 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -268ms — 보정 오프셋 -1268ms 적용
+2026-07-06 12:03:36 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -271ms — 보정 오프셋 -1271ms 적용
+2026-07-06 12:06:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -273ms — 보정 오프셋 -1273ms 적용
+2026-07-06 12:09:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -276ms — 보정 오프셋 -1276ms 적용
+2026-07-06 12:12:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -279ms — 보정 오프셋 -1279ms 적용
+2026-07-06 12:15:38 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -281ms — 보정 오프셋 -1281ms 적용
+2026-07-06 12:18:38 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -284ms — 보정 오프셋 -1284ms 적용
+2026-07-06 12:21:38 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -286ms — 보정 오프셋 -1286ms 적용
+2026-07-06 12:24:39 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -289ms — 보정 오프셋 -1289ms 적용
+2026-07-06 12:25:36 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 12:25:36 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 12:27:39 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -292ms — 보정 오프셋 -1292ms 적용
+2026-07-06 12:30:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -294ms — 보정 오프셋 -1294ms 적용
+2026-07-06 12:33:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -296ms — 보정 오프셋 -1296ms 적용
+2026-07-06 12:36:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -300ms — 보정 오프셋 -1300ms 적용
+2026-07-06 12:39:41 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -301ms — 보정 오프셋 -1301ms 적용
+2026-07-06 12:42:41 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -305ms — 보정 오프셋 -1305ms 적용
+2026-07-06 12:45:41 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -307ms — 보정 오프셋 -1307ms 적용
+2026-07-06 12:48:42 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -310ms — 보정 오프셋 -1310ms 적용
+2026-07-06 12:51:42 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -246ms — 보정 오프셋 -1246ms 적용
+2026-07-06 12:54:42 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -317ms — 보정 오프셋 -1317ms 적용
+2026-07-06 12:55:40 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 12:55:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 12:57:43 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -316ms — 보정 오프셋 -1316ms 적용
+2026-07-06 13:00:43 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -320ms — 보정 오프셋 -1320ms 적용
+2026-07-06 13:03:43 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -321ms — 보정 오프셋 -1321ms 적용
+2026-07-06 13:06:44 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -324ms — 보정 오프셋 -1324ms 적용
+2026-07-06 13:09:44 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -327ms — 보정 오프셋 -1327ms 적용
+2026-07-06 13:12:44 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -331ms — 보정 오프셋 -1331ms 적용
+2026-07-06 13:15:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -332ms — 보정 오프셋 -1332ms 적용
+2026-07-06 13:18:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -335ms — 보정 오프셋 -1335ms 적용
+2026-07-06 13:21:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -338ms — 보정 오프셋 -1338ms 적용
+2026-07-06 13:24:46 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -341ms — 보정 오프셋 -1341ms 적용
+2026-07-06 13:25:45 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 13:25:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 13:27:46 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -343ms — 보정 오프셋 -1343ms 적용
+2026-07-06 13:30:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -345ms — 보정 오프셋 -1345ms 적용
+2026-07-06 13:33:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -348ms — 보정 오프셋 -1348ms 적용
+2026-07-06 13:36:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -351ms — 보정 오프셋 -1351ms 적용
+2026-07-06 13:39:48 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -352ms — 보정 오프셋 -1352ms 적용
+2026-07-06 13:42:48 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -357ms — 보정 오프셋 -1357ms 적용
+2026-07-06 13:45:48 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -358ms — 보정 오프셋 -1358ms 적용
+2026-07-06 13:48:49 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -361ms — 보정 오프셋 -1361ms 적용
+2026-07-06 13:51:49 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -363ms — 보정 오프셋 -1363ms 적용
+2026-07-06 13:54:49 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -365ms — 보정 오프셋 -1365ms 적용
+2026-07-06 13:55:49 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 13:55:49 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 13:57:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -368ms — 보정 오프셋 -1368ms 적용
+2026-07-06 14:00:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -370ms — 보정 오프셋 -1370ms 적용
+2026-07-06 14:03:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -374ms — 보정 오프셋 -1374ms 적용
+2026-07-06 14:06:51 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -376ms — 보정 오프셋 -1376ms 적용
+2026-07-06 14:09:51 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -379ms — 보정 오프셋 -1379ms 적용
+2026-07-06 14:12:51 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -379ms — 보정 오프셋 -1379ms 적용
+2026-07-06 14:15:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -384ms — 보정 오프셋 -1384ms 적용
+2026-07-06 14:18:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -387ms — 보정 오프셋 -1387ms 적용
+2026-07-06 14:21:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -387ms — 보정 오프셋 -1387ms 적용
+2026-07-06 14:24:53 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -390ms — 보정 오프셋 -1390ms 적용
+2026-07-06 14:25:51 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 14:25:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 14:27:53 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -394ms — 보정 오프셋 -1394ms 적용
+2026-07-06 14:30:53 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -396ms — 보정 오프셋 -1396ms 적용
+2026-07-06 14:33:54 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -400ms — 보정 오프셋 -1400ms 적용
+2026-07-06 14:36:54 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -404ms — 보정 오프셋 -1404ms 적용
+2026-07-06 14:39:54 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -405ms — 보정 오프셋 -1405ms 적용
+2026-07-06 14:42:55 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -408ms — 보정 오프셋 -1408ms 적용
+2026-07-06 14:45:55 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -410ms — 보정 오프셋 -1410ms 적용
+2026-07-06 14:48:55 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -412ms — 보정 오프셋 -1412ms 적용
+2026-07-06 14:51:56 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -415ms — 보정 오프셋 -1415ms 적용
+2026-07-06 14:54:56 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -418ms — 보정 오프셋 -1418ms 적용
+2026-07-06 14:55:53 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 14:55:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 14:57:56 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -419ms — 보정 오프셋 -1419ms 적용
+2026-07-06 15:00:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -423ms — 보정 오프셋 -1423ms 적용
+2026-07-06 15:03:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -424ms — 보정 오프셋 -1424ms 적용
+2026-07-06 15:06:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -428ms — 보정 오프셋 -1428ms 적용
+2026-07-06 15:09:58 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -429ms — 보정 오프셋 -1429ms 적용
+2026-07-06 15:12:58 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -433ms — 보정 오프셋 -1433ms 적용
+2026-07-06 15:15:58 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -434ms — 보정 오프셋 -1434ms 적용
+2026-07-06 15:18:59 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -438ms — 보정 오프셋 -1438ms 적용
+2026-07-06 15:21:59 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -439ms — 보정 오프셋 -1439ms 적용
+2026-07-06 15:24:59 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -442ms — 보정 오프셋 -1442ms 적용
+2026-07-06 15:25:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 15:25:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 15:28:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -444ms — 보정 오프셋 -1444ms 적용
+2026-07-06 15:31:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -448ms — 보정 오프셋 -1448ms 적용
+2026-07-06 15:34:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -450ms — 보정 오프셋 -1450ms 적용
+2026-07-06 15:37:01 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -454ms — 보정 오프셋 -1454ms 적용
+2026-07-06 15:40:01 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -455ms — 보정 오프셋 -1455ms 적용
+2026-07-06 15:43:01 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -459ms — 보정 오프셋 -1459ms 적용
+2026-07-06 15:46:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -462ms — 보정 오프셋 -1462ms 적용
+2026-07-06 15:49:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -464ms — 보정 오프셋 -1464ms 적용
+2026-07-06 15:52:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -466ms — 보정 오프셋 -1466ms 적용
+2026-07-06 15:55:03 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -468ms — 보정 오프셋 -1468ms 적용
+2026-07-06 15:55:56 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 15:55:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 15:58:03 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -471ms — 보정 오프셋 -1471ms 적용
+2026-07-06 16:01:03 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -474ms — 보정 오프셋 -1474ms 적용
+2026-07-06 16:04:04 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -477ms — 보정 오프셋 -1477ms 적용
+2026-07-06 16:07:04 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -479ms — 보정 오프셋 -1479ms 적용
+2026-07-06 16:10:04 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -481ms — 보정 오프셋 -1481ms 적용
+2026-07-06 16:13:05 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -484ms — 보정 오프셋 -1484ms 적용
+2026-07-06 16:16:05 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -485ms — 보정 오프셋 -1485ms 적용
+2026-07-06 16:19:05 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -489ms — 보정 오프셋 -1489ms 적용
+2026-07-06 16:22:06 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -489ms — 보정 오프셋 -1489ms 적용
+2026-07-06 16:25:06 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -494ms — 보정 오프셋 -1494ms 적용
+2026-07-06 16:25:57 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-06 16:25:57 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-06 16:28:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -498ms — 보정 오프셋 -1498ms 적용
+2026-07-06 16:31:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -499ms — 보정 오프셋 -1499ms 적용
+2026-07-06 16:34:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -501ms — 보정 오프셋 -1501ms 적용
+2026-07-06 16:37:08 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -505ms — 보정 오프셋 -1505ms 적용
+2026-07-06 16:40:08 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -508ms — 보정 오프셋 -1508ms 적용

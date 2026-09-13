@@ -1,0 +1,73 @@
+
+============================================================
+  Bybit 선물 자동매매 시스템
+============================================================
+[잠금] 단일 인스턴스 잠금 획득 (PID 38032)
+2026-06-14 17:54:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -293ms — generate_timestamp 보정 적용
+2026-06-14 17:54:23 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-14 17:54:23 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-14 17:54:23 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+  텔레그램: 연결 성공
+
+============================================================
+  Bybit 선물 자동매매 [실계좌]
+  종목: BTC-USD, ETH-USD, BNB-USD, SOL-USD, XRP-USD, DOGE-USD, ADA-USD, AVAX-USD, LINK-USD, DOT-USD
+  체크 주기: 1800초
+============================================================
+
+2026-06-14 17:54:25 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=6.84 USDT | 총자산=6.64 USDT
+  잔고:   6.84 USDT
+  총자산: 6.64 USDT
+
+2026-06-14 17:54:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+
+1 Failed download:
+['^VIX']: YFPricesMissingError('possibly delisted; no price data found  (1d 2026-06-14 -> 2026-06-14)')
+
+[2026-06-14 17:54] 사이클 시작 ────────────────────────────────────────
+2026-06-14 17:54:27 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+  F&G=50(N/A)  VIX=20.0  배율=1.00x  [매크로 정상]
+  포지션: 1개
+    BNBUSDT Sell x4 | 진입=$604.5000 | 현재=$610.1000 | PnL=-0.22USDT
+2026-06-14 17:54:28 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:28 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:28 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:28 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:28 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:29 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:29 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:29 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\yfinance\scrapers\history.py:173: Pandas4Warning: Timestamp.utcnow is deprecated and will be removed in a future version. Use Timestamp.now('UTC') instead.
+  dt_now = pd.Timestamp.utcnow()
+2026-06-14 17:54:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+
+  잔고: 6.84 USDT | 총자산: 6.64 USDT
+
+  다음 체크: 18:24 (1800초 후)
+2026-06-14 17:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BNBUSDT Sell x4 | PnL=-0.94% | BE=X
+2026-06-14 18:00:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BNBUSDT Sell x4 | PnL=-0.93% | BE=X
+2026-06-14 18:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BNBUSDT Sell x4 | PnL=-0.96% | BE=X
+2026-06-14 18:10:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BNBUSDT Sell x4 | PnL=-1.03% | BE=X
+2026-06-14 18:15:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BNBUSDT Sell x4 | PnL=-0.94% | BE=X
+2026-06-14 18:20:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BNBUSDT Sell x4 | PnL=-0.79% | BE=X

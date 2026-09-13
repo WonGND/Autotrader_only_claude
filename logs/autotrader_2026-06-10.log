@@ -1,0 +1,382 @@
+2026-06-10 02:08:02 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-10 02:08:02 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-10 02:08:02 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-10 02:10:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -1953ms — time_offset 보정 적용
+2026-06-10 02:10:47 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-10 02:10:47 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-10 02:10:47 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-10 02:15:08 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -1470ms — generate_timestamp 보정 적용
+2026-06-10 02:15:08 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-10 02:15:08 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-10 02:15:08 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-10 02:15:10 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.53 USDT | 총자산=7.87 USDT
+2026-06-10 02:15:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-10 02:15:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.78% | BE=X
+2026-06-10 02:15:15 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 02:15:16 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:16 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:16 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:16 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:17 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:17 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:17 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 02:15:17 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 02:20:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.66% | BE=X
+2026-06-10 02:25:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.64% | BE=X
+2026-06-10 02:30:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.71% | BE=X
+2026-06-10 02:35:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.65% | BE=X
+2026-06-10 02:40:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.69% | BE=X
+2026-06-10 02:45:20 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 02:45:21 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:21 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:21 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:22 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:22 | [92mINFO[0m | [94mdata.news_fetcher[0m | ATOM 헤드라인 33건 수집
+2026-06-10 02:45:23 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | ATOM-USD 레버리지 2x 설정 완료
+2026-06-10 02:45:23 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.700000000000001 @ 시장가 (레버리지=2x, SL=1.9278733098327403, TP=1.317837840446026)
+2026-06-10 02:45:23 | [91mERROR[0m | [94m__main__[0m | ATOM-USD 주문 실패: Qty invalid (ErrCode: 10001) (ErrTime: 17:45:23).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.700000000000001", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9279", "slTriggerBy": "MarkPrice", "takeProfit": "1.3178", "tpTriggerBy": "MarkPrice"}.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 281, in _process_symbol
+    order = self.broker.open_short(symbol, usd_notional, leverage, stop_loss, take_profit)
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 316, in open_short
+    return self._open_position("Sell", symbol, usd_notional, leverage,
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               stop_loss_price, take_profit_price)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 366, in _open_position
+    resp = self._session.place_order(**order_params)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_trade.py", line 21, in place_order
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="POST",
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 244, in _submit_request
+    return self._handle_response(response, method, path, req_params, recv_window, retries_attempted)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 474, in _handle_response
+    raise InvalidRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.InvalidRequestError: Qty invalid (ErrCode: 10001) (ErrTime: 17:45:23).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.700000000000001", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9279", "slTriggerBy": "MarkPrice", "takeProfit": "1.3178", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 02:45:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.65% | BE=X
+2026-06-10 02:45:23 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:23 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:24 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 02:45:24 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 02:50:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.67% | BE=X
+2026-06-10 02:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.66% | BE=X
+2026-06-10 03:00:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.61% | BE=X
+2026-06-10 03:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.67% | BE=X
+2026-06-10 03:10:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.62% | BE=X
+2026-06-10 03:15:27 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 03:15:27 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:28 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:28 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:28 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 18:15:28).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 03:15:28 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.700000000000001 @ 시장가 (레버리지=2x, SL=1.9268733098327402, TP=1.3168378404460257)
+2026-06-10 03:15:28 | [91mERROR[0m | [94m__main__[0m | ATOM-USD 주문 실패: Qty invalid (ErrCode: 10001) (ErrTime: 18:15:28).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.700000000000001", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9269", "slTriggerBy": "MarkPrice", "takeProfit": "1.3168", "tpTriggerBy": "MarkPrice"}.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 281, in _process_symbol
+    order = self.broker.open_short(symbol, usd_notional, leverage, stop_loss, take_profit)
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 316, in open_short
+    return self._open_position("Sell", symbol, usd_notional, leverage,
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               stop_loss_price, take_profit_price)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 366, in _open_position
+    resp = self._session.place_order(**order_params)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_trade.py", line 21, in place_order
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="POST",
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 244, in _submit_request
+    return self._handle_response(response, method, path, req_params, recv_window, retries_attempted)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 474, in _handle_response
+    raise InvalidRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.InvalidRequestError: Qty invalid (ErrCode: 10001) (ErrTime: 18:15:28).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.700000000000001", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9269", "slTriggerBy": "MarkPrice", "takeProfit": "1.3168", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 03:15:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:29 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:29 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 03:15:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.62% | BE=X
+2026-06-10 03:20:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.51% | BE=X
+2026-06-10 03:25:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.44% | BE=X
+2026-06-10 03:30:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.45% | BE=X
+2026-06-10 03:35:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.51% | BE=X
+2026-06-10 03:40:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.57% | BE=X
+2026-06-10 03:45:32 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 03:45:33 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:33 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:33 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:33 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 18:45:34).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 03:45:34 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9329733098327402, TP=1.3229378404460257)
+2026-06-10 03:45:34 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 18:45:34).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9330", "slTriggerBy": "MarkPrice", "takeProfit": "1.3229", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 03:45:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:34 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:35 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 03:45:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.69% | BE=X
+2026-06-10 03:50:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.71% | BE=X
+2026-06-10 03:55:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.73% | BE=X
+2026-06-10 04:00:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.62% | BE=X
+2026-06-10 04:05:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.57% | BE=X
+2026-06-10 04:10:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.60% | BE=X
+2026-06-10 04:15:38 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 04:15:39 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:39 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:39 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:39 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 19:15:40).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 04:15:40 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9410733098327402, TP=1.331037840446026)
+2026-06-10 04:15:40 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 19:15:40).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9411", "slTriggerBy": "MarkPrice", "takeProfit": "1.3310", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 04:15:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:40 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:41 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 04:15:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.64% | BE=X
+2026-06-10 04:20:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.62% | BE=X
+2026-06-10 04:25:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.64% | BE=X
+2026-06-10 04:30:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.65% | BE=X
+2026-06-10 04:35:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.62% | BE=X
+2026-06-10 04:40:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.61% | BE=X
+2026-06-10 04:45:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.65% | BE=X
+2026-06-10 04:45:45 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 04:45:46 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:46 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:46 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:47 | [92mINFO[0m | [94mdata.news_fetcher[0m | BNB 헤드라인 19건 수집
+2026-06-10 04:45:48 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 19:45:48).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 04:45:48 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=638.9877208042221, TP=475.7927445220744)
+2026-06-10 04:45:48 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 19:45:48).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "638.99", "slTriggerBy": "MarkPrice", "takeProfit": "475.79", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 04:45:48 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:48 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 19:45:48).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 04:45:48 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9378733098327403, TP=1.3278378404460258)
+2026-06-10 04:45:48 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 19:45:48).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9379", "slTriggerBy": "MarkPrice", "takeProfit": "1.3278", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 04:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 04:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 04:50:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.53% | BE=X
+2026-06-10 04:55:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.52% | BE=X
+2026-06-10 05:00:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.49% | BE=X
+2026-06-10 05:05:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.47% | BE=X
+2026-06-10 05:10:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.45% | BE=X
+2026-06-10 05:15:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.44% | BE=X
+2026-06-10 05:15:52 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 05:15:53 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:53 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:53 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:54 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 20:15:54).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 05:15:54 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=642.3077208042221, TP=479.1127445220743)
+2026-06-10 05:15:54 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 20:15:54).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "642.31", "slTriggerBy": "MarkPrice", "takeProfit": "479.11", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 05:15:54 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:54 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 20:15:54).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 05:15:54 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.5 @ 시장가 (레버리지=2x, SL=1.9534733098327401, TP=1.3434378404460259)
+2026-06-10 05:15:54 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 20:15:54).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.5", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9535", "slTriggerBy": "MarkPrice", "takeProfit": "1.3434", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 05:15:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:55 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 05:15:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 05:20:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.41% | BE=X
+2026-06-10 05:25:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.42% | BE=X
+2026-06-10 05:30:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.34% | BE=X
+2026-06-10 05:35:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.46% | BE=X
+2026-06-10 05:40:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.53% | BE=X
+2026-06-10 05:45:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.52% | BE=X
+2026-06-10 05:45:58 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 05:45:59 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 05:45:59 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 05:45:59 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 05:45:59 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 20:45:59).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 05:45:59 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=641.4077208042221, TP=478.21274452207433)
+2026-06-10 05:46:00 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 20:46:00).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "641.41", "slTriggerBy": "MarkPrice", "takeProfit": "478.21", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 05:46:00 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 05:46:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 20:46:00).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 05:46:00 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.5 @ 시장가 (레버리지=2x, SL=1.9564733098327403, TP=1.346437840446026)
+2026-06-10 05:46:00 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 20:46:00).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.5", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9565", "slTriggerBy": "MarkPrice", "takeProfit": "1.3464", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 05:46:00 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 05:46:01 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 05:46:01 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 05:46:01 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 05:50:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.56% | BE=X
+2026-06-10 05:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.65% | BE=X
+2026-06-10 06:00:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.69% | BE=X
+2026-06-10 06:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.72% | BE=X
+2026-06-10 06:10:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.66% | BE=X
+2026-06-10 06:15:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.64% | BE=X
+2026-06-10 06:16:02 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 06:16:03 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:03 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:03 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:03 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 21:16:03).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 06:16:03 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=640.3277208042222, TP=477.1327445220744)
+2026-06-10 06:16:03 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 21:16:03).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "640.33", "slTriggerBy": "MarkPrice", "takeProfit": "477.13", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 06:16:04 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:04 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 21:16:04).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 06:16:04 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.5 @ 시장가 (레버리지=2x, SL=1.9581733098327403, TP=1.348137840446026)
+2026-06-10 06:16:04 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 21:16:04).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.5", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9582", "slTriggerBy": "MarkPrice", "takeProfit": "1.3481", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 06:16:04 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:04 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:05 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 06:16:05 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 06:20:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.75% | BE=X
+2026-06-10 06:25:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.67% | BE=X
+2026-06-10 06:30:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.79% | BE=X
+2026-06-10 06:35:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.62% | BE=X
+2026-06-10 06:40:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.67% | BE=X
+2026-06-10 06:45:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.66% | BE=X
+2026-06-10 06:46:08 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 06:46:08 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:09 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:09 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:09 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 21:46:09).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 06:46:09 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=638.9277208042221, TP=475.7327445220743)
+2026-06-10 06:46:09 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 21:46:09).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "638.93", "slTriggerBy": "MarkPrice", "takeProfit": "475.73", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 06:46:09 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:10 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 21:46:10).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 06:46:10 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9412733098327402, TP=1.3312378404460259)
+2026-06-10 06:46:10 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 21:46:10).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9413", "slTriggerBy": "MarkPrice", "takeProfit": "1.3312", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 06:46:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:11 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 06:46:11 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 06:50:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.65% | BE=X
+2026-06-10 06:55:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.78% | BE=X
+2026-06-10 07:00:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.80% | BE=X
+2026-06-10 07:05:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.76% | BE=X
+2026-06-10 07:10:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.80% | BE=X
+2026-06-10 07:15:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.82% | BE=X
+2026-06-10 07:16:14 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 07:16:15 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:15 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:15 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:16 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 22:16:16).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 07:16:16 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=639.4977208042221, TP=476.30274452207436)
+2026-06-10 07:16:16 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 22:16:16).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "639.50", "slTriggerBy": "MarkPrice", "takeProfit": "476.30", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 07:16:16 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:16 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 22:16:16).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 07:16:16 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9446733098327402, TP=1.334637840446026)
+2026-06-10 07:16:16 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 22:16:16).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9447", "slTriggerBy": "MarkPrice", "takeProfit": "1.3346", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 07:16:17 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:17 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:17 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 07:16:17 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 07:20:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.77% | BE=X
+2026-06-10 07:25:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.77% | BE=X
+2026-06-10 07:30:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.82% | BE=X
+2026-06-10 07:35:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.79% | BE=X
+2026-06-10 07:40:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.79% | BE=X
+2026-06-10 07:45:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.75% | BE=X
+2026-06-10 07:46:21 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 07:46:22 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:22 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:22 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:22 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 22:46:22).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-10 07:46:22 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=638.7577208042221, TP=475.56274452207435)
+2026-06-10 07:46:23 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 22:46:23).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "638.76", "slTriggerBy": "MarkPrice", "takeProfit": "475.56", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 07:46:23 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 22:46:23).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 07:46:23 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9416733098327403, TP=1.3316378404460258)
+2026-06-10 07:46:23 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 22:46:23).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9417", "slTriggerBy": "MarkPrice", "takeProfit": "1.3316", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 07:46:23 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:24 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:24 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 07:46:24 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 07:50:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.76% | BE=X
+2026-06-10 07:55:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.79% | BE=X
+2026-06-10 08:00:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.82% | BE=X
+2026-06-10 08:05:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.77% | BE=X
+2026-06-10 08:10:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.73% | BE=X
+2026-06-10 08:15:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.77% | BE=X
+2026-06-10 08:16:28 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 08:16:28 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:29 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:29 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:29 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 23:16:29).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 08:16:29 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9430733098327402, TP=1.3330378404460257)
+2026-06-10 08:16:29 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 23:16:29).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9431", "slTriggerBy": "MarkPrice", "takeProfit": "1.3330", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 08:16:30 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:30 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:30 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 08:16:30 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 08:20:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.74% | BE=X
+2026-06-10 08:25:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.73% | BE=X
+2026-06-10 08:30:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.79% | BE=X
+2026-06-10 08:35:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.79% | BE=X
+2026-06-10 08:40:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.84% | BE=X
+2026-06-10 08:45:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.80% | BE=X
+2026-06-10 08:46:33 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-10 08:46:34 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:34 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:34 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:34 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:36 | [92mINFO[0m | [94mdata.news_fetcher[0m | ATOM 헤드라인 38건 수집
+2026-06-10 08:46:36 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 23:46:36).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "2", "sellLeverage": "2"}.
+2026-06-10 08:46:36 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 8.6 @ 시장가 (레버리지=2x, SL=1.9403733098327403, TP=1.3303378404460258)
+2026-06-10 08:46:36 | [93mWARNING[0m | [94m__main__[0m | ATOM-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 23:46:36).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "ATOMUSDT", "side": "Sell", "orderType": "Market", "qty": "8.6", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "1.9404", "slTriggerBy": "MarkPrice", "takeProfit": "1.3303", "tpTriggerBy": "MarkPrice"}.
+2026-06-10 08:46:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:37 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-10 08:46:37 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-10 08:50:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.81% | BE=X
+2026-06-10 08:55:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.74% | BE=X
+2026-06-10 09:00:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.69% | BE=X
+2026-06-10 09:05:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-1.82% | BE=X

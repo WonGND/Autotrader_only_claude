@@ -1,0 +1,124 @@
+2026-06-26 23:42:21 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2455ms — 보정 오프셋 -3455ms 적용
+2026-06-26 23:42:21 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-26 23:42:21 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-26 23:42:21 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-26 23:42:23 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=196.83 USDT | 총자산=188.21 USDT
+2026-06-26 23:42:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-26 23:42:26 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:26 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:26 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:26 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:27 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:27 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:27 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:27 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:28 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-06-26 23:42:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-26 23:45:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2579ms — 보정 오프셋 -3579ms 적용
+2026-06-26 23:45:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-1.59% | BE=X
+2026-06-26 23:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-1.47% | BE=X
+2026-06-26 23:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-1.88% | BE=X
+2026-06-26 23:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.11% | BE=X
+2026-06-26 23:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.31% | BE=X
+2026-06-26 23:48:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2580ms — 보정 오프셋 -3580ms 적용
+2026-06-26 23:50:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.06% | BE=X
+2026-06-26 23:50:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-1.97% | BE=X
+2026-06-26 23:50:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.38% | BE=X
+2026-06-26 23:50:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.44% | BE=X
+2026-06-26 23:50:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.77% | BE=X
+2026-06-26 23:51:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2582ms — 보정 오프셋 -3582ms 적용
+2026-06-26 23:54:41 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2584ms — 보정 오프셋 -3584ms 적용
+2026-06-26 23:55:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-1.59% | BE=X
+2026-06-26 23:55:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-1.62% | BE=X
+2026-06-26 23:55:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.04% | BE=X
+2026-06-26 23:55:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-0.91% | BE=X
+2026-06-26 23:55:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.30% | BE=X
+2026-06-26 23:57:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2586ms — 보정 오프셋 -3586ms 적용
+2026-06-27 00:00:49 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2589ms — 보정 오프셋 -3589ms 적용
+2026-06-27 00:00:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-1.80% | BE=X
+2026-06-27 00:00:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-1.40% | BE=X
+2026-06-27 00:00:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.00% | BE=X
+2026-06-27 00:00:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.19% | BE=X
+2026-06-27 00:00:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.50% | BE=X
+2026-06-27 00:03:53 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2590ms — 보정 오프셋 -3590ms 적용
+2026-06-27 00:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-1.59% | BE=X
+2026-06-27 00:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-1.19% | BE=X
+2026-06-27 00:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-1.76% | BE=X
+2026-06-27 00:05:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.20% | BE=X
+2026-06-27 00:05:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.29% | BE=X
+2026-06-27 00:06:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2594ms — 보정 오프셋 -3594ms 적용
+2026-06-27 00:10:01 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2596ms — 보정 오프셋 -3596ms 적용
+2026-06-27 00:10:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.46% | BE=X
+2026-06-27 00:10:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-2.18% | BE=X
+2026-06-27 00:10:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.52% | BE=X
+2026-06-27 00:10:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.94% | BE=X
+2026-06-27 00:10:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-2.08% | BE=X
+2026-06-27 00:12:31 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-27 00:12:32 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:32 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:32 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:33 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:33 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:33 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:33 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:33 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:34 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-06-27 00:12:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-27 00:13:05 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2597ms — 보정 오프셋 -3597ms 적용
+2026-06-27 00:15:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.05% | BE=X
+2026-06-27 00:15:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-1.69% | BE=X
+2026-06-27 00:15:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-1.95% | BE=X
+2026-06-27 00:15:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.51% | BE=X
+2026-06-27 00:15:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.64% | BE=X
+2026-06-27 00:16:15 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2599ms — 보정 오프셋 -3599ms 적용
+2026-06-27 00:19:19 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2602ms — 보정 오프셋 -3602ms 적용
+2026-06-27 00:20:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.26% | BE=X
+2026-06-27 00:20:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-2.11% | BE=X
+2026-06-27 00:20:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.14% | BE=X
+2026-06-27 00:20:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-1.79% | BE=X
+2026-06-27 00:20:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-1.86% | BE=X
+2026-06-27 00:22:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2603ms — 보정 오프셋 -3603ms 적용
+2026-06-27 00:25:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2605ms — 보정 오프셋 -3605ms 적용
+2026-06-27 00:25:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.78% | BE=X
+2026-06-27 00:25:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-2.95% | BE=X
+2026-06-27 00:25:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.48% | BE=X
+2026-06-27 00:25:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-2.05% | BE=X
+2026-06-27 00:25:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-2.35% | BE=X
+2026-06-27 00:28:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2608ms — 보정 오프셋 -3608ms 적용
+2026-06-27 00:30:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.89% | BE=X
+2026-06-27 00:30:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-3.30% | BE=X
+2026-06-27 00:30:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.45% | BE=X
+2026-06-27 00:30:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-2.23% | BE=X
+2026-06-27 00:30:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-2.50% | BE=X
+2026-06-27 00:31:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2609ms — 보정 오프셋 -3609ms 적용
+2026-06-27 00:34:41 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2612ms — 보정 오프셋 -3612ms 적용
+2026-06-27 00:35:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-2.88% | BE=X
+2026-06-27 00:35:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-3.51% | BE=X
+2026-06-27 00:35:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.53% | BE=X
+2026-06-27 00:35:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-2.12% | BE=X
+2026-06-27 00:35:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-2.50% | BE=X
+2026-06-27 00:37:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2612ms — 보정 오프셋 -3612ms 적용
+2026-06-27 00:40:49 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2616ms — 보정 오프셋 -3616ms 적용
+2026-06-27 00:40:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-3.37% | BE=X
+2026-06-27 00:40:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-4.07% | BE=X
+2026-06-27 00:40:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.97% | BE=X
+2026-06-27 00:40:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-2.67% | BE=X
+2026-06-27 00:40:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-3.01% | BE=X
+2026-06-27 00:42:37 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-27 00:42:38 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:38 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:38 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:38 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:38 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:39 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:39 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:39 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-06-27 00:42:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-27 00:43:53 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2617ms — 보정 오프셋 -3617ms 적용
+2026-06-27 00:45:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=-3.23% | BE=X
+2026-06-27 00:45:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x2 | PnL=-3.65% | BE=X
+2026-06-27 00:45:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x4 | PnL=-2.84% | BE=X
+2026-06-27 00:45:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=-2.43% | BE=X
+2026-06-27 00:45:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOTUSDT Sell x4 | PnL=-2.81% | BE=X
+2026-06-27 00:46:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -2619ms — 보정 오프셋 -3619ms 적용

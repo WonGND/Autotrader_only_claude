@@ -1,0 +1,173 @@
+2026-06-24 23:21:03 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -245ms — 보정 오프셋 -1245ms 적용
+2026-06-24 23:21:03 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-24 23:21:03 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-24 23:21:03 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-24 23:21:05 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=175.29 USDT | 총자산=187.51 USDT
+2026-06-24 23:21:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-24 23:21:06 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:21:06).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:21:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | BE 이동: ADAUSDT short entry=0.1504
+2026-06-24 23:21:07 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-24 23:21:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | BE 이동: XRPUSDT short entry=1.0940
+2026-06-24 23:21:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | BE 이동: BTCUSDT short entry=62225.0000
+2026-06-24 23:21:08 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:08 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:08 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:09 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:09 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:09 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:09 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:10 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:10 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-06-24 23:21:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-24 23:22:09 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:22:09).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:23:10 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:23:10).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:24:10 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -391ms — 보정 오프셋 -1391ms 적용
+2026-06-24 23:24:11 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:24:11).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:25:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.63% | BE=O
+2026-06-24 23:25:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.33% | BE=O
+2026-06-24 23:25:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.19% | BE=O
+2026-06-24 23:25:12 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:25:12).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:25:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.64% | BE=X
+2026-06-24 23:26:16 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:26:16).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:27:16 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -393ms — 보정 오프셋 -1393ms 적용
+2026-06-24 23:27:17 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:27:17).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:28:18 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:28:18).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:29:19 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:29:19).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:30:19 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -395ms — 보정 오프셋 -1395ms 적용
+2026-06-24 23:30:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.61% | BE=O
+2026-06-24 23:30:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.31% | BE=O
+2026-06-24 23:30:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.06% | BE=O
+2026-06-24 23:30:20 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:30:20).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:30:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.55% | BE=X
+2026-06-24 23:31:21 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:31:21).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:32:22 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:32:22).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:33:23 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -398ms — 보정 오프셋 -1398ms 적용
+2026-06-24 23:33:23 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:33:23).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:34:25 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:34:25).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:35:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.61% | BE=O
+2026-06-24 23:35:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.45% | BE=O
+2026-06-24 23:35:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.13% | BE=O
+2026-06-24 23:35:26 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:35:26).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:35:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.37% | BE=X
+2026-06-24 23:36:26 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -399ms — 보정 오프셋 -1399ms 적용
+2026-06-24 23:36:27 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:36:27).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:37:28 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:37:28).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:38:29 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:38:29).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:39:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -401ms — 보정 오프셋 -1401ms 적용
+2026-06-24 23:39:30 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:39:30).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:40:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.77% | BE=O
+2026-06-24 23:40:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.63% | BE=O
+2026-06-24 23:40:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.19% | BE=O
+2026-06-24 23:40:31 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:40:31).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:40:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.59% | BE=X
+2026-06-24 23:41:32 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:41:32).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:42:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -404ms — 보정 오프셋 -1404ms 적용
+2026-06-24 23:42:34 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:42:34).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:43:35 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:43:35).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:44:36 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:44:36).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:45:36 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -406ms — 보정 오프셋 -1406ms 적용
+2026-06-24 23:45:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.73% | BE=O
+2026-06-24 23:45:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.58% | BE=O
+2026-06-24 23:45:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.13% | BE=O
+2026-06-24 23:45:37 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:45:37).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:45:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.38% | BE=X
+2026-06-24 23:46:38 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:46:38).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:47:39 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:47:39).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:48:39 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -409ms — 보정 오프셋 -1409ms 적용
+2026-06-24 23:48:40 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:48:40).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:49:41 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:49:41).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:50:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.74% | BE=O
+2026-06-24 23:50:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.64% | BE=O
+2026-06-24 23:50:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.19% | BE=O
+2026-06-24 23:50:43 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:50:43).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:50:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.37% | BE=X
+2026-06-24 23:51:11 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-24 23:51:43 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -412ms — 보정 오프셋 -1412ms 적용
+2026-06-24 23:51:44 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:51:44).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:52:45 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:52:45).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:53:46 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:53:46).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:54:46 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -335ms — 보정 오프셋 -1335ms 적용
+2026-06-24 23:54:47 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:54:47).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:55:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+2.05% | BE=O
+2026-06-24 23:55:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.93% | BE=O
+2026-06-24 23:55:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.59% | BE=O
+2026-06-24 23:55:48 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:55:48).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:55:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.71% | BE=X
+2026-06-24 23:56:49 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:56:49).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:57:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -414ms — 보정 오프셋 -1414ms 적용
+2026-06-24 23:57:51 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:57:51).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:58:52 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:58:52).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-24 23:59:53 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 14:59:53).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:00:53 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -417ms — 보정 오프셋 -1417ms 적용
+2026-06-25 00:00:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+1.91% | BE=O
+2026-06-25 00:00:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: XRPUSDT Sell x5 | PnL=+1.85% | BE=O
+2026-06-25 00:00:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ADAUSDT Sell x4 | PnL=+3.46% | BE=O
+2026-06-25 00:00:54 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:00:54).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:00:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Sell x4 | PnL=+3.63% | BE=X
+2026-06-25 00:01:56 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:01:56).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:02:57 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:02:57).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:03:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -420ms — 보정 오프셋 -1420ms 적용
+2026-06-25 00:03:58 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:03:58).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:04:59 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:04:59).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:05:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Sell x5 | PnL=+2.08% | BE=O
+2026-06-25 00:06:00 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:06:00).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:07:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -422ms — 보정 오프셋 -1422ms 적용
+2026-06-25 00:07:01 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:07:01).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.
+2026-06-25 00:08:02 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (LINK-USD): not modified (ErrCode: 34040) (ErrTime: 15:08:02).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "LINKUSDT", "stopLoss": "7.771", "slTriggerBy": "MarkPrice", "positionIdx": 2}.

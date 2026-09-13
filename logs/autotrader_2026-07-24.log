@@ -1,0 +1,981 @@
+2026-07-24 00:36:20 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +377ms — 보정 오프셋 -623ms 적용
+2026-07-24 00:36:20 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-07-24 00:36:20 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-07-24 00:36:20 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-07-24 00:36:22 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=148.13 USDT | 총자산=152.82 USDT
+2026-07-24 00:36:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-07-24 00:36:26 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:27 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:27 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:27 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:27 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:27 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:28 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:28 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:28 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 00:36:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 00:39:26 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +330ms — 보정 오프셋 -670ms 적용
+2026-07-24 00:40:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.86% | BE=X
+2026-07-24 00:40:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.90% | BE=X
+2026-07-24 00:40:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.03% | BE=X
+2026-07-24 00:42:29 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +263ms — 보정 오프셋 -737ms 적용
+2026-07-24 00:45:31 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +260ms — 보정 오프셋 -740ms 적용
+2026-07-24 00:45:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.74% | BE=X
+2026-07-24 00:45:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.03% | BE=X
+2026-07-24 00:45:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.87% | BE=X
+2026-07-24 00:48:34 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +257ms — 보정 오프셋 -743ms 적용
+2026-07-24 00:50:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.03% | BE=X
+2026-07-24 00:50:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.91% | BE=X
+2026-07-24 00:50:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.16% | BE=X
+2026-07-24 00:51:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +260ms — 보정 오프셋 -740ms 적용
+2026-07-24 00:54:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +254ms — 보정 오프셋 -746ms 적용
+2026-07-24 00:55:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.04% | BE=X
+2026-07-24 00:55:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.89% | BE=X
+2026-07-24 00:55:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.20% | BE=X
+2026-07-24 00:57:43 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +252ms — 보정 오프셋 -748ms 적용
+2026-07-24 01:00:46 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +253ms — 보정 오프셋 -747ms 적용
+2026-07-24 01:00:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.03% | BE=X
+2026-07-24 01:00:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.01% | BE=X
+2026-07-24 01:00:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.96% | BE=X
+2026-07-24 01:03:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +251ms — 보정 오프셋 -749ms 적용
+2026-07-24 01:05:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.74% | BE=X
+2026-07-24 01:05:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.66% | BE=X
+2026-07-24 01:05:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.10% | BE=X
+2026-07-24 01:06:30 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:30 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:30 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:30 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:31 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:31 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:31 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:31 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:31 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:32 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 01:06:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +248ms — 보정 오프셋 -752ms 적용
+2026-07-24 01:09:54 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +247ms — 보정 오프셋 -753ms 적용
+2026-07-24 01:10:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.75% | BE=X
+2026-07-24 01:10:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.89% | BE=X
+2026-07-24 01:10:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.09% | BE=X
+2026-07-24 01:12:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +246ms — 보정 오프셋 -754ms 적용
+2026-07-24 01:16:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +244ms — 보정 오프셋 -756ms 적용
+2026-07-24 01:19:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +241ms — 보정 오프셋 -759ms 적용
+2026-07-24 01:20:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.63% | BE=X
+2026-07-24 01:20:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.73% | BE=X
+2026-07-24 01:20:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.22% | BE=X
+2026-07-24 01:22:04 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +240ms — 보정 오프셋 -760ms 적용
+2026-07-24 01:25:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +238ms — 보정 오프셋 -762ms 적용
+2026-07-24 01:25:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.76% | BE=X
+2026-07-24 01:25:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.94% | BE=X
+2026-07-24 01:25:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.12% | BE=X
+2026-07-24 01:28:09 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +234ms — 보정 오프셋 -766ms 적용
+2026-07-24 01:30:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.74% | BE=X
+2026-07-24 01:30:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.98% | BE=X
+2026-07-24 01:30:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.16% | BE=X
+2026-07-24 01:31:12 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +235ms — 보정 오프셋 -765ms 적용
+2026-07-24 01:34:15 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +233ms — 보정 오프셋 -767ms 적용
+2026-07-24 01:35:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.64% | BE=X
+2026-07-24 01:35:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.78% | BE=X
+2026-07-24 01:35:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.27% | BE=X
+2026-07-24 01:36:33 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:33 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:33 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:34 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:34 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:34 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:34 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:34 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 01:36:35 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 01:37:17 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +234ms — 보정 오프셋 -766ms 적용
+2026-07-24 01:40:20 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +230ms — 보정 오프셋 -770ms 적용
+2026-07-24 01:40:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.80% | BE=X
+2026-07-24 01:40:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.95% | BE=X
+2026-07-24 01:40:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.20% | BE=X
+2026-07-24 01:43:22 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +228ms — 보정 오프셋 -772ms 적용
+2026-07-24 01:45:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.77% | BE=X
+2026-07-24 01:45:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.00% | BE=X
+2026-07-24 01:45:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.22% | BE=X
+2026-07-24 01:46:25 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +226ms — 보정 오프셋 -774ms 적용
+2026-07-24 01:49:27 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +225ms — 보정 오프셋 -775ms 적용
+2026-07-24 01:50:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.77% | BE=X
+2026-07-24 01:50:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.02% | BE=X
+2026-07-24 01:50:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.27% | BE=X
+2026-07-24 01:52:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +217ms — 보정 오프셋 -783ms 적용
+2026-07-24 01:55:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +221ms — 보정 오프셋 -779ms 적용
+2026-07-24 01:55:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.81% | BE=X
+2026-07-24 01:55:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.04% | BE=X
+2026-07-24 01:55:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.22% | BE=X
+2026-07-24 01:58:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +220ms — 보정 오프셋 -780ms 적용
+2026-07-24 02:00:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.69% | BE=X
+2026-07-24 02:00:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.88% | BE=X
+2026-07-24 02:00:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.25% | BE=X
+2026-07-24 02:01:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +218ms — 보정 오프셋 -782ms 적용
+2026-07-24 02:04:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +216ms — 보정 오프셋 -784ms 적용
+2026-07-24 02:05:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.64% | BE=X
+2026-07-24 02:05:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.82% | BE=X
+2026-07-24 02:05:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.24% | BE=X
+2026-07-24 02:06:36 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:36 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:36 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:37 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:37 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:37 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:37 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:37 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 02:06:38 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 02:07:42 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +216ms — 보정 오프셋 -784ms 적용
+2026-07-24 02:10:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +214ms — 보정 오프셋 -786ms 적용
+2026-07-24 02:10:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.79% | BE=X
+2026-07-24 02:10:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.03% | BE=X
+2026-07-24 02:10:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.18% | BE=X
+2026-07-24 02:13:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +212ms — 보정 오프셋 -788ms 적용
+2026-07-24 02:15:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.75% | BE=X
+2026-07-24 02:15:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.04% | BE=X
+2026-07-24 02:15:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.18% | BE=X
+2026-07-24 02:16:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +211ms — 보정 오프셋 -789ms 적용
+2026-07-24 02:19:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +208ms — 보정 오프셋 -792ms 적용
+2026-07-24 02:20:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.84% | BE=X
+2026-07-24 02:20:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.15% | BE=X
+2026-07-24 02:20:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.16% | BE=X
+2026-07-24 02:22:55 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +207ms — 보정 오프셋 -793ms 적용
+2026-07-24 02:25:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +205ms — 보정 오프셋 -795ms 적용
+2026-07-24 02:25:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.90% | BE=X
+2026-07-24 02:25:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.14% | BE=X
+2026-07-24 02:25:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.12% | BE=X
+2026-07-24 02:29:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +205ms — 보정 오프셋 -795ms 적용
+2026-07-24 02:30:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.89% | BE=X
+2026-07-24 02:30:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.19% | BE=X
+2026-07-24 02:30:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.10% | BE=X
+2026-07-24 02:32:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 +202ms — 보정 오프셋 -798ms 적용
+2026-07-24 02:35:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.91% | BE=X
+2026-07-24 02:35:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.20% | BE=X
+2026-07-24 02:35:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.04% | BE=X
+2026-07-24 02:36:39 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:39 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:39 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:40 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:40 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:40 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:40 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:41 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 02:36:41 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 02:40:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.76% | BE=X
+2026-07-24 02:40:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.07% | BE=X
+2026-07-24 02:40:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.15% | BE=X
+2026-07-24 02:45:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.72% | BE=X
+2026-07-24 02:45:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.04% | BE=X
+2026-07-24 02:45:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.14% | BE=X
+2026-07-24 02:50:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.76% | BE=X
+2026-07-24 02:50:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.07% | BE=X
+2026-07-24 02:50:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.11% | BE=X
+2026-07-24 02:55:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.62% | BE=X
+2026-07-24 02:55:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.90% | BE=X
+2026-07-24 02:55:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.16% | BE=X
+2026-07-24 03:00:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.28% | BE=X
+2026-07-24 03:00:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.67% | BE=X
+2026-07-24 03:00:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.32% | BE=X
+2026-07-24 03:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.17% | BE=X
+2026-07-24 03:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.55% | BE=X
+2026-07-24 03:05:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.33% | BE=X
+2026-07-24 03:06:42 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:42 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:42 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:43 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:43 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:43 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:43 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:43 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:44 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 03:06:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 03:10:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.26% | BE=X
+2026-07-24 03:10:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.61% | BE=X
+2026-07-24 03:10:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.23% | BE=X
+2026-07-24 03:15:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.26% | BE=X
+2026-07-24 03:15:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.71% | BE=X
+2026-07-24 03:15:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.24% | BE=X
+2026-07-24 03:20:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.17% | BE=X
+2026-07-24 03:20:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.63% | BE=X
+2026-07-24 03:20:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.28% | BE=X
+2026-07-24 03:25:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.21% | BE=X
+2026-07-24 03:25:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.69% | BE=X
+2026-07-24 03:25:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.25% | BE=X
+2026-07-24 03:30:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.32% | BE=X
+2026-07-24 03:30:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.83% | BE=X
+2026-07-24 03:30:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.16% | BE=X
+2026-07-24 03:35:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.45% | BE=X
+2026-07-24 03:35:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.96% | BE=X
+2026-07-24 03:35:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.07% | BE=X
+2026-07-24 03:36:45 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:45 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:45 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:46 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:46 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:46 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:46 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:46 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:47 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 03:36:47 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 03:40:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.26% | BE=X
+2026-07-24 03:40:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.72% | BE=X
+2026-07-24 03:40:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.14% | BE=X
+2026-07-24 03:45:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.23% | BE=X
+2026-07-24 03:45:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.76% | BE=X
+2026-07-24 03:45:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.15% | BE=X
+2026-07-24 03:50:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.35% | BE=X
+2026-07-24 03:50:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.83% | BE=X
+2026-07-24 03:50:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.05% | BE=X
+2026-07-24 03:55:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.39% | BE=X
+2026-07-24 03:55:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.84% | BE=X
+2026-07-24 03:55:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.05% | BE=X
+2026-07-24 04:00:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.36% | BE=X
+2026-07-24 04:00:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.89% | BE=X
+2026-07-24 04:00:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.05% | BE=X
+2026-07-24 04:05:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.40% | BE=X
+2026-07-24 04:05:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.92% | BE=X
+2026-07-24 04:05:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.02% | BE=X
+2026-07-24 04:06:48 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:48 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:48 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:49 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:49 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:49 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:49 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:49 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:50 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 04:06:50 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 04:10:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.30% | BE=X
+2026-07-24 04:10:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.84% | BE=X
+2026-07-24 04:10:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.06% | BE=X
+2026-07-24 04:15:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.19% | BE=X
+2026-07-24 04:15:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.73% | BE=X
+2026-07-24 04:15:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.11% | BE=X
+2026-07-24 04:20:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.17% | BE=X
+2026-07-24 04:20:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.73% | BE=X
+2026-07-24 04:20:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.16% | BE=X
+2026-07-24 04:25:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.34% | BE=X
+2026-07-24 04:25:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.90% | BE=X
+2026-07-24 04:25:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.05% | BE=X
+2026-07-24 04:30:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.40% | BE=X
+2026-07-24 04:30:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.96% | BE=X
+2026-07-24 04:30:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.00% | BE=X
+2026-07-24 04:35:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.25% | BE=X
+2026-07-24 04:35:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.85% | BE=X
+2026-07-24 04:35:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.06% | BE=X
+2026-07-24 04:36:51 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:51 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:52 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:52 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:52 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:52 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:53 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:53 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:53 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 04:36:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 04:40:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.16% | BE=X
+2026-07-24 04:40:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.69% | BE=X
+2026-07-24 04:40:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.16% | BE=X
+2026-07-24 04:45:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.05% | BE=X
+2026-07-24 04:45:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.59% | BE=X
+2026-07-24 04:45:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.24% | BE=X
+2026-07-24 04:50:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.88% | BE=X
+2026-07-24 04:50:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.45% | BE=X
+2026-07-24 04:50:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.29% | BE=X
+2026-07-24 04:55:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.87% | BE=X
+2026-07-24 04:55:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.44% | BE=X
+2026-07-24 04:55:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.22% | BE=X
+2026-07-24 05:00:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.06% | BE=X
+2026-07-24 05:00:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.66% | BE=X
+2026-07-24 05:00:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.09% | BE=X
+2026-07-24 05:05:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.29% | BE=X
+2026-07-24 05:05:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.89% | BE=X
+2026-07-24 05:05:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.96% | BE=X
+2026-07-24 05:06:55 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:55 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:56 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:56 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:56 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 05:06:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 05:10:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.46% | BE=X
+2026-07-24 05:10:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.04% | BE=X
+2026-07-24 05:10:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.79% | BE=X
+2026-07-24 05:15:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.51% | BE=X
+2026-07-24 05:15:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.12% | BE=X
+2026-07-24 05:15:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.78% | BE=X
+2026-07-24 05:20:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.64% | BE=X
+2026-07-24 05:20:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.20% | BE=X
+2026-07-24 05:20:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.66% | BE=X
+2026-07-24 05:25:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.64% | BE=X
+2026-07-24 05:25:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.24% | BE=X
+2026-07-24 05:25:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.65% | BE=X
+2026-07-24 05:30:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.69% | BE=X
+2026-07-24 05:30:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.34% | BE=X
+2026-07-24 05:30:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.61% | BE=X
+2026-07-24 05:35:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.65% | BE=X
+2026-07-24 05:35:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.25% | BE=X
+2026-07-24 05:35:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.68% | BE=X
+2026-07-24 05:36:58 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:58 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:58 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:58 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:58 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:59 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:59 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:59 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:59 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 05:36:59 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 05:40:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.57% | BE=X
+2026-07-24 05:40:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.16% | BE=X
+2026-07-24 05:40:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.70% | BE=X
+2026-07-24 05:45:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.54% | BE=X
+2026-07-24 05:45:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.14% | BE=X
+2026-07-24 05:45:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.68% | BE=X
+2026-07-24 05:50:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.61% | BE=X
+2026-07-24 05:50:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.20% | BE=X
+2026-07-24 05:50:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.67% | BE=X
+2026-07-24 05:55:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.63% | BE=X
+2026-07-24 05:55:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.21% | BE=X
+2026-07-24 05:55:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.64% | BE=X
+2026-07-24 06:00:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.63% | BE=X
+2026-07-24 06:00:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.25% | BE=X
+2026-07-24 06:00:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.64% | BE=X
+2026-07-24 06:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.65% | BE=X
+2026-07-24 06:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.26% | BE=X
+2026-07-24 06:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.65% | BE=X
+2026-07-24 06:07:01 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:01 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:01 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:01 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:02 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:02 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:02 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:02 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:02 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 06:07:03 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 06:15:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.44% | BE=X
+2026-07-24 06:15:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.07% | BE=X
+2026-07-24 06:15:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.80% | BE=X
+2026-07-24 06:20:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.40% | BE=X
+2026-07-24 06:20:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.95% | BE=X
+2026-07-24 06:20:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.83% | BE=X
+2026-07-24 06:25:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.42% | BE=X
+2026-07-24 06:25:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.04% | BE=X
+2026-07-24 06:25:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.75% | BE=X
+2026-07-24 06:30:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.43% | BE=X
+2026-07-24 06:30:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.06% | BE=X
+2026-07-24 06:30:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.70% | BE=X
+2026-07-24 06:35:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.46% | BE=X
+2026-07-24 06:35:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.08% | BE=X
+2026-07-24 06:35:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.72% | BE=X
+2026-07-24 06:37:04 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:04 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:04 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:05 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:05 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:05 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:05 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:05 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:06 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 06:37:06 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 06:40:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.36% | BE=X
+2026-07-24 06:40:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.03% | BE=X
+2026-07-24 06:40:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.75% | BE=X
+2026-07-24 06:45:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.43% | BE=X
+2026-07-24 06:45:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.06% | BE=X
+2026-07-24 06:45:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.69% | BE=X
+2026-07-24 06:50:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.42% | BE=X
+2026-07-24 06:50:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.01% | BE=X
+2026-07-24 06:50:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.65% | BE=X
+2026-07-24 06:55:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.40% | BE=X
+2026-07-24 06:55:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.88% | BE=X
+2026-07-24 06:55:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.64% | BE=X
+2026-07-24 07:00:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.41% | BE=X
+2026-07-24 07:00:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.85% | BE=X
+2026-07-24 07:00:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.61% | BE=X
+2026-07-24 07:05:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.41% | BE=X
+2026-07-24 07:05:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.83% | BE=X
+2026-07-24 07:05:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.61% | BE=X
+2026-07-24 07:07:07 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:07 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:08 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:08 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:08 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:08 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:08 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:08 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:09 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 07:07:09 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 07:10:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.32% | BE=X
+2026-07-24 07:10:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.72% | BE=X
+2026-07-24 07:10:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.72% | BE=X
+2026-07-24 07:15:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.22% | BE=X
+2026-07-24 07:15:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.67% | BE=X
+2026-07-24 07:15:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.71% | BE=X
+2026-07-24 07:20:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.16% | BE=X
+2026-07-24 07:20:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.63% | BE=X
+2026-07-24 07:20:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.77% | BE=X
+2026-07-24 07:25:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.36% | BE=X
+2026-07-24 07:25:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.88% | BE=X
+2026-07-24 07:25:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.62% | BE=X
+2026-07-24 07:30:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.36% | BE=X
+2026-07-24 07:30:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.85% | BE=X
+2026-07-24 07:30:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.62% | BE=X
+2026-07-24 07:35:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.44% | BE=X
+2026-07-24 07:35:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.89% | BE=X
+2026-07-24 07:35:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-07-24 07:37:10 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:11 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:11 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:11 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:11 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:12 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:12 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:12 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 07:37:12 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 07:40:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.43% | BE=X
+2026-07-24 07:40:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.00% | BE=X
+2026-07-24 07:40:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.57% | BE=X
+2026-07-24 07:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.47% | BE=X
+2026-07-24 07:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.92% | BE=X
+2026-07-24 07:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.55% | BE=X
+2026-07-24 07:50:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.40% | BE=X
+2026-07-24 07:50:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.84% | BE=X
+2026-07-24 07:50:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-07-24 07:55:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.46% | BE=X
+2026-07-24 07:55:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.88% | BE=X
+2026-07-24 07:55:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-07-24 08:00:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.52% | BE=X
+2026-07-24 08:00:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.92% | BE=X
+2026-07-24 08:00:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.56% | BE=X
+2026-07-24 08:05:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.48% | BE=X
+2026-07-24 08:05:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.89% | BE=X
+2026-07-24 08:05:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.54% | BE=X
+2026-07-24 08:07:14 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:14 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:14 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:14 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:14 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:15 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:15 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:15 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 08:07:16 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 08:10:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.46% | BE=X
+2026-07-24 08:10:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.88% | BE=X
+2026-07-24 08:10:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-07-24 08:15:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.45% | BE=X
+2026-07-24 08:15:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.82% | BE=X
+2026-07-24 08:15:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.58% | BE=X
+2026-07-24 08:20:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.50% | BE=X
+2026-07-24 08:20:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.92% | BE=X
+2026-07-24 08:20:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.56% | BE=X
+2026-07-24 08:25:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.48% | BE=X
+2026-07-24 08:25:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.95% | BE=X
+2026-07-24 08:25:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.61% | BE=X
+2026-07-24 08:30:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.45% | BE=X
+2026-07-24 08:30:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.90% | BE=X
+2026-07-24 08:30:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-07-24 08:35:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.46% | BE=X
+2026-07-24 08:35:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.94% | BE=X
+2026-07-24 08:35:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.56% | BE=X
+2026-07-24 08:37:17 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:17 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:17 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:18 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:18 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:18 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:18 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:18 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:19 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 120일치
+2026-07-24 08:37:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-07-24 08:40:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.46% | BE=X
+2026-07-24 08:40:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.89% | BE=X
+2026-07-24 08:40:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-07-24 08:45:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.39% | BE=X
+2026-07-24 08:45:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.84% | BE=X
+2026-07-24 08:45:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.60% | BE=X
+2026-07-24 08:50:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.32% | BE=X
+2026-07-24 08:50:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.79% | BE=X
+2026-07-24 08:50:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.68% | BE=X
+2026-07-24 08:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.09% | BE=X
+2026-07-24 08:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.69% | BE=X
+2026-07-24 08:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.75% | BE=X
+2026-07-24 09:00:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.71% | BE=X
+2026-07-24 09:00:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.72% | BE=X
+2026-07-24 09:00:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.20% | BE=X
+2026-07-24 09:05:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.49% | BE=X
+2026-07-24 09:05:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.91% | BE=X
+2026-07-24 09:05:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.02% | BE=X
+2026-07-24 09:07:20 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:20 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:21 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:21 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:21 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:21 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:22 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:22 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 09:07:22 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 09:10:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.49% | BE=X
+2026-07-24 09:10:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.98% | BE=X
+2026-07-24 09:10:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.98% | BE=X
+2026-07-24 09:15:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.55% | BE=X
+2026-07-24 09:15:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.97% | BE=X
+2026-07-24 09:15:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.98% | BE=X
+2026-07-24 09:20:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.50% | BE=X
+2026-07-24 09:20:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.00% | BE=X
+2026-07-24 09:20:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.99% | BE=X
+2026-07-24 09:25:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.57% | BE=X
+2026-07-24 09:25:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.95% | BE=X
+2026-07-24 09:25:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.05% | BE=X
+2026-07-24 09:30:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.41% | BE=X
+2026-07-24 09:30:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.06% | BE=X
+2026-07-24 09:30:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.77% | BE=X
+2026-07-24 09:35:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.24% | BE=X
+2026-07-24 09:35:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.12% | BE=X
+2026-07-24 09:35:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.59% | BE=X
+2026-07-24 09:37:23 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:24 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:24 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:24 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:24 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:25 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:25 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:25 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:25 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 09:37:25 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 09:40:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.25% | BE=X
+2026-07-24 09:40:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.17% | BE=X
+2026-07-24 09:40:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.50% | BE=X
+2026-07-24 09:45:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.18% | BE=X
+2026-07-24 09:45:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.09% | BE=X
+2026-07-24 09:45:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.53% | BE=X
+2026-07-24 09:50:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.23% | BE=X
+2026-07-24 09:50:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.99% | BE=X
+2026-07-24 09:50:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.60% | BE=X
+2026-07-24 09:55:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.20% | BE=X
+2026-07-24 09:55:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-1.01% | BE=X
+2026-07-24 09:55:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.61% | BE=X
+2026-07-24 10:00:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.39% | BE=X
+2026-07-24 10:00:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.92% | BE=X
+2026-07-24 10:00:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.81% | BE=X
+2026-07-24 10:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.55% | BE=X
+2026-07-24 10:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.73% | BE=X
+2026-07-24 10:05:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.00% | BE=X
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 10:07:26 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 10:10:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.55% | BE=X
+2026-07-24 10:10:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.73% | BE=X
+2026-07-24 10:10:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.06% | BE=X
+2026-07-24 10:15:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.36% | BE=X
+2026-07-24 10:15:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.85% | BE=X
+2026-07-24 10:15:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.90% | BE=X
+2026-07-24 10:20:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.37% | BE=X
+2026-07-24 10:20:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.83% | BE=X
+2026-07-24 10:20:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.93% | BE=X
+2026-07-24 10:25:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.44% | BE=X
+2026-07-24 10:25:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.74% | BE=X
+2026-07-24 10:25:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.01% | BE=X
+2026-07-24 10:30:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.30% | BE=X
+2026-07-24 10:30:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.80% | BE=X
+2026-07-24 10:30:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.95% | BE=X
+2026-07-24 10:35:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.38% | BE=X
+2026-07-24 10:35:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.70% | BE=X
+2026-07-24 10:35:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.00% | BE=X
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 10:37:27 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 10:40:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.48% | BE=X
+2026-07-24 10:40:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.65% | BE=X
+2026-07-24 10:40:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.09% | BE=X
+2026-07-24 10:45:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.62% | BE=X
+2026-07-24 10:45:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.72% | BE=X
+2026-07-24 10:45:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.08% | BE=X
+2026-07-24 10:50:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.56% | BE=X
+2026-07-24 10:50:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.74% | BE=X
+2026-07-24 10:50:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.01% | BE=X
+2026-07-24 10:55:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.43% | BE=X
+2026-07-24 10:55:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.71% | BE=X
+2026-07-24 10:55:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.06% | BE=X
+2026-07-24 11:00:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.37% | BE=X
+2026-07-24 11:00:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.74% | BE=X
+2026-07-24 11:00:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.92% | BE=X
+2026-07-24 11:05:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.37% | BE=X
+2026-07-24 11:05:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.77% | BE=X
+2026-07-24 11:05:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.88% | BE=X
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 11:07:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 11:10:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.37% | BE=X
+2026-07-24 11:10:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.67% | BE=X
+2026-07-24 11:10:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.02% | BE=X
+2026-07-24 11:15:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.43% | BE=X
+2026-07-24 11:15:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.63% | BE=X
+2026-07-24 11:15:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.13% | BE=X
+2026-07-24 11:20:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.29% | BE=X
+2026-07-24 11:20:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.70% | BE=X
+2026-07-24 11:20:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.95% | BE=X
+2026-07-24 11:25:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.41% | BE=X
+2026-07-24 11:25:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.62% | BE=X
+2026-07-24 11:25:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.10% | BE=X
+2026-07-24 11:30:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.35% | BE=X
+2026-07-24 11:30:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.67% | BE=X
+2026-07-24 11:30:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.07% | BE=X
+2026-07-24 11:35:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+0.96% | BE=X
+2026-07-24 11:35:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.97% | BE=X
+2026-07-24 11:35:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.62% | BE=X
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 11:37:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 11:40:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.17% | BE=X
+2026-07-24 11:40:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.77% | BE=X
+2026-07-24 11:40:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.83% | BE=X
+2026-07-24 11:45:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.11% | BE=X
+2026-07-24 11:45:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.78% | BE=X
+2026-07-24 11:45:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.80% | BE=X
+2026-07-24 11:50:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+0.94% | BE=X
+2026-07-24 11:50:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.89% | BE=X
+2026-07-24 11:50:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.56% | BE=X
+2026-07-24 11:55:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+0.93% | BE=X
+2026-07-24 11:55:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.85% | BE=X
+2026-07-24 11:55:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.55% | BE=X
+2026-07-24 12:00:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.13% | BE=X
+2026-07-24 12:00:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.68% | BE=X
+2026-07-24 12:00:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.75% | BE=X
+2026-07-24 12:05:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.49% | BE=X
+2026-07-24 12:05:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.60% | BE=X
+2026-07-24 12:05:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+0.94% | BE=X
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 12:07:30 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 12:10:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.59% | BE=X
+2026-07-24 12:10:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.47% | BE=X
+2026-07-24 12:10:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.02% | BE=X
+2026-07-24 12:15:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.63% | BE=X
+2026-07-24 12:15:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-07-24 12:15:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.07% | BE=X
+2026-07-24 12:20:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.68% | BE=X
+2026-07-24 12:20:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.34% | BE=X
+2026-07-24 12:20:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.16% | BE=X
+2026-07-24 12:25:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.67% | BE=X
+2026-07-24 12:25:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-07-24 12:25:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.20% | BE=X
+2026-07-24 12:30:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.71% | BE=X
+2026-07-24 12:30:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.35% | BE=X
+2026-07-24 12:30:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.26% | BE=X
+2026-07-24 12:35:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.66% | BE=X
+2026-07-24 12:35:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.38% | BE=X
+2026-07-24 12:35:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.21% | BE=X
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 12:37:31 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 12:40:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.60% | BE=X
+2026-07-24 12:40:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-07-24 12:40:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.22% | BE=X
+2026-07-24 12:45:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.66% | BE=X
+2026-07-24 12:45:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.27% | BE=X
+2026-07-24 12:45:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.29% | BE=X
+2026-07-24 12:50:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.63% | BE=X
+2026-07-24 12:50:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.22% | BE=X
+2026-07-24 12:50:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.28% | BE=X
+2026-07-24 12:55:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.57% | BE=X
+2026-07-24 12:55:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.23% | BE=X
+2026-07-24 12:55:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.28% | BE=X
+2026-07-24 13:00:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.53% | BE=X
+2026-07-24 13:00:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.21% | BE=X
+2026-07-24 13:00:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.27% | BE=X
+2026-07-24 13:05:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.53% | BE=X
+2026-07-24 13:05:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.21% | BE=X
+2026-07-24 13:05:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.30% | BE=X
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 13:07:32 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 13:10:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.50% | BE=X
+2026-07-24 13:10:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.24% | BE=X
+2026-07-24 13:10:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.29% | BE=X
+2026-07-24 13:15:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.39% | BE=X
+2026-07-24 13:15:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.28% | BE=X
+2026-07-24 13:15:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.21% | BE=X
+2026-07-24 13:20:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.41% | BE=X
+2026-07-24 13:20:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.28% | BE=X
+2026-07-24 13:20:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.25% | BE=X
+2026-07-24 13:25:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.49% | BE=X
+2026-07-24 13:25:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.24% | BE=X
+2026-07-24 13:25:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.32% | BE=X
+2026-07-24 13:30:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.54% | BE=X
+2026-07-24 13:30:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.29% | BE=X
+2026-07-24 13:30:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.25% | BE=X
+2026-07-24 13:35:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.48% | BE=X
+2026-07-24 13:35:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.30% | BE=X
+2026-07-24 13:35:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.25% | BE=X
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 13:37:33 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 13:40:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.36% | BE=X
+2026-07-24 13:40:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.36% | BE=X
+2026-07-24 13:40:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.11% | BE=X
+2026-07-24 13:45:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.33% | BE=X
+2026-07-24 13:45:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.35% | BE=X
+2026-07-24 13:45:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.08% | BE=X
+2026-07-24 13:50:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.37% | BE=X
+2026-07-24 13:50:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.35% | BE=X
+2026-07-24 13:50:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.13% | BE=X
+2026-07-24 13:55:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.35% | BE=X
+2026-07-24 13:55:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.40% | BE=X
+2026-07-24 13:55:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.10% | BE=X
+2026-07-24 14:00:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.21% | BE=X
+2026-07-24 14:00:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.43% | BE=X
+2026-07-24 14:00:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.02% | BE=X
+2026-07-24 14:05:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.29% | BE=X
+2026-07-24 14:05:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.44% | BE=X
+2026-07-24 14:05:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.05% | BE=X
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 14:07:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 14:10:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.51% | BE=X
+2026-07-24 14:10:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.30% | BE=X
+2026-07-24 14:10:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.30% | BE=X
+2026-07-24 14:15:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.47% | BE=X
+2026-07-24 14:15:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.33% | BE=X
+2026-07-24 14:15:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.28% | BE=X
+2026-07-24 14:25:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.51% | BE=X
+2026-07-24 14:25:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.32% | BE=X
+2026-07-24 14:25:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.30% | BE=X
+2026-07-24 14:30:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.48% | BE=X
+2026-07-24 14:30:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.36% | BE=X
+2026-07-24 14:30:08 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.29% | BE=X
+2026-07-24 14:35:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.42% | BE=X
+2026-07-24 14:35:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.41% | BE=X
+2026-07-24 14:35:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.29% | BE=X
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 14:37:35 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 14:40:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.36% | BE=X
+2026-07-24 14:40:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.44% | BE=X
+2026-07-24 14:40:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.29% | BE=X
+2026-07-24 14:45:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.50% | BE=X
+2026-07-24 14:45:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-07-24 14:45:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.37% | BE=X
+2026-07-24 14:50:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.49% | BE=X
+2026-07-24 14:50:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-07-24 14:50:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.30% | BE=X
+2026-07-24 14:55:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.43% | BE=X
+2026-07-24 14:55:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.42% | BE=X
+2026-07-24 14:55:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.35% | BE=X
+2026-07-24 15:00:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.41% | BE=X
+2026-07-24 15:00:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.42% | BE=X
+2026-07-24 15:00:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.33% | BE=X
+2026-07-24 15:05:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.39% | BE=X
+2026-07-24 15:05:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.43% | BE=X
+2026-07-24 15:05:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.34% | BE=X
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 15:07:36 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 15:10:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.56% | BE=X
+2026-07-24 15:10:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.35% | BE=X
+2026-07-24 15:10:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.40% | BE=X
+2026-07-24 15:15:44 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -202ms — 보정 오프셋 -1202ms 적용
+2026-07-24 15:15:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.56% | BE=X
+2026-07-24 15:15:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.31% | BE=X
+2026-07-24 15:15:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.35% | BE=X
+2026-07-24 15:18:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -203ms — 보정 오프셋 -1203ms 적용
+2026-07-24 15:20:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.86% | BE=X
+2026-07-24 15:20:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.13% | BE=X
+2026-07-24 15:20:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.56% | BE=X
+2026-07-24 15:21:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -204ms — 보정 오프셋 -1204ms 적용
+2026-07-24 15:24:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -207ms — 보정 오프셋 -1207ms 적용
+2026-07-24 15:25:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.83% | BE=X
+2026-07-24 15:25:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.13% | BE=X
+2026-07-24 15:25:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.62% | BE=X
+2026-07-24 15:27:55 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -207ms — 보정 오프셋 -1207ms 적용
+2026-07-24 15:30:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -210ms — 보정 오프셋 -1210ms 적용
+2026-07-24 15:30:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.63% | BE=X
+2026-07-24 15:30:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.26% | BE=X
+2026-07-24 15:30:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.42% | BE=X
+2026-07-24 15:34:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -212ms — 보정 오프셋 -1212ms 적용
+2026-07-24 15:35:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.79% | BE=X
+2026-07-24 15:35:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.17% | BE=X
+2026-07-24 15:35:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.58% | BE=X
+2026-07-24 15:37:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -213ms — 보정 오프셋 -1213ms 적용
+2026-07-24 15:37:36 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:36 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:36 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 15:37:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 15:40:04 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -215ms — 보정 오프셋 -1215ms 적용
+2026-07-24 15:40:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.83% | BE=X
+2026-07-24 15:40:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.12% | BE=X
+2026-07-24 15:40:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.68% | BE=X
+2026-07-24 15:43:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -211ms — 보정 오프셋 -1211ms 적용
+2026-07-24 15:45:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.74% | BE=X
+2026-07-24 15:45:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.16% | BE=X
+2026-07-24 15:45:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.64% | BE=X
+2026-07-24 15:46:09 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -218ms — 보정 오프셋 -1218ms 적용
+2026-07-24 15:49:12 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -219ms — 보정 오프셋 -1219ms 적용
+2026-07-24 15:50:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.66% | BE=X
+2026-07-24 15:50:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.17% | BE=X
+2026-07-24 15:50:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.63% | BE=X
+2026-07-24 15:52:14 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -220ms — 보정 오프셋 -1220ms 적용
+2026-07-24 15:55:17 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -222ms — 보정 오프셋 -1222ms 적용
+2026-07-24 15:55:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.74% | BE=X
+2026-07-24 15:55:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.19% | BE=X
+2026-07-24 15:55:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.65% | BE=X
+2026-07-24 15:58:19 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -225ms — 보정 오프셋 -1225ms 적용
+2026-07-24 16:00:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.84% | BE=X
+2026-07-24 16:00:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.13% | BE=X
+2026-07-24 16:00:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.74% | BE=X
+2026-07-24 16:01:22 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -226ms — 보정 오프셋 -1226ms 적용
+2026-07-24 16:04:24 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -227ms — 보정 오프셋 -1227ms 적용
+2026-07-24 16:05:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+1.98% | BE=X
+2026-07-24 16:05:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.03% | BE=X
+2026-07-24 16:05:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.89% | BE=X
+2026-07-24 16:07:27 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -225ms — 보정 오프셋 -1225ms 적용
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 16:07:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 16:10:30 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -230ms — 보정 오프셋 -1230ms 적용
+2026-07-24 16:10:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.58% | BE=X
+2026-07-24 16:10:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=+0.21% | BE=X
+2026-07-24 16:10:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.60% | BE=X
+2026-07-24 16:13:32 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -232ms — 보정 오프셋 -1232ms 적용
+2026-07-24 16:15:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.73% | BE=X
+2026-07-24 16:15:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=+0.24% | BE=X
+2026-07-24 16:15:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.64% | BE=X
+2026-07-24 16:16:35 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -235ms — 보정 오프셋 -1235ms 적용
+2026-07-24 16:19:37 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -236ms — 보정 오프셋 -1236ms 적용
+2026-07-24 16:20:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.88% | BE=X
+2026-07-24 16:20:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=+0.21% | BE=X
+2026-07-24 16:20:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.52% | BE=X
+2026-07-24 16:22:40 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -237ms — 보정 오프셋 -1237ms 적용
+2026-07-24 16:25:42 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -238ms — 보정 오프셋 -1238ms 적용
+2026-07-24 16:25:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.73% | BE=X
+2026-07-24 16:25:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=+0.14% | BE=X
+2026-07-24 16:25:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.32% | BE=X
+2026-07-24 16:28:45 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -238ms — 보정 오프셋 -1238ms 적용
+2026-07-24 16:30:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.69% | BE=X
+2026-07-24 16:30:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=+0.06% | BE=X
+2026-07-24 16:30:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.21% | BE=X
+2026-07-24 16:31:47 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -243ms — 보정 오프셋 -1243ms 적용
+2026-07-24 16:34:50 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -242ms — 보정 오프셋 -1242ms 적용
+2026-07-24 16:35:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.58% | BE=X
+2026-07-24 16:35:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.06% | BE=X
+2026-07-24 16:35:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.12% | BE=X
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | XRP-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | ADA-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | AVAX-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | LINK-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:38 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-07-24 16:37:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -246ms — 보정 오프셋 -1246ms 적용
+2026-07-24 16:40:55 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -231ms — 보정 오프셋 -1231ms 적용
+2026-07-24 16:40:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.52% | BE=X
+2026-07-24 16:40:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.17% | BE=X
+2026-07-24 16:40:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+1.95% | BE=X
+2026-07-24 16:43:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -249ms — 보정 오프셋 -1249ms 적용
+2026-07-24 16:45:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.48% | BE=X
+2026-07-24 16:45:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.27% | BE=X
+2026-07-24 16:47:00 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -249ms — 보정 오프셋 -1249ms 적용
+2026-07-24 16:50:02 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -249ms — 보정 오프셋 -1249ms 적용
+2026-07-24 16:50:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: LINKUSDT Buy x5 | PnL=+2.68% | BE=X
+2026-07-24 16:50:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: BTCUSDT Buy x5 | PnL=-0.16% | BE=X
+2026-07-24 16:50:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ETHUSDT Buy x4 | PnL=+2.11% | BE=X

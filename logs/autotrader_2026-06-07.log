@@ -1,0 +1,529 @@
+2026-06-07 01:40:30 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 01:40:30 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 01:40:30 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 01:40:32 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 01:40:38 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 01:40:39 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:39 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:39 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:39 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:40 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 01:40:40 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:29 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 01:45:29 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 01:45:29 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 01:45:31 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 01:45:36 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 01:45:36 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:36 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:36 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:37 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:37 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:37 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 01:45:37 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:26 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 02:24:26 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 02:24:26 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 02:24:28 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 02:24:32 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 02:24:32 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:33 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:34 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 02:24:34 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:43 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 02:40:44 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:44 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:45 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:45 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:45 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 02:40:46 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:40 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 02:45:41 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:41 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:42 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:42 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:42 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:42 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:42 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 02:45:43 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:37 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 02:54:38 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:38 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:38 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 02:54:39 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:42 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 03:24:43 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 03:24:45 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:49 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 03:40:50 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:50 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:51 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:51 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:51 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 03:40:52 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 03:42:47 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 03:42:47 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 03:43:01 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 03:43:01 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 03:43:01 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 03:43:03 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 03:43:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-07 03:43:08 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 03:43:09 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:09 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:09 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:09 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:10 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 03:43:10 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:47 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 03:45:47 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:48 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:48 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:48 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:48 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 03:45:49 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:48 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 03:54:49 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:49 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:50 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 03:54:51 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:13 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 04:13:14 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:14 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:14 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:14 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:15 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 04:13:15 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 04:24:54 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:55 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:56 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 04:24:56 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 04:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:56 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:56 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:56 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:56 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 04:40:57 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:18 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 04:43:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:19 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:19 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:19 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:20 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 04:43:20 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:52 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 04:45:53 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:53 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:53 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:53 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:54 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 04:45:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 04:54:59 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 04:55:00 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:00 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:00 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:00 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:01 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:01 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:01 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 04:55:01 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 13:47:56 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 13:47:56 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 13:47:56 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 13:47:58 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 13:47:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-07 13:48:02 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 13:48:03 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:03 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:03 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:04 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:04 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:04 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:04 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 13:48:04 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:45 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 14:00:45 | [92mINFO[0m | [94m__main__[0m | 워치독 시작
+2026-06-07 14:00:45 | [92mINFO[0m | [94m__main__[0m | 자동매매 프로세스 시작 (PID=28780)
+2026-06-07 14:00:48 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 14:00:48 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 14:00:48 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 14:00:50 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 14:00:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-07 14:00:52 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 14:00:53 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:53 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:53 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:53 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:54 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 14:00:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 14:09:27 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 14:10:27 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 14:10:27 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 14:10:27 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | DOGE-USD 레버리지 2x 설정 완료
+2026-06-07 14:10:27 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 롱 진입: DOGE-USD 64.0 @ 시장가 (레버리지=2x, SL=0.08201, TP=0.08619)
+2026-06-07 14:10:44 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 14:10:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.00% | BE=X
+2026-06-07 14:11:53 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 14:11:53 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 14:15:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.08% | BE=X
+2026-06-07 14:20:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.17% | BE=X
+2026-06-07 14:22:45 | [93mWARNING[0m | [94m__main__[0m | 자동매매 프로세스 종료 감지 (exit=1) → 재시작
+2026-06-07 14:22:45 | [92mINFO[0m | [94m__main__[0m | 자동매매 프로세스 시작 (PID=29020)
+2026-06-07 14:22:46 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 14:22:46 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 14:22:46 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 14:22:48 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.43 USDT | 총자산=8.45 USDT
+2026-06-07 14:22:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-07 14:22:50 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 14:22:51 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:51 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:51 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:51 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:52 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:52 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 14:22:52 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 14:25:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.41% | BE=X
+2026-06-07 14:30:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.31% | BE=X
+2026-06-07 14:35:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.29% | BE=X
+2026-06-07 14:40:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.35% | BE=X
+2026-06-07 14:45:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.38% | BE=X
+2026-06-07 14:50:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.17% | BE=X
+2026-06-07 14:52:53 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 14:52:53 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 14:55:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.19% | BE=X
+2026-06-07 15:00:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.22% | BE=X
+2026-06-07 15:05:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.05% | BE=X
+2026-06-07 15:10:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.24% | BE=X
+2026-06-07 15:15:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.36% | BE=X
+2026-06-07 15:20:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.61% | BE=X
+2026-06-07 15:22:53 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 15:22:53 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:53 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:53 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:53 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:53 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:54 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 15:22:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 15:25:14 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.78% | BE=X
+2026-06-07 15:29:15 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:29:15).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:30:16 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:30:16).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:30:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.06% | BE=X
+2026-06-07 15:31:16 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:31:16).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:32:16 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:32:16).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:33:17 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:33:17).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:34:17 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:34:17).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:35:18 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:35:18).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:35:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.09% | BE=X
+2026-06-07 15:36:18 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:36:18).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:37:19 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:37:19).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:38:19 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:38:19).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:39:19 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:39:19).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:40:20 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:40:20).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:40:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.35% | BE=X
+2026-06-07 15:41:20 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:41:20).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:42:21 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:42:21).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:43:21 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:43:21).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:44:21 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:44:21).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:45:22 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:45:22).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:45:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.22% | BE=X
+2026-06-07 15:46:22 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:46:22).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:47:23 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:47:23).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:48:23 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:48:23).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:49:23 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:49:23).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:50:24 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:50:24).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:50:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.09% | BE=X
+2026-06-07 15:51:24 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:51:24).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:52:25 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:52:25).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:52:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 15:52:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 15:53:25 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:53:25).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:54:25 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:54:25).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:55:26 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:55:26).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:55:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.09% | BE=X
+2026-06-07 15:56:26 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:56:26).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:57:27 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:57:27).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:58:27 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:58:27).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 15:59:27 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 06:59:27).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:00:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+0.91% | BE=X
+2026-06-07 16:04:29 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:04:29).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:05:29 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:05:29).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:05:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.02% | BE=X
+2026-06-07 16:06:30 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:06:30).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:07:30 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:07:30).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:08:31 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:08:31).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:09:31 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:09:31).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:10:31 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:10:31).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:10:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.25% | BE=X
+2026-06-07 16:11:32 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:11:32).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:12:32 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:12:32).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:13:33 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:13:33).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:14:33 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:14:33).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:15:33 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:15:33).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:15:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.15% | BE=X
+2026-06-07 16:16:34 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:16:34).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:20:35 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:20:35).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:20:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.09% | BE=X
+2026-06-07 16:21:36 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:21:36).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:22:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 16:22:54 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:54 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:55 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:55 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-07 16:22:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-07 16:23:36 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:23:36).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:24:37 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:24:37).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:25:37 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:25:37).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:25:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.22% | BE=X
+2026-06-07 16:26:37 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:26:37).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:27:38 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:27:38).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:28:38 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:28:38).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:29:39 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:29:39).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:30:39 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:30:39).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:30:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: DOGEUSDT Buy x2 | PnL=+1.28% | BE=X
+2026-06-07 16:31:39 | [91mERROR[0m | [94mbroker.bybit_futures_broker[0m | 손절 변경 실패 (DOGE-USD): not modified (ErrCode: 34040) (ErrTime: 07:31:39).
+Request → POST https://api.bybit.com/v5/position/trading-stop: {"category": "linear", "symbol": "DOGEUSDT", "stopLoss": "0.08", "slTriggerBy": "MarkPrice", "positionIdx": 1}.
+2026-06-07 16:31:51 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 16:31:51 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 16:31:51 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 청산: DOGE-USD long 64.0개 @ 시장가
+2026-06-07 16:32:41 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 16:34:02 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 16:34:45 | [93mWARNING[0m | [94m__main__[0m | 자동매매 프로세스 종료 감지 (exit=1) → 재시작
+2026-06-07 16:34:45 | [92mINFO[0m | [94m__main__[0m | 자동매매 프로세스 시작 (PID=1440)
+2026-06-07 16:34:47 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 16:34:47 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 16:34:47 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 16:34:48 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.49 USDT | 총자산=8.51 USDT
+2026-06-07 16:34:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-07 16:34:51 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 16:34:51 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:51 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:51 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:52 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:52 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:52 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:52 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 16:34:52 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 17:04:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 17:34:54 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 18:04:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 18:33:18 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: BTC-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:19 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: BTC-USD 동적 | 수익=6.0% | MDD=-15.3% | 샤프=-0.05 | 청산=0
+2026-06-07 18:33:19 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: BTC-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:19 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: BTC-USD 동적 | 수익=3.2% | MDD=-12.9% | 샤프=-0.13 | 청산=0
+2026-06-07 18:33:19 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: ETH-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:20 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:20 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: ETH-USD 동적 | 수익=28.4% | MDD=-9.5% | 샤프=0.41 | 청산=0
+2026-06-07 18:33:20 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: ETH-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:20 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:20 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: ETH-USD 동적 | 수익=-2.9% | MDD=-18.0% | 샤프=-0.26 | 청산=1
+2026-06-07 18:33:20 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: BNB-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:20 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:21 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: BNB-USD 동적 | 수익=55.5% | MDD=-9.9% | 샤프=0.89 | 청산=0
+2026-06-07 18:33:21 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: BNB-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:21 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:21 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: BNB-USD 동적 | 수익=53.4% | MDD=-8.9% | 샤프=0.93 | 청산=0
+2026-06-07 18:33:21 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: ATOM-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:21 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:22 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: ATOM-USD 동적 | 수익=26.8% | MDD=-13.3% | 샤프=0.37 | 청산=0
+2026-06-07 18:33:22 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: ATOM-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:22 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:22 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: ATOM-USD 동적 | 수익=3.5% | MDD=-23.5% | 샤프=-0.11 | 청산=0
+2026-06-07 18:33:22 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: DOGE-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:22 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:23 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: DOGE-USD 동적 | 수익=7.3% | MDD=-17.3% | 샤프=-0.01 | 청산=1
+2026-06-07 18:33:23 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: DOGE-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:23 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:23 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: DOGE-USD 동적 | 수익=-5.0% | MDD=-17.2% | 샤프=-0.32 | 청산=1
+2026-06-07 18:33:23 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: DOT-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:23 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:24 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: DOT-USD 동적 | 수익=26.7% | MDD=-22.9% | 샤프=0.37 | 청산=1
+2026-06-07 18:33:24 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: DOT-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:24 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:24 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: DOT-USD 동적 | 수익=24.4% | MDD=-16.3% | 샤프=0.36 | 청산=1
+2026-06-07 18:33:24 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: TRX-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:24 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:25 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: TRX-USD 동적 | 수익=43.3% | MDD=-18.1% | 샤프=0.74 | 청산=0
+2026-06-07 18:33:25 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: TRX-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:25 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:25 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: TRX-USD 동적 | 수익=49.8% | MDD=-11.4% | 샤프=0.79 | 청산=0
+2026-06-07 18:33:25 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: SOL-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:25 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:25 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: SOL-USD 동적 | 수익=-9.2% | MDD=-27.4% | 샤프=-0.40 | 청산=0
+2026-06-07 18:33:25 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 시작: SOL-USD | 2023-01-01~2026-06-07 | 레버리지=동적
+2026-06-07 18:33:25 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 1463일치
+2026-06-07 18:33:26 | [92mINFO[0m | [94mbacktester.futures_backtester[0m | 선물 백테스트 완료: SOL-USD 동적 | 수익=-13.5% | MDD=-22.4% | 샤프=-0.60 | 청산=0
+2026-06-07 18:34:55 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 18:34:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-07 22:34:00 | [92mINFO[0m | [94m__main__[0m | 자동 매매 시작 (모드: paper)
+2026-06-07 22:34:00 | [92mINFO[0m | [94m__main__[0m | 모의 투자 브로커 초기화 (초기 자본: ₩10,000,000)
+2026-06-07 22:34:00 | [92mINFO[0m | [94mbroker.paper_broker[0m | 모의 투자 브로커 초기화 완료. 초기 자본: ₩10,000,000
+2026-06-07 22:34:01 | [92mINFO[0m | [94m__main__[0m | 전략 초기화: 이동평균 교차 (5/20)
+2026-06-07 22:34:03 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 22:34:03 | [92mINFO[0m | [94m__main__[0m | 첫 번째 거래 사이클을 즉시 실행합니다...
+2026-06-07 22:34:03 | [92mINFO[0m | [94mtrader.engine[0m | 트레이딩 엔진 시작. 실행 간격: 5분
+2026-06-07 22:34:03 | [92mINFO[0m | [94m__main__[0m | 자동 매매 실행 중. Ctrl+C로 중지하세요.
+2026-06-07 23:21:45 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-07 23:21:45 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-07 23:21:45 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-07 23:21:46 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.49 USDT | 총자산=8.51 USDT
+2026-06-07 23:21:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-07 23:21:49 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-07 23:21:50 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:50 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:50 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:51 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:51 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-07 23:21:52 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치

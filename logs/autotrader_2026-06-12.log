@@ -1,0 +1,481 @@
+2026-06-12 00:21:56 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-12 00:21:56 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-12 00:21:56 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-12 00:21:58 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.58 USDT | 총자산=7.78 USDT
+2026-06-12 00:21:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-12 00:22:04 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 00:22:05 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:05 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:05 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:07 | [92mINFO[0m | [94mdata.news_fetcher[0m | BNB 헤드라인 20건 수집
+2026-06-12 00:22:07 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 15:22:07).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-12 00:22:07 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=638.3085230483281, TP=494.1772718711251)
+2026-06-12 00:22:07 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 15:22:07).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "638.31", "slTriggerBy": "MarkPrice", "takeProfit": "494.18", "tpTriggerBy": "MarkPrice"}.
+2026-06-12 00:22:07 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:07 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:08 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:08 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-12 00:22:08 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-12 00:25:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.18% | BE=X
+2026-06-12 00:30:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.14% | BE=X
+2026-06-12 00:35:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.17% | BE=X
+2026-06-12 00:40:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.23% | BE=X
+2026-06-12 00:45:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.29% | BE=X
+2026-06-12 00:50:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.33% | BE=X
+2026-06-12 00:52:11 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 00:52:12 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:12 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:12 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:13 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 15:52:13).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-12 00:52:13 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=637.5085230483281, TP=493.3772718711251)
+2026-06-12 00:52:13 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 15:52:13).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "637.51", "slTriggerBy": "MarkPrice", "takeProfit": "493.38", "tpTriggerBy": "MarkPrice"}.
+2026-06-12 00:52:13 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:13 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:13 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:14 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-12 00:52:14 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-12 00:55:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.53% | BE=X
+2026-06-12 01:00:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.56% | BE=X
+2026-06-12 01:05:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.56% | BE=X
+2026-06-12 01:10:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.54% | BE=X
+2026-06-12 01:15:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.52% | BE=X
+2026-06-12 01:20:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.47% | BE=X
+2026-06-12 01:22:17 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 01:22:17 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:18 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:18 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:18 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 16:22:18).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-12 01:22:18 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=638.2085230483281, TP=494.07727187112505)
+2026-06-12 01:22:18 | [93mWARNING[0m | [94m__main__[0m | BNB-USD 주문 실패 (잔고 부족): ab not enough for new order (ErrCode: 110007) (ErrTime: 16:22:18).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "638.21", "slTriggerBy": "MarkPrice", "takeProfit": "494.08", "tpTriggerBy": "MarkPrice"}.
+2026-06-12 01:22:18 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:19 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-12 01:22:19 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-12 01:25:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.57% | BE=X
+2026-06-12 01:30:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-2.80% | BE=X
+2026-06-12 01:39:42 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -248ms — generate_timestamp 보정 적용
+2026-06-12 01:39:42 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-12 01:39:57 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -252ms — generate_timestamp 보정 적용
+2026-06-12 01:39:57 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-12 01:39:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 청산 알림 전송: TRXUSDT_Buy pnl=-1.56 USDT (청산)
+2026-06-12 10:10:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -420ms — generate_timestamp 보정 적용
+2026-06-12 10:10:33 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-12 10:10:33 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-12 10:10:33 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-12 10:10:34 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=6.93 USDT | 총자산=6.94 USDT
+2026-06-12 10:10:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-12 10:10:40 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 10:10:41 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:41 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:41 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:42 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:43 | [92mINFO[0m | [94mdata.news_fetcher[0m | ATOM 헤드라인 37건 수집
+2026-06-12 10:10:43 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | ATOM-USD 레버리지 4x 설정 완료
+2026-06-12 10:10:43 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 12.5 @ 시장가 (레버리지=4x, SL=2.1587494050792886, TP=1.5462349197885632)
+2026-06-12 10:10:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:44 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 10:10:44 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 10:15:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.23% | BE=X
+2026-06-12 10:20:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.36% | BE=X
+2026-06-12 10:25:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.43% | BE=X
+2026-06-12 10:30:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.47% | BE=X
+2026-06-12 10:35:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.36% | BE=X
+2026-06-12 10:40:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.30% | BE=X
+2026-06-12 10:40:47 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 10:40:48 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 10:45:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.31% | BE=X
+2026-06-12 10:50:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.45% | BE=X
+2026-06-12 10:55:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.72% | BE=X
+2026-06-12 11:00:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | BE 이동: ATOMUSDT short entry=1.9917
+2026-06-12 11:00:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.06% | BE=O
+2026-06-12 11:05:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.99% | BE=O
+2026-06-12 11:10:51 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:51 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 11:10:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.93% | BE=O
+2026-06-12 11:15:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.05% | BE=O
+2026-06-12 11:20:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.93% | BE=O
+2026-06-12 11:25:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.47% | BE=O
+2026-06-12 11:30:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.73% | BE=O
+2026-06-12 11:35:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.71% | BE=O
+2026-06-12 11:40:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.06% | BE=O
+2026-06-12 11:40:55 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 11:40:55 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 11:42:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 청산 알림 전송: ATOMUSDT_Sell pnl=-0.03 USDT (SL 체결)
+2026-06-12 12:10:58 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 12:10:58 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:58 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:58 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:58 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:58 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 03:10:58).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-12 12:10:59 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 12.4 @ 시장가 (레버리지=4x, SL=2.1637494050792885, TP=1.551234919788563)
+2026-06-12 12:10:59 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:59 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:59 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 12:10:59 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 12:15:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.46% | BE=X
+2026-06-12 12:20:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.19% | BE=X
+2026-06-12 12:25:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.18% | BE=X
+2026-06-12 12:30:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.55% | BE=X
+2026-06-12 12:35:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.38% | BE=X
+2026-06-12 12:40:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.53% | BE=X
+2026-06-12 12:41:02 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 12:41:02 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 12:45:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.60% | BE=X
+2026-06-12 12:50:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.20% | BE=X
+2026-06-12 12:55:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.18% | BE=X
+2026-06-12 13:00:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.30% | BE=X
+2026-06-12 13:05:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.45% | BE=X
+2026-06-12 13:10:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.21% | BE=X
+2026-06-12 13:11:05 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 13:11:05 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 13:15:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.25% | BE=X
+2026-06-12 13:20:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.46% | BE=X
+2026-06-12 13:25:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.03% | BE=X
+2026-06-12 13:30:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.46% | BE=X
+2026-06-12 13:35:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.37% | BE=X
+2026-06-12 13:40:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.24% | BE=X
+2026-06-12 13:41:09 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 13:41:09 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 13:45:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.66% | BE=X
+2026-06-12 13:50:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.32% | BE=X
+2026-06-12 13:55:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.68% | BE=X
+2026-06-12 14:00:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.19% | BE=X
+2026-06-12 14:05:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-1.29% | BE=X
+2026-06-12 14:10:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.99% | BE=X
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 14:11:10 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 14:15:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.61% | BE=X
+2026-06-12 14:20:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.71% | BE=X
+2026-06-12 14:25:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.78% | BE=X
+2026-06-12 14:30:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.73% | BE=X
+2026-06-12 14:35:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.74% | BE=X
+2026-06-12 14:40:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.11% | BE=X
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 14:41:10 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 14:45:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.30% | BE=X
+2026-06-12 14:50:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.12% | BE=X
+2026-06-12 14:55:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.05% | BE=X
+2026-06-12 15:00:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.24% | BE=X
+2026-06-12 15:05:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.01% | BE=X
+2026-06-12 15:10:06 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.11% | BE=X
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 15:11:11 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 15:15:10 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.36% | BE=X
+2026-06-12 15:20:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.78% | BE=X
+2026-06-12 15:25:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.79% | BE=X
+2026-06-12 15:30:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.87% | BE=X
+2026-06-12 15:35:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.70% | BE=X
+2026-06-12 15:38:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | BE 이동: ATOMUSDT short entry=1.9965
+2026-06-12 15:40:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.62% | BE=O
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 15:41:11 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 15:45:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.26% | BE=O
+2026-06-12 15:50:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.53% | BE=O
+2026-06-12 15:55:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.49% | BE=O
+2026-06-12 16:00:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.57% | BE=O
+2026-06-12 16:05:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.36% | BE=O
+2026-06-12 16:10:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.55% | BE=O
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 16:11:12 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 16:15:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.72% | BE=O
+2026-06-12 16:20:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.60% | BE=O
+2026-06-12 16:25:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.76% | BE=O
+2026-06-12 16:30:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.59% | BE=O
+2026-06-12 16:35:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.61% | BE=O
+2026-06-12 16:40:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.64% | BE=O
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 16:41:12 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 16:45:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.78% | BE=O
+2026-06-12 16:50:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.83% | BE=O
+2026-06-12 16:55:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.96% | BE=O
+2026-06-12 17:00:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.87% | BE=O
+2026-06-12 17:05:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.89% | BE=O
+2026-06-12 17:10:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.75% | BE=O
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 17:11:13 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 17:15:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.75% | BE=O
+2026-06-12 17:20:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.57% | BE=O
+2026-06-12 17:20:52 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | PC 시계 오차 -523ms — generate_timestamp 보정 적용
+2026-06-12 17:20:52 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-12 17:25:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.14% | BE=O
+2026-06-12 17:30:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.31% | BE=O
+2026-06-12 17:35:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.27% | BE=O
+2026-06-12 17:40:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 청산 알림 전송: ATOMUSDT_Sell pnl=-0.03 USDT (SL 체결)
+2026-06-12 17:41:13 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:13 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:13 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:13 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:15 | [92mINFO[0m | [94mdata.news_fetcher[0m | ATOM 헤드라인 34건 수집
+2026-06-12 17:41:15 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (ATOM-USD): leverage not modified (ErrCode: 110043) (ErrTime: 08:41:15).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "ATOMUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-12 17:41:15 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: ATOM-USD 12.4 @ 시장가 (레버리지=4x, SL=2.160349405079289, TP=1.5478349197885632)
+2026-06-12 17:41:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:15 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 17:41:15 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 17:50:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.21% | BE=X
+2026-06-12 17:55:03 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.04% | BE=X
+2026-06-12 18:00:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.03% | BE=X
+2026-06-12 18:05:13 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.12% | BE=X
+2026-06-12 18:10:15 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.33% | BE=X
+2026-06-12 18:11:15 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:15 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:15 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:15 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:15 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 18:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 18:15:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.32% | BE=X
+2026-06-12 18:20:18 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.53% | BE=X
+2026-06-12 18:25:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.62% | BE=X
+2026-06-12 18:30:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.57% | BE=X
+2026-06-12 18:35:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.48% | BE=X
+2026-06-12 18:40:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.34% | BE=X
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 18:41:16 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 18:45:26 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.26% | BE=X
+2026-06-12 18:50:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.08% | BE=X
+2026-06-12 18:55:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.33% | BE=X
+2026-06-12 19:00:31 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.02% | BE=X
+2026-06-12 19:05:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.33% | BE=X
+2026-06-12 19:10:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.47% | BE=X
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 19:11:16 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 19:15:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.10% | BE=X
+2026-06-12 19:20:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.00% | BE=X
+2026-06-12 19:25:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.03% | BE=X
+2026-06-12 19:30:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.15% | BE=X
+2026-06-12 19:35:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.07% | BE=X
+2026-06-12 19:40:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.07% | BE=X
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 19:41:17 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 19:45:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.22% | BE=X
+2026-06-12 19:50:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.02% | BE=X
+2026-06-12 19:55:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.02% | BE=X
+2026-06-12 20:00:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.14% | BE=X
+2026-06-12 20:05:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.05% | BE=X
+2026-06-12 20:10:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.14% | BE=X
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 20:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 20:15:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=-0.09% | BE=X
+2026-06-12 20:20:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.29% | BE=X
+2026-06-12 20:25:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.30% | BE=X
+2026-06-12 20:30:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.27% | BE=X
+2026-06-12 20:35:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.37% | BE=X
+2026-06-12 20:40:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.47% | BE=X
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 20:41:18 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 20:45:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.46% | BE=X
+2026-06-12 20:50:07 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.46% | BE=X
+2026-06-12 20:55:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.40% | BE=X
+2026-06-12 21:00:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.67% | BE=X
+2026-06-12 21:05:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+0.83% | BE=X
+2026-06-12 21:09:21 | [92mINFO[0m | [94mtrader.position_monitor[0m | BE 이동: ATOMUSDT short entry=1.9914
+2026-06-12 21:10:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.55% | BE=O
+2026-06-12 21:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:18 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 21:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 21:15:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.04% | BE=O
+2026-06-12 21:20:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.32% | BE=O
+2026-06-12 21:25:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.57% | BE=O
+2026-06-12 21:30:28 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.41% | BE=O
+2026-06-12 21:35:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.59% | BE=O
+2026-06-12 21:40:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.27% | BE=O
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 21:41:19 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 21:45:33 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.05% | BE=O
+2026-06-12 21:50:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.02% | BE=O
+2026-06-12 21:55:36 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.58% | BE=O
+2026-06-12 22:00:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.66% | BE=O
+2026-06-12 22:05:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.87% | BE=O
+2026-06-12 22:10:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.10% | BE=O
+2026-06-12 22:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:19 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:20 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 22:11:20 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 22:15:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.96% | BE=O
+2026-06-12 22:20:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.04% | BE=O
+2026-06-12 22:25:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.33% | BE=O
+2026-06-12 22:30:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.50% | BE=O
+2026-06-12 22:35:49 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.30% | BE=O
+2026-06-12 22:40:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.52% | BE=O
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 22:41:20 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 22:45:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.63% | BE=O
+2026-06-12 22:50:54 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.56% | BE=O
+2026-06-12 22:55:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.76% | BE=O
+2026-06-12 23:00:57 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.29% | BE=O
+2026-06-12 23:05:59 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.32% | BE=O
+2026-06-12 23:10:01 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.24% | BE=O
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 23:11:21 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 23:15:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.91% | BE=O
+2026-06-12 23:20:04 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.07% | BE=O
+2026-06-12 23:25:05 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.04% | BE=O
+2026-06-12 23:30:09 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.67% | BE=O
+2026-06-12 23:35:11 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.73% | BE=O
+2026-06-12 23:40:12 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.82% | BE=O
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-12 23:41:21 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-12 23:45:16 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.95% | BE=O
+2026-06-12 23:50:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+2.29% | BE=O
+2026-06-12 23:55:19 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.71% | BE=O
+2026-06-13 00:00:20 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.76% | BE=O
+2026-06-13 00:05:22 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: ATOMUSDT Sell x4 | PnL=+1.75% | BE=O

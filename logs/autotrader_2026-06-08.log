@@ -1,0 +1,488 @@
+2026-06-08 00:27:20 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-08 00:27:20 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-08 00:27:20 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-08 00:27:22 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.49 USDT | 총자산=8.51 USDT
+2026-06-08 00:27:23 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-08 00:27:26 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 00:27:27 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:27 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:27 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:27 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:28 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:28 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:29 | [92mINFO[0m | [94mdata.news_fetcher[0m | TRX 헤드라인 4건 수집
+2026-06-08 00:27:29 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | TRX-USD 레버리지 5x 설정 완료
+2026-06-08 00:27:30 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 롱 진입: TRX-USD 116.0 @ 시장가 (레버리지=5x, SL=0.3162633000953447, TP=0.36006786641241406)
+2026-06-08 00:27:30 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 00:27:31 | [93mWARNING[0m | [94mutils.telegram_notifier[0m | 텔레그램 전송 실패: 400 {"ok":false,"error_code":400,"description":"Bad Request: can't parse entities: Unsupported start tag \"60.0\" at byte offset 272"}
+2026-06-08 00:30:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=+0.08% | BE=X
+2026-06-08 00:35:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=+0.10% | BE=X
+2026-06-08 00:40:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=+0.11% | BE=X
+2026-06-08 00:45:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=+0.03% | BE=X
+2026-06-08 00:50:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.16% | BE=X
+2026-06-08 00:55:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.10% | BE=X
+2026-06-08 00:57:33 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 00:57:34 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:34 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:34 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:34 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:35 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:35 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:35 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 00:57:35 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 01:00:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.14% | BE=X
+2026-06-08 01:05:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.07% | BE=X
+2026-06-08 01:10:39 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.10% | BE=X
+2026-06-08 01:15:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.09% | BE=X
+2026-06-08 01:20:42 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.13% | BE=X
+2026-06-08 01:25:44 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.15% | BE=X
+2026-06-08 01:27:39 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 01:27:39 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:39 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:40 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:40 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:40 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:40 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 01:27:41 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 01:30:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.17% | BE=X
+2026-06-08 01:35:47 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.25% | BE=X
+2026-06-08 01:40:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.26% | BE=X
+2026-06-08 01:45:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.30% | BE=X
+2026-06-08 01:50:52 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.30% | BE=X
+2026-06-08 01:55:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.35% | BE=X
+2026-06-08 01:57:44 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 01:57:44 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:44 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:45 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:45 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:45 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:45 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 01:57:46 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 02:00:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.43% | BE=X
+2026-06-08 02:05:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.40% | BE=X
+2026-06-08 02:10:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-06-08 02:15:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.34% | BE=X
+2026-06-08 08:06:57 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-08 08:06:57 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-08 08:06:57 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-08 08:06:58 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.48 USDT | 총자산=8.20 USDT
+2026-06-08 08:07:00 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-08 08:07:04 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 08:07:04 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:04 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:05 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:06 | [92mINFO[0m | [94mdata.news_fetcher[0m | BNB 헤드라인 3건 수집
+2026-06-08 08:07:06 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | BNB-USD 레버리지 4x 설정 완료
+2026-06-08 08:07:06 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=653.3782036260217, TP=470.894790330609)
+2026-06-08 08:07:06 | [91mERROR[0m | [94m__main__[0m | BNB-USD 주문 실패: ab not enough for new order (ErrCode: 110007) (ErrTime: 23:07:06).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "653.38", "slTriggerBy": "MarkPrice", "takeProfit": "470.89", "tpTriggerBy": "MarkPrice"}.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 276, in _process_symbol
+    order = self.broker.open_short(symbol, usd_notional, leverage, stop_loss, take_profit)
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 292, in open_short
+    return self._open_position("Sell", symbol, usd_notional, leverage,
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               stop_loss_price, take_profit_price)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 342, in _open_position
+    resp = self._session.place_order(**order_params)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_trade.py", line 21, in place_order
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="POST",
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 244, in _submit_request
+    return self._handle_response(response, method, path, req_params, recv_window, retries_attempted)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 474, in _handle_response
+    raise InvalidRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.InvalidRequestError: ab not enough for new order (ErrCode: 110007) (ErrTime: 23:07:06).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "653.38", "slTriggerBy": "MarkPrice", "takeProfit": "470.89", "tpTriggerBy": "MarkPrice"}.
+2026-06-08 08:07:06 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:07 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:07 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:07 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 08:07:07 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:21 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-08 08:11:21 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-08 08:11:21 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-08 08:11:23 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 연결 OK [실계좌] | 잔고=8.48 USDT | 총자산=8.22 USDT
+2026-06-08 08:11:24 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 모니터 시작 (1분 주기, 1m·3m·5m 멀티 TF)
+2026-06-08 08:11:27 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 08:11:27 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:27 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:28 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:28 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 23:11:28).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-08 08:11:28 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=654.3682036260217, TP=471.884790330609)
+2026-06-08 08:11:28 | [91mERROR[0m | [94m__main__[0m | BNB-USD 주문 실패: ab not enough for new order (ErrCode: 110007) (ErrTime: 23:11:28).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "654.37", "slTriggerBy": "MarkPrice", "takeProfit": "471.88", "tpTriggerBy": "MarkPrice"}.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 276, in _process_symbol
+    order = self.broker.open_short(symbol, usd_notional, leverage, stop_loss, take_profit)
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 292, in open_short
+    return self._open_position("Sell", symbol, usd_notional, leverage,
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               stop_loss_price, take_profit_price)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 342, in _open_position
+    resp = self._session.place_order(**order_params)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_trade.py", line 21, in place_order
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="POST",
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 244, in _submit_request
+    return self._handle_response(response, method, path, req_params, recv_window, retries_attempted)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 474, in _handle_response
+    raise InvalidRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.InvalidRequestError: ab not enough for new order (ErrCode: 110007) (ErrTime: 23:11:28).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "654.37", "slTriggerBy": "MarkPrice", "takeProfit": "471.88", "tpTriggerBy": "MarkPrice"}.
+2026-06-08 08:11:28 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:29 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:29 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 08:11:29 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 08:15:25 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.66% | BE=X
+2026-06-08 08:20:27 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.69% | BE=X
+2026-06-08 08:25:29 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.67% | BE=X
+2026-06-08 08:30:30 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.59% | BE=X
+2026-06-08 08:35:32 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.61% | BE=X
+2026-06-08 08:40:34 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.55% | BE=X
+2026-06-08 08:41:32 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 08:41:32 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:33 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:33 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:33 | [93mWARNING[0m | [94mbroker.bybit_futures_broker[0m | 레버리지 설정 실패 (BNB-USD): leverage not modified (ErrCode: 110043) (ErrTime: 23:41:33).
+Request → POST https://api.bybit.com/v5/position/set-leverage: {"category": "linear", "symbol": "BNBUSDT", "buyLeverage": "4", "sellLeverage": "4"}.
+2026-06-08 08:41:33 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | 숏 진입: BNB-USD 0.05 @ 시장가 (레버리지=4x, SL=652.9882036260217, TP=470.504790330609)
+2026-06-08 08:41:33 | [91mERROR[0m | [94m__main__[0m | BNB-USD 주문 실패: ab not enough for new order (ErrCode: 110007) (ErrTime: 23:41:33).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "652.99", "slTriggerBy": "MarkPrice", "takeProfit": "470.50", "tpTriggerBy": "MarkPrice"}.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 276, in _process_symbol
+    order = self.broker.open_short(symbol, usd_notional, leverage, stop_loss, take_profit)
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 292, in open_short
+    return self._open_position("Sell", symbol, usd_notional, leverage,
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               stop_loss_price, take_profit_price)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 342, in _open_position
+    resp = self._session.place_order(**order_params)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_trade.py", line 21, in place_order
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="POST",
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 244, in _submit_request
+    return self._handle_response(response, method, path, req_params, recv_window, retries_attempted)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 474, in _handle_response
+    raise InvalidRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.InvalidRequestError: ab not enough for new order (ErrCode: 110007) (ErrTime: 23:41:33).
+Request → POST https://api.bybit.com/v5/order/create: {"category": "linear", "symbol": "BNBUSDT", "side": "Sell", "orderType": "Market", "qty": "0.05", "timeInForce": "IOC", "positionIdx": 2, "stopLoss": "652.99", "slTriggerBy": "MarkPrice", "takeProfit": "470.50", "tpTriggerBy": "MarkPrice"}.
+2026-06-08 08:41:33 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:34 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:34 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 120일치
+2026-06-08 08:41:34 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 120일치
+2026-06-08 08:45:35 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.56% | BE=X
+2026-06-08 08:50:37 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.56% | BE=X
+2026-06-08 08:55:38 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.54% | BE=X
+2026-06-08 09:00:40 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.49% | BE=X
+2026-06-08 09:05:41 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.61% | BE=X
+2026-06-08 09:10:43 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.71% | BE=X
+2026-06-08 09:11:37 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 09:11:38 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:38 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:38 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:39 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:39 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:39 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-08 09:11:39 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-08 09:15:45 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.69% | BE=X
+2026-06-08 09:20:46 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.69% | BE=X
+2026-06-08 09:25:48 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.69% | BE=X
+2026-06-08 09:30:50 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.55% | BE=X
+2026-06-08 09:35:51 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.62% | BE=X
+2026-06-08 09:40:53 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.38% | BE=X
+2026-06-08 09:41:42 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 09:41:43 | [92mINFO[0m | [94mdata.fetcher[0m | BTC-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:43 | [92mINFO[0m | [94mdata.fetcher[0m | ETH-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:43 | [92mINFO[0m | [94mdata.fetcher[0m | BNB-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:44 | [92mINFO[0m | [94mdata.fetcher[0m | ATOM-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOGE-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:44 | [92mINFO[0m | [94mdata.fetcher[0m | DOT-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:44 | [92mINFO[0m | [94mdata.fetcher[0m | TRX-USD 데이터 로드 완료: 119일치
+2026-06-08 09:41:45 | [92mINFO[0m | [94mdata.fetcher[0m | SOL-USD 데이터 로드 완료: 119일치
+2026-06-08 09:45:55 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.39% | BE=X
+2026-06-08 09:50:56 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.35% | BE=X
+2026-06-08 09:55:58 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.41% | BE=X
+2026-06-08 10:00:02 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.44% | BE=X
+2026-06-08 10:01:11 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:01:11).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:01:11).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:02:21 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:02:21).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:02:21).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:04:36 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:04:36).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:04:36).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:05:46 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:05:46).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:05:46).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:06:55 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:06:55).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:06:55).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:08:04 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:08:04).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:08:04).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:09:13 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:09:13).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:09:13).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:10:17 | [92mINFO[0m | [94mtrader.position_monitor[0m | 포지션 체크: TRXUSDT Buy x5 | PnL=-0.46% | BE=X
+2026-06-08 10:11:26 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:11:26).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:11:26).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:11:48 | [93mWARNING[0m | [94mdata.macro_fetcher[0m | VIX 데이터 없음
+2026-06-08 10:11:57 | [91mERROR[0m | [94m__main__[0m | 사이클 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:11:57).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 102, in start
+    self._run_cycle()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\run_live_trading.py", line 128, in _run_cycle
+    open_positions = {p.symbol: p for p in self.broker.get_positions()}
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:11:57).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:12:35 | [91mERROR[0m | [94mtrader.position_monitor[0m | 모니터 오류: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:12:35).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+Traceback (most recent call last):
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\trader\position_monitor.py", line 85, in _loop
+    positions = self.broker.get_positions()
+  File "C:\Users\원용\Desktop\Wonyong company\autotrader_only_claude\broker\bybit_futures_broker.py", line 211, in get_positions
+    resp = self._session.get_positions(**kwargs)
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_v5_position.py", line 22, in get_positions
+    return self._submit_request(
+           ~~~~~~~~~~~~~~~~~~~~^
+        method="GET",
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        auth=True,
+        ^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\원용\AppData\Local\Programs\Python\Python313\Lib\site-packages\pybit\_http_manager.py", line 255, in _submit_request
+    raise FailedRequestError(
+    ...<5 lines>...
+    )
+pybit.exceptions.FailedRequestError: Bad request. retries exceeded maximum. (ErrCode: 400) (ErrTime: 01:12:35).
+Request → GET https://api.bybit.com/v5/position/list: category=linear&settleCoin=USDT.
+2026-06-08 10:13:49 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-08 10:13:49 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-08 10:13:49 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
+2026-06-08 10:51:10 | [92mINFO[0m | [94mbroker.bybit_futures_broker[0m | Bybit 브로커 연결 (실계좌)
+2026-06-08 10:51:10 | [93mWARNING[0m | [94mdata.news_fetcher[0m | ANTHROPIC_API_KEY 없음 — 뉴스 감성 분석 비활성화
+2026-06-08 10:51:10 | [92mINFO[0m | [94mutils.telegram_notifier[0m | 텔레그램 알림 활성화
