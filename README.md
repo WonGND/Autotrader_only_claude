@@ -1,5 +1,12 @@
 # AutoTrader - 자동 주식 거래 시스템
 
+> **코인 선물 봇 (2026-10 개편)** — 실매매 규칙은 `run_ensemble_trading.py`(규칙 D: 앙상블 추세추종, 하루 1회)입니다.
+> 기준선 B2(터틀 55/20+롱우위)는 매일 가상으로 같이 계산됩니다.
+> - 클라우드 설치: [`deploy/DEPLOY_SEOUL.md`](deploy/DEPLOY_SEOUL.md)
+> - 로그로 피드백 받기: [`FEEDBACK.md`](FEEDBACK.md)
+> - 규칙 비교 백테스트: [`research/coin_rules_sim/`](research/coin_rules_sim/) · 설정: [`config/ensemble.yaml`](config/ensemble.yaml)
+> - 예전 상시 실행 봇 `run_live_trading.py`는 남아 있지만 새 봇과 **동시에 실행하지 마세요**.
+
 Python 기반의 완전 자동화 주식 거래 시스템입니다.
 한국/미국 주식을 지원하며, 다양한 기술적 분석 전략과 백테스트 기능을 제공합니다.
 

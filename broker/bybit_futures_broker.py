@@ -242,9 +242,79 @@ class BybitFuturesBroker:
         return SYMBOL_MAP.get(symbol, symbol.replace("-USD", "USDT").replace("/", ""))
 
     def _floor_qty(self, symbol_bybit: str, qty: float) -> float:
-        """최소 수량 단위로 내림"""
-        step = LOT_SIZE.get(symbol_bybit, 0.001)
-        return math.floor(qty / step) * step
+        """최소 수량 단위로 내림.
+
+        부동소수점 오차로 0.30000000000000004 같은 값이 거래소로 넘어가
+        'Qty invalid'(ErrCode 10001)로 주문이 105건 실패하던 문제를 고쳤다:
+        수량 단위의 소수 자릿수에 맞춰 반올림해 깨끗한 값만 보낸다.
+        """
+        step = self.get_instrument(symbol_bybit)["qty_step"]
+        decimals = max(0, -int(math.floor(math.log10(step)))) if step < 1 else 0
+        return round(math.floor(qty / step + 1e-9) * step, decimals)
+
+    def get_instrument(self, symbol: str) -> dict:
+        """종목 거래 규칙(수량 단위·최소 수량·최소 주문금액)을 거래소에서 조회 (캐시).
+
+        조회 실패 시 하드코딩 LOT_SIZE로 대체한다.
+        """
+        sym = symbol if symbol.endswith("USDT") else self._to_bybit_symbol(symbol)
+        cache = self.__dict__.setdefault("_instrument_cache", {})
+        if sym in cache:
+            return cache[sym]
+        info = {"qty_step": LOT_SIZE.get(sym, 0.001), "min_qty": LOT_SIZE.get(sym, 0.001),
+                "min_notional": 5.0}
+        try:
+            resp = self._session.get_instruments_info(category=self.CATEGORY, symbol=sym)
+            lf = resp["result"]["list"][0]["lotSizeFilter"]
+            info = {
+                "qty_step": float(lf.get("qtyStep") or info["qty_step"]),
+                "min_qty": float(lf.get("minOrderQty") or info["min_qty"]),
+                "min_notional": float(lf.get("minNotionalValue") or 5.0),
+            }
+        except Exception as e:
+            logger.warning(f"종목 규칙 조회 실패 ({sym}): {e} → 기본값 사용")
+        cache[sym] = info
+        return info
+
+    @_resilient
+    def get_daily_klines(self, symbol: str, limit: int = 1000):
+        """완성된 일봉만 반환 (UTC 00:00 기준, 진행 중인 오늘 봉 제외).
+
+        Returns: pandas DataFrame [Open, High, Low, Close, Volume], index=날짜(오름차순)
+        """
+        import pandas as pd
+        sym = self._to_bybit_symbol(symbol)
+        resp = self._session.get_kline(category=self.CATEGORY, symbol=sym,
+                                       interval="D", limit=min(limit + 1, 1000))
+        self._raise_if_error(resp, f"일봉 조회 {symbol}")
+        rows = resp["result"]["list"]                 # 최신순
+        df = pd.DataFrame(rows).iloc[:, :6]
+        df.columns = ["t", "Open", "High", "Low", "Close", "Volume"]
+        df["Date"] = pd.to_datetime(df["t"].astype("int64"), unit="ms")
+        df = df.set_index("Date").drop(columns="t").astype(float).sort_index()
+        today_utc = pd.Timestamp.utcnow().tz_localize(None).normalize()
+        return df[df.index < today_utc]               # 진행 중인 봉 제거
+
+    @_resilient
+    def place_qty_order(self, symbol: str, side: str, qty: float,
+                        position_side: str, reduce_only: bool = False) -> dict:
+        """수량 지정 시장가 주문 (리밸런싱용).
+
+        side: "Buy"/"Sell" (주문 방향), position_side: "long"/"short" (헤지모드 포지션 쪽)
+        """
+        sym = self._to_bybit_symbol(symbol)
+        qty = self._floor_qty(sym, qty)
+        if qty <= 0:
+            raise ValueError(f"{symbol} 주문 수량 0 (최소 단위 미만)")
+        params = dict(category=self.CATEGORY, symbol=sym, side=side, orderType="Market",
+                      qty=str(qty), timeInForce="IOC",
+                      positionIdx=1 if position_side == "long" else 2)
+        if reduce_only:
+            params["reduceOnly"] = True
+        logger.info(f"리밸런스 주문: {symbol} {side} {qty} ({position_side}{', reduceOnly' if reduce_only else ''})")
+        resp = self._session.place_order(**params)
+        self._raise_if_error(resp, f"리밸런스 {side} {symbol}")
+        return {"order_id": resp["result"].get("orderId", ""), "qty": qty}
 
     def _price_decimals(self, symbol_bybit: str) -> int:
         """심볼의 가격 틱 사이즈로부터 소수점 자릿수를 조회 (캐시)"""
@@ -717,8 +787,7 @@ class BybitFuturesBroker:
             logger.warning(f"{symbol} {side} 포지션 없음")
             return None
 
-        lot  = LOT_SIZE.get(bybit_sym, 0.001)
-        qty  = math.floor(target.size * ratio / lot) * lot
+        qty  = self._floor_qty(bybit_sym, target.size * ratio)   # 부동소수점 오차 없는 수량
         if qty <= 0:
             logger.warning(f"{symbol} 부분 청산 수량 부족 (size={target.size}, ratio={ratio})")
             return None

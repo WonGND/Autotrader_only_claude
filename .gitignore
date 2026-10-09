@@ -22,3 +22,7 @@ backtest_*.csv
 futures_backtest_*.csv
 coin_rotation_results.csv
 backtest_coin_per_symbol.csv
+
+# 일일 봇 로그 (자산·거래 정보 — 공개 저장소에 올리지 않음)
+bot_logs/
+coin_bot.lock
