@@ -604,7 +604,21 @@ _PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
 
 
 def _pid_alive(pid: int) -> bool:
-    """해당 PID의 프로세스가 아직 실행 중인지 확인 (Windows API)."""
+    """해당 PID의 프로세스가 아직 실행 중인지 확인 (Windows API / 리눅스는 os.kill 0).
+
+    리눅스 서버(클라우드 VM)에서는 ctypes.windll이 없어 항상 False가 되어
+    중복 실행 잠금이 무력화되던 문제를 수정했다.
+    """
+    if os.name != "nt":
+        try:
+            os.kill(pid, 0)          # 신호를 보내지 않고 존재 여부만 확인
+            return True
+        except ProcessLookupError:
+            return False
+        except PermissionError:
+            return True              # 다른 사용자의 살아있는 프로세스
+        except Exception:
+            return False
     try:
         kernel32 = ctypes.windll.kernel32
         handle = kernel32.OpenProcess(_PROCESS_QUERY_LIMITED_INFORMATION, False, pid)

@@ -1,5 +1,8 @@
 # 코인선물 봇 — Google Cloud 무료 VM 배포 가이드 (24/7 무인 운용)
 
+> ⚠️ **사용 중단 권장**: GCP 무료 VM은 미국 리전만 가능한데 Bybit은 미국 IP의 API를 차단합니다(403).
+> 아시아 리전 기준인 [`DEPLOY_SEOUL.md`](DEPLOY_SEOUL.md)를 따르세요.
+
 PC를 꺼도 클라우드에서 봇이 계속 돌도록 하는 절차. **Google Cloud `e2-micro` Always Free**(평생 무료, 자동 청구 없음) 기준.
 
 > 한 줄 요약: 무료 리눅스 VM 1대를 만들고 → 봇을 올리고 → `systemd` 서비스로 등록하면,
