@@ -21,6 +21,7 @@ class FakeBroker:
         return {"qty_step": LOTS[s], "min_qty": LOTS[s], "min_notional": 5.0}
     def get_closed_pnl(self, limit=100): return []
     def set_leverage(self, *a): return True
+    def get_margin_mode(self): return "REGULAR_MARGIN"
 
 
 def pos(symbol, side, size, price):

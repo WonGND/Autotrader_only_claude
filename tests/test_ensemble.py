@@ -7,25 +7,28 @@ import run_ensemble_trading as E
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CFG = yaml.safe_load(open(os.path.join(ROOT, "config", "ensemble.yaml"), encoding="utf-8"))
-D = R.load()
+D = R.load()                                                   # 일봉
+D4 = R.load(os.path.join(ROOT, "research", "coin_rules_sim", "data_4h"))   # 4시간봉
 INS = {s: {"qty_step": 0.001, "min_qty": 0.001, "min_notional": 5.0} for s in D}
 PX = {s: float(D[s].Close.iloc[-1]) for s in D}
 
 
 def test_live_weights_equal_backtest_weights():
     """실매매 목표비중 == 백테스트 비중 (같은 함수, 같은 결과)."""
-    W_live = E.compute_targets(D, CFG)
+    W_live = E.compute_targets(D4, CFG, D)
     k = CFG["exposure_multiplier"]
-    W_bt = R.ensemble_weights(D, [10, 20, 30, 60, 90, 150, 250], 0.25 * k, 2.0 * k, 0.43, True)
+    bull = E.btc_bull_series(D4["BTC"].index, D)
+    W_bt = R.ensemble_weights(D4, [10, 20, 30, 60, 90, 150, 250], 0.25 * k, 2.0 * k, 0.43, True,
+                              bpd=6, bull=bull)
     pd.testing.assert_frame_equal(W_live, W_bt)
     assert (W_live.abs().sum(axis=1) <= 2.0 * k + 1e-9).all()  # 총 레버리지 한도
 
 
 def test_no_lookahead():
     """마지막 날 데이터를 바꿔도 그 전날까지의 비중은 변하지 않아야 함."""
-    D2 = {s: df.copy() for s, df in D.items()}
+    D2 = {s: df.copy() for s, df in D4.items()}
     D2["BTC"].iloc[-1, D2["BTC"].columns.get_loc("Close")] *= 1.5
-    a, b = E.compute_targets(D, CFG), E.compute_targets(D2, CFG)
+    a, b = E.compute_targets(D4, CFG, D), E.compute_targets(D2, CFG, D)
     pd.testing.assert_frame_equal(a.iloc[:-1], b.iloc[:-1])
 
 
@@ -70,9 +73,24 @@ def test_auto_multiplier_bounds_and_brake():
 
 
 def test_decide_multiplier_uses_config_mode():
-    W1 = E.compute_targets(D, dict(CFG, exposure_multiplier=1))
-    k, info = E.decide_multiplier(D, W1, dict(CFG, leverage_mode="fixed"), 100, 100)
+    W1 = E.compute_targets(D4, dict(CFG, exposure_multiplier=1), D)
+    k, info = E.decide_multiplier(D4, W1, dict(CFG, leverage_mode="fixed"), 100, 100)
     assert k == CFG["exposure_multiplier"] and info["mode"] == "fixed"
-    k, info = E.decide_multiplier(D, W1, dict(CFG, leverage_mode="auto"), 85, 100)
+    k, info = E.decide_multiplier(D4, W1, dict(CFG, leverage_mode="auto"), 85, 100)
     a = CFG["auto_leverage"]
     assert a["k_min"] <= k <= a["k_max"] and info["drawdown"] == 0.15
+
+
+def test_gross_cap_and_cross_margin_leverage():
+    row = pd.Series({"BTC": 6.0, "ETH": -6.0})
+    capped, flag = E.cap_gross(row, 10)
+    assert flag and abs(capped.abs().sum() - 10) < 1e-9
+    assert E.exchange_leverage_for(D["BTC"], CFG, "REGULAR_MARGIN") == CFG["exchange_leverage_cross"]
+
+
+def test_short_regime_uses_previous_day():
+    """4h 봉의 BTC 추세 필터는 '전날 확정된' 일봉 200일선 값이어야 함 (당일 미래정보 금지)."""
+    bull = E.btc_bull_series(D4["BTC"].index, D)
+    btc = D["BTC"].Close; daily = btc > btc.rolling(200).mean()
+    t = D4["BTC"].index[-1]
+    assert bool(bull.loc[t]) == bool(daily.loc[t.normalize() - pd.Timedelta(days=1)])

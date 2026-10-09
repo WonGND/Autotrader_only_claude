@@ -296,6 +296,48 @@ class BybitFuturesBroker:
         return df[df.index < today_utc]               # 진행 중인 봉 제거
 
     @_resilient
+    def get_klines(self, symbol: str, interval: str = "D", total: int = 1000):
+        """완성된 봉만 반환 (진행 중인 봉 제외). interval: "D", "240"(4h), "60"(1h) 등.
+
+        total이 1000을 넘으면 과거 방향으로 여러 번 나눠 받는다.
+        Returns: pandas DataFrame [Open, High, Low, Close, Volume], index=봉 시작시각(UTC, 오름차순)
+        """
+        import pandas as pd
+        sym = self._to_bybit_symbol(symbol)
+        rows, end = [], None
+        while len(rows) < total + 1:
+            kw = dict(category=self.CATEGORY, symbol=sym, interval=interval,
+                      limit=min(1000, total + 1 - len(rows)))
+            if end is not None:
+                kw["end"] = end
+            resp = self._session.get_kline(**kw)
+            self._raise_if_error(resp, f"캔들 조회 {symbol} {interval}")
+            page = resp["result"]["list"]            # 최신순
+            if not page:
+                break
+            rows.extend(page)
+            end = int(page[-1][0]) - 1
+            if len(page) < kw["limit"]:
+                break
+        df = pd.DataFrame(rows).iloc[:, :6]
+        df.columns = ["t", "Open", "High", "Low", "Close", "Volume"]
+        df["Date"] = pd.to_datetime(df["t"].astype("int64"), unit="ms")
+        df = df.set_index("Date").drop(columns="t").astype(float).sort_index()
+        df = df[~df.index.duplicated()]
+        minutes = {"D": 1440, "W": 10080}.get(interval, None) or int(interval)
+        now = pd.Timestamp.utcnow().tz_localize(None)
+        return df[df.index + pd.Timedelta(minutes=minutes) <= now]   # 진행 중인 봉 제거
+
+    def get_margin_mode(self) -> str:
+        """계좌 마진 모드: REGULAR_MARGIN(교차) / ISOLATED_MARGIN(격리) / PORTFOLIO_MARGIN / UNKNOWN"""
+        try:
+            resp = self._session.get_account_info()
+            return str(resp["result"].get("marginMode") or "UNKNOWN")
+        except Exception as e:
+            logger.warning(f"마진 모드 조회 실패: {e}")
+            return "UNKNOWN"
+
+    @_resilient
     def place_qty_order(self, symbol: str, side: str, qty: float,
                         position_side: str, reduce_only: bool = False) -> dict:
         """수량 지정 시장가 주문 (리밸런싱용).

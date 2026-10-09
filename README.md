@@ -1,6 +1,6 @@
 # AutoTrader - 자동 주식 거래 시스템
 
-> **코인 선물 봇 (2026-10 개편)** — 실매매 규칙은 `run_ensemble_trading.py`(규칙 D: 앙상블 추세추종, 하루 1회)입니다.
+> **코인 선물 봇 (2026-10 개편)** — 실매매 규칙은 `run_ensemble_trading.py`(규칙 D: 앙상블 추세추종, 4시간봉·4시간마다 실행, 자동 레버리지 1~10배)입니다.
 > 기준선 B2(터틀 55/20+롱우위)는 매일 가상으로 같이 계산됩니다.
 > - 클라우드 설치: [`deploy/DEPLOY_SEOUL.md`](deploy/DEPLOY_SEOUL.md)
 > - 로그로 피드백 받기: [`FEEDBACK.md`](FEEDBACK.md)

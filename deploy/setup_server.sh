@@ -12,7 +12,7 @@
 #   2) 파이썬·시간동기화(chrony)·스왑 설치
 #   3) .venv 생성 + requirements 설치
 #   4) .env 템플릿 생성 (키는 직접 입력, 기본 DRY_RUN=true)
-#   5) systemd 타이머 등록 (매일 09:05 KST 1회 실행, 서버 재부팅에도 유지)
+#   5) systemd 타이머 등록 (4시간마다 봉 마감 5분 뒤 실행, 서버 재부팅에도 유지)
 # ────────────────────────────────────────────────────────────────────
 set -euo pipefail
 
@@ -73,10 +73,10 @@ else
   echo "   기존 .env 유지"
 fi
 
-echo "== [5/5] 매일 자동 실행 등록 (매일 09:05 한국시간 = 일봉 마감 직후)"
+echo "== [5/5] 자동 실행 등록 (4시간마다: 한국시간 01·05·09·13·17·21시 5분 = 4시간봉 마감 직후)"
 sudo tee /etc/systemd/system/coin-ensemble.service >/dev/null <<UNITEOF
 [Unit]
-Description=Coin futures ensemble bot (rule D) - daily rebalance
+Description=Coin futures ensemble bot (rule D) - 4h rebalance
 After=network-online.target chrony.service
 Wants=network-online.target
 
@@ -94,10 +94,10 @@ UNITEOF
 
 sudo tee /etc/systemd/system/coin-ensemble.timer >/dev/null <<UNITEOF
 [Unit]
-Description=Run coin ensemble bot daily after the UTC daily close
+Description=Run coin ensemble bot after every 4h candle close
 
 [Timer]
-OnCalendar=*-*-* 00:05:00 UTC
+OnCalendar=*-*-* 00/4:05:00 UTC
 # 서버가 꺼져 있다 켜지면 놓친 실행을 바로 1회 수행
 Persistent=true
 RandomizedDelaySec=60
@@ -122,7 +122,7 @@ cat <<DONE
   1) 키 입력:              nano ${APP_DIR}/.env
   2) Bybit API 관리에서 이 서버 IP(${PUBIP})를 화이트리스트에 등록 (출금 권한 OFF)
   3) 주문 없이 시험 실행:   cd ${APP_DIR} && .venv/bin/python -X utf8 run_ensemble_trading.py --dry-run
-  4) 매일 자동 실행 시작:   sudo systemctl start coin-ensemble.timer
+  4) 자동 실행 시작:       sudo systemctl start coin-ensemble.timer   (4시간마다)
   5) 다음 실행 시각 확인:   systemctl list-timers coin-ensemble.timer
   6) 지금 바로 1회 실행:    sudo systemctl start coin-ensemble.service
   7) 실행 로그 보기:        journalctl -u coin-ensemble.service -n 100

@@ -184,13 +184,24 @@ RULE_B2 = dict(RULE_B, name="B2. 터틀 55/20 + 롱우위", ch=lambda s, side: 5
 # ─────────────────────────────────────────────────────────────────────
 # 앙상블 + 변동성 타깃 (규칙 C: Zarattini et al. 2025)
 # ─────────────────────────────────────────────────────────────────────
-def ensemble_weights(D, lookbacks, vol_target, lev_cap, short_frac=0.0, short_bear_only=True):
+def ensemble_weights(D, lookbacks, vol_target, lev_cap, short_frac=0.0, short_bear_only=True,
+                     bpd=1, bull=None):
+    """규칙 D 목표 비중.
+
+    bpd : 하루당 봉 수 (일봉 1, 4시간봉 6, 1시간봉 24). lookbacks는 '봉 개수' 단위.
+          변동성은 최근 90일(=90·bpd봉)로 계산해 연율화(√(365·bpd)).
+    bull: BTC 강세 여부(bool Series, D와 같은 인덱스). None이면 BTC 200일선(=200·bpd봉)으로 계산.
+          단기봉에서는 일봉 200일선을 넘겨주는 것이 정확하다 (데이터가 짧아도 됨).
+    """
     syms = list(D); idx = D[syms[0]].index
     W = pd.DataFrame(0.0, index=idx, columns=syms)
-    btc = D["BTC"].Close; bull = btc > btc.rolling(200).mean()
+    if bull is None:
+        btc = D["BTC"].Close; bull = btc > btc.rolling(200 * bpd).mean()
+    bull_arr = np.asarray(pd.Series(bull).reindex(idx).fillna(False).values, dtype=bool) \
+        if isinstance(bull, pd.Series) else np.asarray(bull, dtype=bool)
     for s in syms:
         c = D[s].Close.values; n = len(c)
-        vol = pd.Series(c).pct_change().rolling(90).std().values * np.sqrt(365)
+        vol = pd.Series(c).pct_change().rolling(90 * bpd).std().values * np.sqrt(365 * bpd)
         expo = np.zeros(n)
         for side in ([1, -1] if short_frac > 0 else [1]):
             for L in lookbacks:
@@ -203,7 +214,7 @@ def ensemble_weights(D, lookbacks, vol_target, lev_cap, short_frac=0.0, short_be
                     mid = (hiL[t] + loL[t]) / 2
                     if not inpos:
                         ok = (c[t] > hi[t]) if side == 1 else (c[t] < lo[t])
-                        if side == -1 and short_bear_only and bull.iloc[t]: ok = False
+                        if side == -1 and short_bear_only and bull_arr[t]: ok = False
                         if ok: inpos, stop = True, mid
                     else:
                         stop = max(stop, mid) if side == 1 else min(stop, mid)
@@ -218,7 +229,7 @@ def ensemble_weights(D, lookbacks, vol_target, lev_cap, short_frac=0.0, short_be
     W = W.div(np.maximum(gross / lev_cap, 1.0), axis=0)
     return W
 
-def run_weights(D, W, start, end, band=0.2):
+def run_weights(D, W, start, end, band=0.2, bpd=1):
     syms = list(D); idx = D[syms[0]].index
     O = pd.DataFrame({s: D[s].Open for s in syms}); C = pd.DataFrame({s: D[s].Close for s in syms})
     held = pd.Series(0.0, index=syms); eq = 1.0; curve = []; turnover = 0
@@ -236,7 +247,7 @@ def run_weights(D, W, start, end, band=0.2):
         intra = (C.iloc[t] / O.iloc[t] - 1)
         r = (held * gap).sum() + (new * intra).sum()
         tc = (new - held).abs().sum() * COST
-        fund = (new.clip(lower=0).sum() - new.clip(upper=0).abs().sum()) * FUND_D
+        fund = (new.clip(lower=0).sum() - new.clip(upper=0).abs().sum()) * FUND_D / bpd
         turnover += (new - held).abs().sum()
         eq *= (1 + r - tc - fund)
         held = new; curve.append((d, eq))
@@ -247,11 +258,11 @@ def run_weights(D, W, start, end, band=0.2):
 # 자동 노출 배수 (2026-10-09 adaptive_study.py 검토 결과: 변동성 목표 + 낙폭 브레이크)
 # D의 비중은 배수에 정비례(W_k = k·W_1)하므로 매일 k만 정하면 된다.
 # ─────────────────────────────────────────────────────────────────────
-def model_vol(D, W1, win=60):
-    """1배 모델 포트폴리오의 최근 실현 연변동성. t일 값은 t일 종가까지의 정보만 사용."""
+def model_vol(D, W1, win=60, bpd=1):
+    """1배 모델 포트폴리오의 최근 60일 실현 연변동성. t봉 값은 t봉 종가까지의 정보만 사용."""
     C = pd.DataFrame({s: D[s].Close for s in D})
     r = (W1.shift(1) * C.pct_change()).sum(axis=1)
-    return r.rolling(win, min_periods=30).std() * np.sqrt(365)
+    return r.rolling(win * bpd, min_periods=30 * bpd).std() * np.sqrt(365 * bpd)
 
 
 def auto_multiplier(vol, drawdown, p):
@@ -267,9 +278,9 @@ def auto_multiplier(vol, drawdown, p):
                "drawdown": round(float(drawdown), 4)}
 
 
-def run_weights_auto(D, W1, start, end, p, band=0.2):
+def run_weights_auto(D, W1, start, end, p, band=0.2, bpd=1):
     """자동 배수를 적용한 비중 백테스트 (모델 D 가상 곡선용). 낙폭은 자기 자산곡선 기준."""
-    vol1 = model_vol(D, W1)
+    vol1 = model_vol(D, W1, bpd=bpd)
     syms = list(D); idx = D[syms[0]].index
     O = pd.DataFrame({s: D[s].Open for s in syms}); C = pd.DataFrame({s: D[s].Close for s in syms})
     held = pd.Series(0.0, index=syms); eq, peak = 1.0, 1.0; curve, ks = [], []
@@ -286,7 +297,7 @@ def run_weights_auto(D, W1, start, end, p, band=0.2):
                 new[s] = tgt[s]
         r = (held * (O.iloc[t] / C.iloc[t - 1] - 1)).sum() + (new * (C.iloc[t] / O.iloc[t] - 1)).sum()
         tc = (new - held).abs().sum() * COST
-        fund = (new.clip(lower=0).sum() - new.clip(upper=0).abs().sum()) * FUND_D
+        fund = (new.clip(lower=0).sum() - new.clip(upper=0).abs().sum()) * FUND_D / bpd
         eq *= (1 + r - tc - fund); peak = max(peak, eq)
         held = new; curve.append((d, eq))
     return pd.Series(dict(curve)), ks
