@@ -24,7 +24,7 @@ code=$(curl -s -o /dev/null -w "%{http_code}" -m 15 "https://api.bybit.com/v5/ma
 if [ "$code" != "200" ]; then
   echo "!! Bybit API 응답 코드: $code"
   echo "!! 이 서버 지역(IP)에서는 Bybit API가 막혀 있습니다 (미국 등 제한 지역은 403)."
-  echo "!! 서울/춘천/도쿄/싱가포르 리전 VM을 사용하세요. 설치를 중단합니다."
+  echo "!! 서울·춘천·시드니·멜버른·뭄바이 리전 VM을 사용하세요 (미국·싱가포르·홍콩·일본 제외). 설치를 중단합니다."
   exit 1
 fi
 echo "   OK (HTTP 200)"

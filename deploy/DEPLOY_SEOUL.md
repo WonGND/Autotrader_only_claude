@@ -27,8 +27,14 @@ PC를 꺼도 봇이 매일 알아서 돌도록, 인터넷 회사의 컴퓨터를
 1. **https://www.oracle.com/kr/cloud/free/** 접속 → **"무료로 시작하기"**
 2. 국가: **대한민국**, 이름·이메일 입력 → 이메일 인증
 3. 비밀번호, **클라우드 계정 이름**(영문, 나중에 로그인할 때 씀 — 메모)
-4. **홈 리전: `South Korea North (Chuncheon)` 또는 `South Korea Central (Seoul)`**
-   - ⚠️ 홈 리전은 나중에 못 바꿉니다. 무료 서버는 홈 리전에서만 만들 수 있어요.
+4. **홈 리전 선택** — ⚠️ 나중에 못 바꿉니다. 무료 서버는 홈 리전에서만 만들 수 있어요.
+   - 1순위: `South Korea Central (Seoul)` / `South Korea North (Chuncheon)`
+   - **목록에 한국이 없으면**: `Australia East (Sydney)` 또는 `Australia Southeast (Melbourne)`,
+     그다음 `India West (Mumbai)` / `India South (Hyderabad)`
+   - **고르면 안 되는 곳**: 미국·캐나다 전 지역, `Singapore`, `Hong Kong` (Bybit 제한 국가 → API 차단),
+     `Japan` (Tokyo/Osaka — Bybit이 2026년 일본 서비스 제한을 발표해 막힐 위험)
+   - 봇은 하루 1번 주문이라 서버가 멀어도(호주·인도) 속도 차이는 문제 되지 않습니다.
+   - 설치 스크립트가 첫 단계에서 Bybit 접속을 검사하므로, 막힌 지역이면 설치 전에 바로 알 수 있습니다.
 5. 주소·전화번호 → **카드 등록** (본인 확인용 소액 승인 후 취소됨. "Always Free" 자원만 쓰면 청구 없음)
 6. 가입 완료 메일이 오면 https://cloud.oracle.com 로그인 (계정 이름 → 이메일/비밀번호)
 
@@ -149,7 +155,7 @@ Host coin-bot
 
 | 증상 | 원인·해결 |
 |---|---|
-| 설치 스크립트가 "Bybit API 응답 코드 403" 으로 중단 | 미국 등 차단 지역 VM. 서울/춘천/도쿄 리전으로 다시 생성 |
+| 설치 스크립트가 "Bybit API 응답 코드 403" 으로 중단 | 차단 지역 VM. 서울·춘천·시드니·멜버른·뭄바이 리전으로 다시 생성 |
 | `Permission denied (publickey)` | 키 파일 경로 오타 또는 3단계 `icacls` 미실행 |
 | 텔레그램에 "10003 / invalid api key" | `.env` 키 오타, 또는 Bybit IP 제한에 서버 IP 미등록 |
 | 리포트에 "최소주문 미달"이 많음 | 계좌 규모가 작아 목표 금액이 최소 주문보다 작음 — 정상 동작(건너뛰고 기록). `FEEDBACK.md` 참고 |

@@ -58,3 +58,21 @@ def test_exchange_leverage_keeps_liquidation_beyond_stop():
         stop_dist = CFG["disaster_stop_atr"] * a / px
         assert 1 <= lev <= CFG["exchange_leverage_max"]
         assert stop_dist < (1.0 / lev) * 0.95 or lev == 1, (s, lev, stop_dist)
+
+
+def test_auto_multiplier_bounds_and_brake():
+    p = dict(vol_target=0.30, dd_limit=0.20, k_min=1.0, k_max=3.0)
+    assert R.auto_multiplier(0.05, 0.0, p)[0] == 3.0          # 잔잔한 시장 + 낙폭 없음 → 상한
+    assert R.auto_multiplier(0.30, 0.0, p)[0] == 1.0          # 거친 시장 → 하한
+    assert R.auto_multiplier(0.05, 0.10, p)[0] == 1.5         # 낙폭 10% → 3×(1−0.5)
+    assert R.auto_multiplier(0.05, 0.25, p)[0] == 1.0         # 낙폭 한도 초과 → 하한
+    assert R.auto_multiplier(float("nan"), 0.0, p)[0] == 3.0  # 데이터 부족 시에도 범위 안
+
+
+def test_decide_multiplier_uses_config_mode():
+    W1 = E.compute_targets(D, dict(CFG, exposure_multiplier=1))
+    k, info = E.decide_multiplier(D, W1, dict(CFG, leverage_mode="fixed"), 100, 100)
+    assert k == CFG["exposure_multiplier"] and info["mode"] == "fixed"
+    k, info = E.decide_multiplier(D, W1, dict(CFG, leverage_mode="auto"), 85, 100)
+    a = CFG["auto_leverage"]
+    assert a["k_min"] <= k <= a["k_max"] and info["drawdown"] == 0.15

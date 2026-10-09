@@ -146,12 +146,36 @@ def plan_orders(targets: dict, current: dict, prices: dict, equity: float, instr
     return plans
 
 
-def shadow_curves(D: dict, W: pd.DataFrame, start: pd.Timestamp):
-    """모델 D(이상적 체결)와 기준선 B2(가상)의 시작일 대비 자산 배수."""
+def auto_params(cfg: dict) -> dict:
+    a = cfg["auto_leverage"]
+    return dict(vol_target=a["portfolio_vol_target"], dd_limit=a["dd_limit"],
+                k_min=a["k_min"], k_max=a["k_max"])
+
+
+def decide_multiplier(D: dict, W1: pd.DataFrame, cfg: dict, equity: float, peak: float):
+    """오늘 적용할 노출 배수 k와 그 근거.
+
+    leverage_mode=auto : 변동성 목표 + 낙폭 브레이크 (backtester/rule_sim.auto_multiplier)
+    leverage_mode=fixed: exposure_multiplier 고정
+    """
+    if cfg.get("leverage_mode", "fixed") != "auto":
+        k = float(cfg.get("exposure_multiplier", 1.0))
+        return k, {"mode": "fixed", "k": k}
+    vol = float(R.model_vol(D, W1).iloc[-1])
+    dd = max(0.0, 1 - equity / peak) if peak and peak > 0 else 0.0
+    k, comp = R.auto_multiplier(vol, dd, auto_params(cfg))
+    return k, dict(comp, mode="auto", k=round(k, 3))
+
+
+def shadow_curves(D: dict, W1: pd.DataFrame, start: pd.Timestamp, cfg: dict):
+    """모델 D(같은 배수 규칙·이상적 체결)와 기준선 B2(가상)의 시작일 대비 자산 배수."""
     end = D["BTC"].index[-1]
     if start > end:
         return {"d_model": 1.0, "b2": 1.0, "b2_open": [], "b2_trades": 0}
-    d_eq, _ = R.run_weights(D, W, start, end, band=0.2)
+    if cfg.get("leverage_mode", "fixed") == "auto":
+        d_eq, _ = R.run_weights_auto(D, W1, start, end, auto_params(cfg))
+    else:
+        d_eq, _ = R.run_weights(D, W1 * float(cfg.get("exposure_multiplier", 1.0)), start, end, band=0.2)
     b2_eq, b2_tr = R.run_discrete(D, R.RULE_B2, start, end)
     return {
         "d_model": float(d_eq.iloc[-1]) if len(d_eq) else 1.0,
@@ -200,9 +224,8 @@ def main():
         last_bar = D["BTC"].index[-1]
         report["last_closed_bar"] = str(last_bar.date())
 
-        # 2) 목표 비중
-        W = compute_targets(D, cfg)
-        targets = W.iloc[-1].to_dict()
+        # 2) 1배 기준 목표 비중 (배수는 계좌 상태를 본 뒤 결정)
+        W1 = compute_targets(D, dict(cfg, exposure_multiplier=1))
 
         # 3) 계좌 상태
         equity = broker.get_total_equity()
@@ -231,6 +254,17 @@ def main():
                 last_eq = float(prev["real_equity"].iloc[-1])
                 if last_eq > 0 and (last_eq - equity) / last_eq >= cfg["daily_loss_halt"]:
                     halted = True
+
+        # 자동 노출 배수 결정 (낙폭은 지금까지 기록된 실계좌 최고 자산 기준)
+        peak = equity
+        if eq_path.exists():
+            hist = pd.read_csv(eq_path)
+            if len(hist):
+                peak = max(peak, float(hist["real_equity"].max()))
+        k, k_info = decide_multiplier(D, W1, cfg, equity, peak)
+        W = W1 * k
+        targets = W.iloc[-1].to_dict()
+        report["leverage"] = k_info
 
         # 4) 주문 계획 → 실행
         plans = plan_orders(targets, current, prices, equity, instruments, cfg, halted)
@@ -298,7 +332,7 @@ def main():
             report["errors"].append(f"실현손익 조회 실패: {e}")
 
         # 7) 가상 곡선 (모델 D / 기준선 B2)
-        shadow = shadow_curves(D, W, pd.Timestamp(cfg["shadow_start"]))
+        shadow = shadow_curves(D, W1, pd.Timestamp(cfg["shadow_start"]), cfg)
         first_eq = None
         if eq_path.exists():
             prev_all = pd.read_csv(eq_path)
@@ -311,6 +345,8 @@ def main():
                    d_model_index=round(shadow["d_model"], 4), b2_index=round(shadow["b2"], 4),
                    btc_close=float(D["BTC"].Close.iloc[-1]),
                    gross_target=round(float(W.iloc[-1].abs().sum()), 4),
+                   multiplier=round(k, 3), k_vol=k_info.get("k_vol"), k_dd=k_info.get("k_dd"),
+                   drawdown=k_info.get("drawdown"),
                    n_orders=len([e for e in executed if e["status"] in ("sent", "dry_run")]),
                    n_failed=len([e for e in executed if e["status"] == "failed"]),
                    n_skipped_min=len(skipped), halted=halted, dry_run=dry)
@@ -328,6 +364,9 @@ def main():
         lines = [f"📊 <b>앙상블 봇 일일 리포트</b> {'(DRY RUN)' if dry else ''}",
                  f"기준 일봉: {last_bar.date()}  ·  자산 {equity:.2f} USDT",
                  f"실계좌 {row['real_index']:.3f}x | 모델D {row['d_model_index']:.3f}x | 기준선B2 {row['b2_index']:.3f}x",
+                 f"노출 배수 {k:.2f}배 ({k_info['mode']}"
+                 + (f": 변동성기준 {k_info['k_vol']:.2f} · 낙폭기준 {k_info['k_dd']:.2f}, 계좌낙폭 {k_info['drawdown']*100:.1f}%)"
+                    if k_info["mode"] == "auto" else ")"),
                  f"주문 {row['n_orders']}건 · 실패 {row['n_failed']} · 최소주문 미달 {row['n_skipped_min']}"]
         for e in executed:
             lines.append(f"  {e['symbol']} {e['action']} {e['side']} {e['notional']}U ({e['reason']}) {e['status']}")

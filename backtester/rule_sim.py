@@ -241,3 +241,52 @@ def run_weights(D, W, start, end, band=0.2):
         eq *= (1 + r - tc - fund)
         held = new; curve.append((d, eq))
     return pd.Series(dict(curve)), turnover
+
+
+# ─────────────────────────────────────────────────────────────────────
+# 자동 노출 배수 (2026-10-09 adaptive_study.py 검토 결과: 변동성 목표 + 낙폭 브레이크)
+# D의 비중은 배수에 정비례(W_k = k·W_1)하므로 매일 k만 정하면 된다.
+# ─────────────────────────────────────────────────────────────────────
+def model_vol(D, W1, win=60):
+    """1배 모델 포트폴리오의 최근 실현 연변동성. t일 값은 t일 종가까지의 정보만 사용."""
+    C = pd.DataFrame({s: D[s].Close for s in D})
+    r = (W1.shift(1) * C.pct_change()).sum(axis=1)
+    return r.rolling(win, min_periods=30).std() * np.sqrt(365)
+
+
+def auto_multiplier(vol, drawdown, p):
+    """k = min(목표변동성/실현변동성, k_max·(1−낙폭/낙폭한도)) 를 [k_min, k_max]로 제한.
+
+    반환: (k, 구성요소 dict) — 로그에 근거를 남기기 위해 구성요소도 돌려준다.
+    """
+    k_vol = p["k_max"] if not np.isfinite(vol) or vol <= 0 else p["vol_target"] / vol
+    k_dd = p["k_max"] * (1 - drawdown / p["dd_limit"])
+    k = float(np.clip(min(k_vol, k_dd), p["k_min"], p["k_max"]))
+    return k, {"k_vol": round(float(k_vol), 3), "k_dd": round(float(k_dd), 3),
+               "model_vol": round(float(vol), 4) if np.isfinite(vol) else None,
+               "drawdown": round(float(drawdown), 4)}
+
+
+def run_weights_auto(D, W1, start, end, p, band=0.2):
+    """자동 배수를 적용한 비중 백테스트 (모델 D 가상 곡선용). 낙폭은 자기 자산곡선 기준."""
+    vol1 = model_vol(D, W1)
+    syms = list(D); idx = D[syms[0]].index
+    O = pd.DataFrame({s: D[s].Open for s in syms}); C = pd.DataFrame({s: D[s].Close for s in syms})
+    held = pd.Series(0.0, index=syms); eq, peak = 1.0, 1.0; curve, ks = [], []
+    for t in range(1, len(idx)):
+        d = idx[t]
+        if d < start: continue
+        if d > end: break
+        k, _ = auto_multiplier(vol1.iloc[t - 1], 1 - eq / peak, p)
+        ks.append(k)
+        tgt = W1.iloc[t - 1] * k
+        new = held.copy()
+        for s in syms:
+            if abs(tgt[s] - held[s]) > band * max(abs(held[s]), 1e-9) or (tgt[s] == 0) != (held[s] == 0):
+                new[s] = tgt[s]
+        r = (held * (O.iloc[t] / C.iloc[t - 1] - 1)).sum() + (new * (C.iloc[t] / O.iloc[t] - 1)).sum()
+        tc = (new - held).abs().sum() * COST
+        fund = (new.clip(lower=0).sum() - new.clip(upper=0).abs().sum()) * FUND_D
+        eq *= (1 + r - tc - fund); peak = max(peak, eq)
+        held = new; curve.append((d, eq))
+    return pd.Series(dict(curve)), ks
