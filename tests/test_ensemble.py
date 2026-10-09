@@ -15,9 +15,10 @@ PX = {s: float(D[s].Close.iloc[-1]) for s in D}
 def test_live_weights_equal_backtest_weights():
     """실매매 목표비중 == 백테스트 비중 (같은 함수, 같은 결과)."""
     W_live = E.compute_targets(D, CFG)
-    W_bt = R.ensemble_weights(D, [10, 20, 30, 60, 90, 150, 250], 0.25, 2.0, 0.43, True)
+    k = CFG["exposure_multiplier"]
+    W_bt = R.ensemble_weights(D, [10, 20, 30, 60, 90, 150, 250], 0.25 * k, 2.0 * k, 0.43, True)
     pd.testing.assert_frame_equal(W_live, W_bt)
-    assert (W_live.abs().sum(axis=1) <= 2.0 + 1e-9).all()      # 총 레버리지 한도
+    assert (W_live.abs().sum(axis=1) <= 2.0 * k + 1e-9).all()  # 총 레버리지 한도
 
 
 def test_no_lookahead():
@@ -47,3 +48,13 @@ def test_min_order_skip_and_halt():
     assert p["action"] == "skip_halt"
     p = E.plan_orders({"XRP": 0.0}, {"XRP": 50.0}, PX, 1000, INS, CFG, halted=True)[0]
     assert p["action"] == "close"                               # 중단 중에도 청산은 허용
+
+
+def test_exchange_leverage_keeps_liquidation_beyond_stop():
+    """어떤 종목이든 강제청산 거리(≈1/레버리지)가 비상 손절 거리보다 멀어야 함."""
+    for s, df in D.items():
+        lev = E.exchange_leverage_for(df, CFG)
+        a = float(R.atr(df, 14).iloc[-1]); px = float(df.Close.iloc[-1])
+        stop_dist = CFG["disaster_stop_atr"] * a / px
+        assert 1 <= lev <= CFG["exchange_leverage_max"]
+        assert stop_dist < (1.0 / lev) * 0.95 or lev == 1, (s, lev, stop_dist)

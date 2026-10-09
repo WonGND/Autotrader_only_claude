@@ -62,8 +62,23 @@ def append_csv(path: Path, rows: list):
 
 # ── 핵심 계산 (거래소와 무관 — 오프라인 테스트 가능) ──────────────────
 def compute_targets(D: dict, cfg: dict) -> pd.DataFrame:
-    return R.ensemble_weights(D, cfg["lookbacks"], cfg["vol_target"], cfg["lev_cap"],
+    """노출 배수(exposure_multiplier) k는 변동성 목표와 총 레버리지 한도를 함께 k배 한다."""
+    k = float(cfg.get("exposure_multiplier", 1.0))
+    return R.ensemble_weights(D, cfg["lookbacks"], cfg["vol_target"] * k, cfg["lev_cap"] * k,
                               short_frac=cfg["short_frac"], short_bear_only=cfg["short_bear_only"])
+
+
+def exchange_leverage_for(df: pd.DataFrame, cfg: dict) -> int:
+    """종목별 거래소 레버리지 설정값.
+
+    거래소 레버리지는 손익을 바꾸지 않고 '묶이는 증거금'과 '청산 거리'만 바꾼다.
+    격리(isolated) 마진이어도 강제청산(약 1/레버리지 하락)이 비상 손절(3×ATR)보다
+    먼저 오지 않도록: 청산 거리의 70% 안쪽에 손절이 오게 레버리지를 고른다.
+    """
+    a = float(R.atr(df, 14).iloc[-1]); px = float(df.Close.iloc[-1])
+    stop_dist = cfg["disaster_stop_atr"] * a / px
+    lev = int(np.floor(0.7 / stop_dist)) if stop_dist > 0 else cfg["exchange_leverage_max"]
+    return int(np.clip(lev, 1, cfg["exchange_leverage_max"]))
 
 
 def plan_orders(targets: dict, current: dict, prices: dict, equity: float, instruments: dict,
@@ -222,7 +237,9 @@ def main():
         executed = []
         if not dry:
             for s in {pl["symbol"] for pl in plans if pl["action"] in ("open",)}:
-                broker.set_leverage(f"{s}-USD", int(cfg["exchange_leverage"]))
+                lev = exchange_leverage_for(D[s], cfg)
+                report.setdefault("exchange_leverage", {})[s] = lev
+                broker.set_leverage(f"{s}-USD", lev)
         for pl in plans:
             if pl["action"] not in ("open", "reduce", "close"):
                 continue

@@ -88,6 +88,14 @@ def run_discrete(D, cfg, start, end):
             equity = eq_cash + sum(p["upnl"] for p in pos.values())
             notional = equity * risk_pct / dist
             notional = min(notional, equity * cfg["max_notional_x"])
+            # 소액 계좌 최소 주문 제약 (cfg["capital"]=시작 자본 USDT, cfg["lots"]=수량 단위)
+            if cfg.get("capital"):
+                min_n = max(cfg["lots"][s] * px, 5.0) / cfg["capital"]   # 정규화(시작=1.0) 단위
+                if notional < min_n:
+                    if notional >= 0.6 * min_n and min_n <= 2.0 * notional:
+                        notional = min_n
+                    else:
+                        continue
             eq_cash -= notional * FEE
             tp = px + side * cfg["tp_mult"] * a if cfg["tp_mult"] else None
             pos[(s, side)] = dict(s=s, side=side, entry=px, stop=stop, tp=tp, notional=notional,
