@@ -72,6 +72,11 @@ class TelegramNotifier:
     def send(self, text: str):
         self._send_async(text)
 
+    def send_now(self, text: str) -> bool:
+        """즉시(동기) 전송. 한 번 실행하고 바로 끝나는 스크립트(앙상블 봇 등)는 이걸 써야 한다.
+        send()는 백그라운드 스레드라, 프로세스가 먼저 끝나면 메시지가 사라진다."""
+        return self._send(text)
+
     def notify_start(self, mode: str, balance: float, symbols: list, interval_sec: int):
         now = datetime.now().strftime("%Y-%m-%d %H:%M")
         syms = "\n".join(f"  • {s}" for s in symbols)

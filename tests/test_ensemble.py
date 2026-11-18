@@ -94,3 +94,33 @@ def test_short_regime_uses_previous_day():
     btc = D["BTC"].Close; daily = btc > btc.rolling(200).mean()
     t = D4["BTC"].index[-1]
     assert bool(bull.loc[t]) == bool(daily.loc[t.normalize() - pd.Timedelta(days=1)])
+
+
+# ── 텔레그램: 거래소 청산 알림 + 동기 전송 ─────────────────────────────
+def test_closed_pnl_alert_sent_sync_and_not_on_first_sync(tmp_path, monkeypatch):
+    import sys as _sys
+    import run_ensemble_trading as E
+    from tests import fake_broker as FB
+    from utils import telegram_notifier as TN
+
+    monkeypatch.setattr(E, "LOG_DIR", tmp_path)
+    monkeypatch.setenv("TELEGRAM_TOKEN", "x")
+    monkeypatch.setenv("TELEGRAM_CHAT_ID", "1")
+    sent = []
+    monkeypatch.setattr(TN.TelegramNotifier, "_send", lambda self, t: sent.append(t) or True)
+    monkeypatch.setattr(TN.TelegramNotifier, "_send_async",
+                        lambda self, t: (_ for _ in ()).throw(AssertionError("비동기 전송 금지")))
+    closed = [{"orderId": "o1", "symbol": "BTCUSDT", "side": "Sell", "qty": "0.001",
+               "avgEntryPrice": "60000", "avgExitPrice": "61000", "closedPnl": "1.0",
+               "leverage": "3", "updatedTime": "1"}]
+    monkeypatch.setattr(FB.FakeBroker, "get_closed_pnl", lambda self, limit=100: list(closed))
+    data = str(E.ROOT / "research" / "coin_rules_sim" / "data_4h")
+    monkeypatch.setattr(_sys, "argv", ["x", "--offline-data", data])
+
+    E.main()   # 첫 실행: 과거 청산은 기록만, '청산 체결' 알림 없음
+    assert not any("청산 체결" in m for m in sent)
+    closed.append({**closed[0], "orderId": "o2", "side": "Buy", "symbol": "ETHUSDT",
+                   "closedPnl": "-0.5", "updatedTime": "2"})
+    sent.clear()
+    E.main()   # 새 청산(비상 손절 등) 1건 → 알림
+    assert len(sent) == 1 and "청산 체결 1건" in sent[0] and "ETH 숏" in sent[0]

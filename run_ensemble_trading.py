@@ -357,10 +357,11 @@ def main():
                 stops.append(dict(symbol=s, side=p.side, stop=round(sl, 6), ok=ok))
 
         # 6) 실현손익 내역 누적 (거래소 기준 = 진짜 체결 기록)
-        new_closed = []
+        new_closed, first_pnl_sync = [], True
         try:
             closed = broker.get_closed_pnl(limit=100)
             cp_path = LOG_DIR / "closed_pnl.csv"
+            first_pnl_sync = not cp_path.exists()   # 첫 실행: 과거 내역을 '새 청산'으로 알리지 않음
             seen = set(pd.read_csv(cp_path)["orderId"].astype(str)) if cp_path.exists() else set()
             for c in closed:
                 if str(c.get("orderId")) in seen:
@@ -412,6 +413,17 @@ def main():
                  f"주문 {row['n_orders']}건 · 실패 {row['n_failed']} · 최소주문 미달 {row['n_skipped_min']}"]
         for e in executed:
             lines.append(f"  {e['symbol']} {e['action']} {e['side']} {e['notional']}U ({e['reason']}) {e['status']}")
+        # 거래소에서 체결된 청산 (봇 주문 + 실행 사이에 비상 손절로 닫힌 것 포함)
+        alert_closed = [] if first_pnl_sync else new_closed
+        if alert_closed:
+            tot = sum(float(c.get("closedPnl") or 0) for c in alert_closed)
+            lines.append(f"{'💰' if tot >= 0 else '🔻'} 청산 체결 {len(alert_closed)}건 · 실현손익 {tot:+.2f} USDT")
+            for c in sorted(alert_closed, key=lambda r: int(r.get("updatedTime") or 0))[-10:]:
+                # 청산 주문의 side가 Sell이면 롱을 닫은 것, Buy면 숏을 닫은 것
+                pos_side = "롱" if c.get("side") == "Sell" else "숏"
+                lines.append(f"  {str(c.get('symbol', '')).replace('USDT', '')} {pos_side} {c.get('qty')} · "
+                             f"진입 {c.get('avgEntryPrice')} → 청산 {c.get('avgExitPrice')} · "
+                             f"{float(c.get('closedPnl') or 0):+.2f}U")
         if halted:
             lines.append("⛔ 24시간 손실 한도 → 증액 중단")
         if outside:
@@ -422,9 +434,9 @@ def main():
             lines.append("❗ " + " / ".join(report["errors"])[:500])
         msg = "\n".join(lines)
         print(msg.replace("<b>", "").replace("</b>", ""))
-        notify = executed or report["errors"] or halted or run_ts.hour == 0
+        notify = executed or alert_closed or report["errors"] or halted or run_ts.hour == 0
         if telegram and getattr(telegram, "_enabled", False) and notify:
-            telegram.send(msg)
+            telegram.send_now(msg)   # 동기 전송 (프로세스 종료 전에 확실히 보냄)
         return 0 if not report["errors"] else 2
 
     except Exception as e:
@@ -434,7 +446,7 @@ def main():
         (LOG_DIR / "runs" / f"{run_ts.strftime('%Y-%m-%d_%H%M')}_ERROR.json").write_text(
             json.dumps(report, ensure_ascii=False, indent=1, default=str), encoding="utf-8")
         if telegram and getattr(telegram, "_enabled", False):
-            telegram.send(f"❗ 앙상블 봇 실행 실패: {str(e)[:300]}")
+            telegram.send_now(f"❗ 앙상블 봇 실행 실패: {str(e)[:300]}")
         return 1
 
 
