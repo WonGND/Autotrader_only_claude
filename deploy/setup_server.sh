@@ -109,6 +109,9 @@ UNITEOF
 sudo systemctl daemon-reload
 sudo systemctl enable coin-ensemble.timer
 
+# 급변 감시 (10분마다, 알림 전용)
+bash "${APP_DIR}/deploy/install_monitor.sh"
+
 # 예전 상시 실행 봇(run_live_trading.py)이 등록돼 있으면 꺼서 이중 주문 방지
 if systemctl list-unit-files | grep -q '^coin-futures.service'; then
   sudo systemctl disable --now coin-futures.service || true
